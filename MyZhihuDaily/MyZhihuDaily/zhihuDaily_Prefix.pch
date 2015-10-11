@@ -1,0 +1,22 @@
+//
+//  zhihuDaily_Prefix.pch
+//  MyZhihuDaily
+//
+//  Created by oahgnehzoul on 15/8/27.
+//  Copyright (c) 2015年 oahgnehzoul. All rights reserved.
+//
+
+#ifndef MyZhihuDaily_zhihuDaily_Prefix_pch
+#define MyZhihuDaily_zhihuDaily_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import<UIKit/UIKit.h>
+
+#define KWidth [UIScreen mainScreen].bounds.size.width
+#define KHeight [UIScreen mainScreen].bounds.size.height
+#import "Common.h"
+#import "Utils.h"
+#import "UIViewExt.h"
+#endif
