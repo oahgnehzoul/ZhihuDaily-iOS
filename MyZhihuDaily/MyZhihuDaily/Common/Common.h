@@ -39,4 +39,8 @@
 
 #define kThemeDidChangeNofication @"kThemeDidChangeNofication"
 
+//友盟Appkey
+#define UMAPPKEY @"56233163e0f55a6bba0018fe"
+
+
 #endif

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
+@interface HomeTableView : UITableView<UITableViewDataSource,UITableViewDelegate,UINavigationBarDelegate>
 
 
 //@property (nonatomic,strong) NSArray *storyModelArray;

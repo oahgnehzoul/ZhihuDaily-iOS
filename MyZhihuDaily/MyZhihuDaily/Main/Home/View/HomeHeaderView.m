@@ -14,9 +14,9 @@
 #import "HomeViewController.h"
 
 @implementation HomeHeaderView
-{
-    UIImageView *_imgView;
-}
+//{
+//    UIImageView *_imgView;
+//}
 
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {

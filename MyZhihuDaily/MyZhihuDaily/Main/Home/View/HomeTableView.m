@@ -14,9 +14,14 @@
 #import "UIView+UIViewController.h"
 #import "DataService.h"
 #import "UIView+UIViewController.h"
+#import "UINavigationBar+BackgroundColor.h"
+#import "HomeHeaderViewCell.h"
+#import "HomeHeaderView.h"
 @implementation HomeTableView
 {
     NSMutableArray *rowArray;
+//    int i;
+    NSInteger i;
 }
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [super initWithFrame:frame style:style];
@@ -60,14 +65,12 @@
 
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor redColor];
-//    cell.model = self.storyModelArray[indexPath.row];
     NSArray *array = [self.dataDicArray[indexPath.section] objectForKey:@"array"];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
     cell.model = array[indexPath.row];
     cell.backgroundColor = [UIColor clearColor];
-//#warning cellColor
-//    cell.backgroundColor = [UIColor grayColor];
+
 
     return cell;
 }
@@ -174,9 +177,9 @@
 //得到要改变日期的偏移量数组
 - (NSArray *)offYarray{
     
-    NSInteger offy = 200-64;
+    NSInteger offy = 220-64-64;
     NSMutableArray *offyArray = [[NSMutableArray alloc] init];
-    for (int i = 0 ; i< rowArray.count; i++) {
+    for (i = 0 ; i< rowArray.count; i++) {
         offy+= ([rowArray[i] integerValue]*80+40);
         [offyArray addObject:[NSNumber numberWithInteger:offy]];
     }
@@ -185,19 +188,42 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"offY:%f",scrollView.contentOffset.y);
     CGFloat offY = scrollView.contentOffset.y;
+//    NSLog(@"%f",offY);
 //    NSLog(@"count:%ld",rowArray.count);
 //    NSLog(@"array:%@",[self offYarray]);
+//    NSLog(@"%f",alpha);
+    UIColor *color = [UIColor colorWithRed:0 green: 175/255.0 blue:240/255.0 alpha:1];
+    CGFloat alpha = (offY + 64)/156;
+    [self.viewController.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
+//    if (offY < 0) {
+//        HomeHeaderView *view = self.tableHeaderView;
+//        UIImageView *imgView = view.imgView;
+//        NSLog(@"%@",imgView);
+//        
+//    }
+//    if (offY <= -64) {
+//        CGFloat newHeight = -offY - 64 +200;
+////        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, newHeight);
+//    }
+//    self.tableHeaderView.bottom = self.top;
+//    if (offY <= -64) {
+//        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, -offY-64+200);
+//    }
+//    UIView *view = self.tableHeaderView;
+//    NSLog(@"%f %f",view.frame.size.width,view.size.height);
+    
     NSArray *offArray = [self offYarray];
     if (offArray.count > 1) {
         
-        for (int i = 0; i < offArray.count - 1; i++) {
+        for ( i = 0; i < offArray.count - 1; i++) {
             if (offY >= [offArray[i] integerValue] && offY <= [offArray[i+1] integerValue]) {
+//                if (offY >= ([offArray[0] integerValue]+[offArray[1] integerValue] )) {
+//                    [self setNavigationBarTransformProgress:1];
+//                }
                 NSDictionary *dic = self.dataDicArray[i+1];
                 NSString *date = dic[@"date"];
                 NSString *text = [self dateWithString:date];
-//                NSLog(@"%@",text);
                 self.viewController.navigationItem.title = text;
             }else if (offY <= [offArray[0] integerValue]) {
                 self.viewController.navigationItem.title = @"今日热闻";
@@ -206,5 +232,13 @@
     
 
     }
-    }
+}
+- (void)setNavigationBarTransformProgress:(CGFloat)progress
+{
+    [self.viewController.navigationController.navigationBar hzl_setTranslationY:(-44 * progress)];
+    [self.viewController.navigationController.navigationBar hzl_setEementsAlpha:(1-progress)];
+}
+
+
+
 @end

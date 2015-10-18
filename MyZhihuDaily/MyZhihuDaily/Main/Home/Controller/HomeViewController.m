@@ -15,6 +15,11 @@
 #import "HomeHeaderView.h"
 #import "HomeTableView.h"
 #import "MJRefresh.h"
+#import "HomeHeaderViewCell.h"
+#import "DetailViewController.h"
+#import "HomeTableViewCell.h"
+#import "UINavigationBar+BackgroundColor.h"
+
 @interface HomeViewController ()
 {
     NSArray *_topStoriesArray;
@@ -28,12 +33,13 @@
     NSString *todayDate;
     NSString *lastDate;
     
-//    NSMutableDictionary *_dataDic;
+
     NSMutableArray *_dataDicArray;
     
-//    NSMutableArray *_dataArray;
     NSMutableArray *_dateArray;
+    NSMutableArray *rowArray;
     BOOL _isNight;
+//    NSInteger i;
 }
 @end
 
@@ -42,41 +48,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"今日热闻";
-//    self.view.backgroundColor = [UIColor yellowColor];
-    
-    
     [self _createTableView];
     [self _loadData];
-//    [self setRootNavItem];
     [self _setNavigation];
 }
 
-//- (void)dealloc{
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:kThemeDidChangeNofication object:nil];
-//    
-//    
-//}
-
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modeChangeAction) name:kThemeDidChangeNofication object:nil];
-//    }
-//    return self;
-//    
-//}
-//- (void)modeChangeAction{
-//    _isNight = !_isNight;
-//    _tableView.isNight = _isNight;
-//    if (_isNight) {
-//        _tableView.backgroundColor = [UIColor grayColor];
-//        
-//    }
-//    else{
-//        _tableView.backgroundColor = [UIColor whiteColor];
-//    }
-//    
-//}
 
 //添加菜单按钮  此处还有bug,mmDraw open close 与 开关要同步。
 - (void)_setNavigation {
@@ -84,21 +60,22 @@
     [leftBtn setBackgroundImage:[UIImage imageNamed:@"Home_Icon.png"] forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
-//    self.navigationController.navigationBar.translucent = YES;
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsCompact];
+
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-//    self.navigationController.navigationBarHidden = YES;
+}
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 - (void)btnAction:(UIButton *)btn {
-    static BOOL i ;
-    if (i == 0) {
+    static BOOL j ;
+    if (j == 0) {
         MMDrawerController *mmDraw = self.mm_drawerController;
         [mmDraw openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    }else if (i == 1) {
+    }else if (j == 1) {
         MMDrawerController *mmDraw = self.mm_drawerController;
         [mmDraw closeDrawerAnimated:YES completion:nil];
     }
-    i = !i;
+    j = !j;
 }
 
 - (void)_createTableView {
@@ -108,19 +85,19 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.itemSize = CGSizeMake(KWidth, 200);
-    headerView = [[HomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 200) collectionViewLayout:layout];
+    layout.itemSize = CGSizeMake(KWidth, 220);
+    headerView = [[HomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 220) collectionViewLayout:layout];
     headerView.pagingEnabled = YES;
     _topStoryModelArray = [[NSMutableArray alloc] init];
     _storyModelArray = [[NSMutableArray alloc] init];
     _dateArray = [[NSMutableArray alloc] init];
     
-    _tableView = [[HomeTableView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight) style:UITableViewStyleGrouped];
-#warning !!!
-    _tableView.sectionFooterHeight = 0;
+    _tableView = [[HomeTableView alloc] initWithFrame:CGRectMake(0, -64, KWidth, KHeight+64) style:UITableViewStylePlain];
+//    _tableView.dataSource = self;
+//    _tableView.delegate = self;
+//    [_tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:_tableView];
-//#warning 改了背景
-//    _tableView.backgroundColor = [UIColor grayColor];
+
     _tableView.tableHeaderView = headerView;
     _tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(_loadMoreData)];
     
@@ -160,19 +137,14 @@
 //            self.title = [Utils dateWithString:todayDate];
             [_tableView.footer endRefreshing];
         }];
-//    }else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"不好意思" message:@"只有这个月的新闻" delegate:self cancelButtonTitle:@"喔" otherButtonTitles:nil, nil];
-//        [alert show];
-//        [_tableView.footer endRefreshing];
-//    }
+
 }
 - (void)_loadData {
     //下载网络数据
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [DataService requestAFUrl:LatestNews httpMethod:@"GET" params:nil data:nil block:^(id result) {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             todayDate = [result objectForKey:@"date"];
-//            NSLog(@"%@",todayDate);
             [dic setValue:todayDate forKey:@"date"];
 //#warning 打印日期
             _topStoriesArray = [result objectForKey:@"top_stories"];
@@ -197,7 +169,9 @@
 //                _tableView.dataArray = _dataArray;
                 [_dataDicArray addObject:dic];
                 _tableView.dataDicArray = _dataDicArray;
+                
                 [_tableView reloadData];
+                
             });
             
         }];
@@ -206,12 +180,186 @@
 
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [self setNeedsStatusBarAppearanceUpdate];
-}
+//#pragma mark - UITableViewDataSource
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    
+//    //    return self.storyModelArray.count;
+//    NSArray *array = [_dataDicArray[section] objectForKey:@"array"];
+//    return array.count;
+//    
+//}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSArray *array = [_dataDicArray[indexPath.section] objectForKey:@"array"];
+//    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    
+//    cell.model = array[indexPath.row];
+//    cell.backgroundColor = [UIColor clearColor];
+//    
+//    
+//    return cell;
+//}
+//
+//#pragma mark - UITableViewDelegate
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 80;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    DetailViewController *vc = [[DetailViewController alloc] init];
+//    NSArray *modelArray = [_dataDicArray[indexPath.section] objectForKey:@"array"];
+//    storyModel *model = modelArray[indexPath.row];
+//    vc.newsId = model.idStr;
+//    NSLog(@"%@",vc.newsId);
+//    //    vc.dataArray = [self.dataDicArray[indexPath.section] objectForKey:@"array"];
+//    NSMutableArray *array = [[NSMutableArray alloc] init];
+//    for (storyModel *model in modelArray) {
+//        NSString *newsId = model.idStr;
+//        [array addObject:newsId];
+//    }
+//    vc.newsIdArray = array;
+//    vc.index = indexPath.row;
+//    //    HomeViewController *homeVC = (HomeViewController *)self.nextResponder.nextResponder;
+//    [self presentViewController:vc animated:YES completion:nil];
+//}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    //    if (_dateArray) {
+//    //        return _dateArray.count+1;
+//    //    }
+//    //    return 1;
+//    return _dataDicArray.count;
+//}
+////日期显示
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return nil;
+//    }else {
+//        UIView *dateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 40)];
+//        UILabel *dateLabel = [[UILabel alloc] initWithFrame:dateView.bounds];
+//        dateLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mask_titlebar64@2x"]];
+//        //        dateLabel.backgroundColor = [UIColor blueColor];
+//        NSString *date = [_dataDicArray[section] objectForKey:@"date"];
+//        dateLabel.text = [self dateWithString:date];
+//        
+//        dateLabel.textAlignment = NSTextAlignmentCenter;
+//        dateLabel.textColor = [UIColor whiteColor];
+//        [dateView addSubview:dateLabel];
+//        
+//        
+//        
+//        return dateView;
+//    }
+//}
+//
+//
+//- (NSString*)weekdayStringFromDate:(NSDate*)inputDate {
+//    
+//    NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
+//    
+//    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//    
+//    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+//    
+//    [calendar setTimeZone: timeZone];
+//    
+//    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+//    
+//    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:inputDate];
+//    
+//    return [weekdays objectAtIndex:theComponents.weekday];
+//    
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return 0;
+//    }else {
+//        return 40;
+//    }
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    return 0;
+//}
+//- (NSString *)dateWithString:(NSString *)string{
+//    NSString *formatStr = @"yyyyMMdd";
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateFormat = formatStr;
+//    NSDate *date = [formatter dateFromString:string];
+//    //#warning 打印
+//    //    NSLog(@"%@",[self weekdayStringFromDate:date]);
+//    NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+//    [formatter1 setDateFormat:@"MM月dd日"];
+//    NSString *dateString = [formatter1 stringFromDate:date];
+//    NSString *fullStr = [dateString stringByAppendingString:[self weekdayStringFromDate:date]];
+//    return fullStr;
+//    
+//    
+//}
+////得到要改变日期的偏移量数组
+//- (NSArray *)offYarray{
+//    
+//    NSInteger offy = 220-64-64;
+//    NSMutableArray *offyArray = [[NSMutableArray alloc] init];
+//    for (i = 0 ; i< rowArray.count; i++) {
+//        offy+= ([rowArray[i] integerValue]*80+40);
+//        [offyArray addObject:[NSNumber numberWithInteger:offy]];
+//    }
+//    
+//    return (NSArray *)offyArray;
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat offY = scrollView.contentOffset.y;
+//    //    NSLog(@"%f",offY);
+//    //    NSLog(@"count:%ld",rowArray.count);
+//    //    NSLog(@"array:%@",[self offYarray]);
+//    //    NSLog(@"%f",alpha);
+//    UIColor *color = [UIColor colorWithRed:0 green: 175/255.0 blue:240/255.0 alpha:1];
+//    CGFloat alpha = (offY + 64)/156;
+//    [self.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
+//        if (offY < 0) {
+////            imgView.frame = CGRectMake(0, offY, KWidth, 200-offY);
+//            HomeHeaderViewCell *cell = [headerView cellForItemAtIndexPath:0];
+//            UIImageView *imgView = cell.imgView;
+//            imgView.frame = CGRectMake(0, offY, KWidth, 200-offY);
+//        }
+//    //    if (offY <= -64) {
+//    //        CGFloat newHeight = -offY - 64 +200;
+//    ////        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, newHeight);
+//    //    }
+//    //    self.tableHeaderView.bottom = self.top;
+//    //    if (offY <= -64) {
+//    //        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, -offY-64+200);
+//    //    }
+//    //    UIView *view = self.tableHeaderView;
+//    //    NSLog(@"%f %f",view.frame.size.width,view.size.height);
+//    
+//    NSArray *offArray = [self offYarray];
+//    if (offArray.count > 1) {
+//        
+//        for ( i = 0; i < offArray.count - 1; i++) {
+//            if (offY >= [offArray[i] integerValue] && offY <= [offArray[i+1] integerValue]) {
+//                //                if (offY >= ([offArray[0] integerValue]+[offArray[1] integerValue] )) {
+//                //                    [self setNavigationBarTransformProgress:1];
+//                //                }
+//                NSDictionary *dic = _dataDicArray[i+1];
+//                NSString *date = dic[@"date"];
+//                NSString *text = [self dateWithString:date];
+//                self.navigationItem.title = text;
+//            }else if (offY <= [offArray[0] integerValue]) {
+//                self.title = @"今日热闻";
+//            }
+//        }
+//        
+//        
+//    }
+//}
+//
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -14,6 +14,7 @@
 #import "BaseNavController.h"
 #import "MJRefresh.h"
 #import "storyModel.h"
+#import "UMSocial.h"
 @interface DetailViewController ()
 {
     UIView *_topView;
@@ -160,6 +161,7 @@
         }
         
         NSString *body = result[@"body"];
+//        NSLog(@"%@",body);
         NSString *cssUrl = result[@"css"][0];
         NSString *linkString = [NSString stringWithFormat:@"<link rel=\"Stylesheet\" type=\"text/css\" href=\"%@\" />", cssUrl];
         NSString *htmlString = [NSString stringWithFormat:@"%@%@", linkString, body];
@@ -216,6 +218,8 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }else if (btn.tag == 3) {
         NSLog(@"分享按钮");
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPKEY shareText:@"bonjour" shareImage:[UIImage imageNamed:@"Menu_Icon_Collect.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToWechatSession, nil] delegate:self];
+//        [UMSocialSnsService presentSnsController:self appKey:UMAPPKEY shareText:@"hzl" shareImage:[UIImage imageNamed:@"AppIcon29x29@3x.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToDouban,UMShareToQzone,UMShareToEmail,UMShareToSms, nil] delegate:self];
     }else if (btn.tag == 4) {
         NSLog(@"进入点评页面");
         CommentViewController *vc = [[CommentViewController alloc] init];
@@ -238,10 +242,7 @@
         NSLog(@"下一个新闻");
         if (self.index < self.newsIdArray.count-1) {
             self.index+=1;
-//            storyModel *model = self.dataArray[self.index];
-//            self.newsId = model.idStr;
             self.newsId = self.newsIdArray[self.index];
-//            [self viewDidLoad];
             [self _loadView];
             [self LoadBottomData];
             

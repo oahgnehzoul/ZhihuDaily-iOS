@@ -11,4 +11,7 @@
 @interface HomeHeaderView : UICollectionView<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic,strong) NSArray *storyModelArray;
+
+//@property (nonatomic,strong) UIImage *imgView;
+
 @end

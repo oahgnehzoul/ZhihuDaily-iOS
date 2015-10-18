@@ -38,17 +38,13 @@
     _isNight = !_isNight;
     if (_isNight) {
         _tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Dark_News_Text_bg@2x.png"]];
-//        cell.textLabel.textColor = [UIColor whiteColor];
-//        [cell.textLabel setTextColor:[UIColor whiteColor]];
-//        cellLabel.textColor = [UIColor whiteColor];
+
     }
     else{
         _tableView.backgroundColor = [UIColor whiteColor];
-//        cell.textLabel.textColor = [UIColor blackColor];
-//        cellLabel.textColor = [UIColor blackColor];
+
     }
     [_tableView reloadData];
-//    [self viewDidLoad];
     [self preferredStatusBarStyle];
 }
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -121,10 +117,7 @@
         cell.textLabel.text = model.name;
 //        cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont systemFontOfSize:14];
-//        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 200, 30)];
-//        cellLabel.text = model.name;
-//        cellLabel.font = [UIFont systemFontOfSize:14];
-//        [cell.contentView addSubview:cellLabel];
+
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     if (_isNight) {

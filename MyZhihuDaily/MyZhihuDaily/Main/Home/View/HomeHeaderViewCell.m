@@ -20,9 +20,9 @@
 }
 
 - (void)_createSubViews {
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 200)];
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 100+25, KWidth-40, 60)];
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(KWidth/2-50, 175, 100, 20)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 220)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 100+45, KWidth-40, 60)];
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(KWidth/2-50, 175+20, 100, 20)];
 //    _pageControl.backgroundColor = [UIColor redColor];
     _pageControl.numberOfPages = 5;
    

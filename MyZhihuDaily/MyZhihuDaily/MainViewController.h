@@ -12,7 +12,6 @@
 
 @property (nonatomic,assign) NSInteger selectIndex;
 
-//@property (nonatomic,strong) NSString *themeId;
 
 @property (nonatomic,strong) ThemeCellModel *model;
 
