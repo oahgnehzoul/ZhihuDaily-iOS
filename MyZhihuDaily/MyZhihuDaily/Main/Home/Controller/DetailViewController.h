@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-#import "UMSocial.h"
-@interface DetailViewController : BaseViewController<UMSocialUIDelegate>
+//#import "UMSocial.h"
+@interface DetailViewController : BaseViewController
 
 //@property (nonatomic,strong) NSURL *url;
 

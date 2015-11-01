@@ -14,7 +14,7 @@
 #import "BaseNavController.h"
 #import "MJRefresh.h"
 #import "storyModel.h"
-#import "UMSocial.h"
+//#import "UMSocial.h"
 @interface DetailViewController ()
 {
     UIView *_topView;
@@ -218,7 +218,7 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }else if (btn.tag == 3) {
         NSLog(@"分享按钮");
-        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPKEY shareText:@"bonjour" shareImage:[UIImage imageNamed:@"Menu_Icon_Collect.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToWechatSession, nil] delegate:self];
+//        [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPKEY shareText:@"bonjour" shareImage:[UIImage imageNamed:@"Menu_Icon_Collect.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToWechatSession, nil] delegate:self];
 //        [UMSocialSnsService presentSnsController:self appKey:UMAPPKEY shareText:@"hzl" shareImage:[UIImage imageNamed:@"AppIcon29x29@3x.png"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToDouban,UMShareToQzone,UMShareToEmail,UMShareToSms, nil] delegate:self];
     }else if (btn.tag == 4) {
         NSLog(@"进入点评页面");
