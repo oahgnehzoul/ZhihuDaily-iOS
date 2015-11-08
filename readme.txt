@@ -1,2 +1,2 @@
-添加一个readme吧
-children of the earth
+穷极一生做不完一场梦
+be hungry be foolish .

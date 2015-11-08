@@ -58,15 +58,15 @@
 //}
 
 - (void)_createSubViews {
-    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2)];
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2-80)];
+    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2-80)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2-80-40)];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, KHeight/2-120-20, KWidth-40, 50)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, KHeight/2-120-20-40, KWidth-40, 50)];
     _titleLabel.numberOfLines = 0;
     _titleLabel.font = [UIFont systemFontOfSize:18];
     _titleLabel.textColor = [UIColor whiteColor];
     
-    _sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(KWidth-140, KHeight/2-15-60-20, 130, 10)];
+    _sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(KWidth-140, KHeight/2-15-60-20-40, 130, 10)];
     _sourceLabel.font = [UIFont systemFontOfSize:9];
     _sourceLabel.textColor = [UIColor whiteColor];
     [_imgView addSubview:_titleLabel];
