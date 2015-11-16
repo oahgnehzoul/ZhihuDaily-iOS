@@ -195,24 +195,10 @@
 //    NSLog(@"%f",alpha);
     UIColor *color = [UIColor colorWithRed:0 green: 175/255.0 blue:240/255.0 alpha:1];
     CGFloat alpha = (offY + 64)/156;
-    [self.viewController.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
-//    if (offY < 0) {
-//        HomeHeaderView *view = self.tableHeaderView;
-//        UIImageView *imgView = view.imgView;
-//        NSLog(@"%@",imgView);
-//        
-//    }
-//    if (offY <= -64) {
-//        CGFloat newHeight = -offY - 64 +200;
-////        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, newHeight);
-//    }
-//    self.tableHeaderView.bottom = self.top;
-//    if (offY <= -64) {
-//        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, -offY-64+200);
-//    }
-//    UIView *view = self.tableHeaderView;
-//    NSLog(@"%f %f",view.frame.size.width,view.size.height);
-    
+//    [self.viewController.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
+    UIView *view = self.viewController.navigationController.navigationBar.subviews[0];
+    view.alpha = alpha;
+
     NSArray *offArray = [self offYarray];
     if (offArray.count > 1) {
         
