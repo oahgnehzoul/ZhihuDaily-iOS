@@ -2030,6 +2030,7 @@
 				TargetAttributes = {
 					3483A3991B8EB74C00C71AB0 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 94W382AB54;
 					};
 					3483A3B21B8EB74C00C71AB0 = {
 						CreatedOnToolsVersion = 6.4;
@@ -2750,7 +2751,7 @@
 			baseConfigurationReference = AB55A109B07BAA00171C0096 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei feng Hou (ZXLU7WXR29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2785,7 +2786,7 @@
 					"$(PROJECT_DIR)/MyZhihuDaily/Common/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/MyZhihuDaily/Common/UMSocial_Sdk_Extra_Frameworks/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.huiwen.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oahgnehzoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -2796,7 +2797,7 @@
 			baseConfigurationReference = 23A3CBE020D2490314FC5BCE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei feng Hou (ZXLU7WXR29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2831,7 +2832,7 @@
 					"$(PROJECT_DIR)/MyZhihuDaily/Common/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/MyZhihuDaily/Common/UMSocial_Sdk_Extra_Frameworks/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.huiwen.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oahgnehzoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
