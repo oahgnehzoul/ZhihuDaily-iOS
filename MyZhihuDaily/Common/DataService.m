@@ -7,7 +7,6 @@
 //
 
 #import "DataService.h"
-#import "JSONKit.h"
 @implementation DataService
 
 + (AFHTTPRequestOperation *)requestAFUrl:(NSString *)urlString httpMethod:(NSString *)method params:(NSMutableDictionary *)params data:(NSMutableDictionary *)datas block:(BlockType)block {
@@ -67,35 +66,35 @@
     
 }
 
-+ (void)requestUrl:(NSString *)urlStr params:(NSMutableDictionary *)params httpMethod:(NSString *)method block:(BlockType)block {
-    NSString *str = @"http://news-at.zhihu.com";
-    NSString *urlString = [NSString stringWithFormat:@"%@%@",str,urlStr];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setTimeoutInterval:60];
-    [request setHTTPMethod:method];
-    NSArray *allKeys = [params allKeys];
-    NSMutableString *paramsString = [[NSMutableString alloc] init];
-    for (int i = 0; i < allKeys.count; i++) {
-        NSString *key = allKeys[i];
-        NSString *value = [params objectForKey:key];
-        [paramsString appendFormat:@"%@=%@",key,value];
-        if (i < allKeys.count - 1) {
-            [paramsString appendString:@"&"];
-        }
-    }
-    if ([method isEqualToString:@"POST"]) {
-        NSData *data = [paramsString dataUsingEncoding:NSUTF8StringEncoding];
-        [request setHTTPBody:data];
-    }
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (connectionError ) {
-            NSLog(@"请求失败");
-        }
-        id result = [data objectFromJSONData];
-        if (block) {
-            block(result);
-        }
-    }];
-}
+//+ (void)requestUrl:(NSString *)urlStr params:(NSMutableDictionary *)params httpMethod:(NSString *)method block:(BlockType)block {
+//    NSString *str = @"http://news-at.zhihu.com";
+//    NSString *urlString = [NSString stringWithFormat:@"%@%@",str,urlStr];
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    [request setTimeoutInterval:60];
+//    [request setHTTPMethod:method];
+//    NSArray *allKeys = [params allKeys];
+//    NSMutableString *paramsString = [[NSMutableString alloc] init];
+//    for (int i = 0; i < allKeys.count; i++) {
+//        NSString *key = allKeys[i];
+//        NSString *value = [params objectForKey:key];
+//        [paramsString appendFormat:@"%@=%@",key,value];
+//        if (i < allKeys.count - 1) {
+//            [paramsString appendString:@"&"];
+//        }
+//    }
+//    if ([method isEqualToString:@"POST"]) {
+//        NSData *data = [paramsString dataUsingEncoding:NSUTF8StringEncoding];
+//        [request setHTTPBody:data];
+//    }
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        if (connectionError ) {
+//            NSLog(@"请求失败");
+//        }
+//        id result = [data objectFromJSONData];
+//        if (block) {
+//            block(result);
+//        }
+//    }];
+//}
 @end

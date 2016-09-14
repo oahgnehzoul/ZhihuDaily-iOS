@@ -21,6 +21,9 @@
     NSString *urlString;
     NSString *_text;
 }
+@property (nonatomic, strong) UIImageView *launchImageView;
+@property (nonatomic, strong) UIView *bottomView;
+
 @end
 
 @implementation LaunchViewController
@@ -43,9 +46,9 @@
     _lauchImageView = [[UIImageView alloc] initWithFrame:self.view.bounds
                        ];
     [self.view addSubview:_lauchImageView];
-    [DataService requestAFUrl:Start httpMethod:@"GET" params:nil data:nil block:^(id result) {
-        NSString *imgStr = result[@"img"];
-//        NSLog(@"%@",imgStr);
+    NSString *url = [NSString stringWithFormat:@"%@%.f*%.f",Start,KWidth * 2,KHeight * 2];
+    [DataService requestAFUrl:url httpMethod:@"GET" params:nil data:nil block:^(id result) {
+        NSString *imgStr = result[@"url"];
         [_lauchImageView sd_setImageWithURL:[NSURL URLWithString:imgStr] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:CGRectMake((KWidth-120)/2, KHeight-100, 120, 60)];
             loginImageView.image = [UIImage imageNamed:@"Login_Logo@2x"];
