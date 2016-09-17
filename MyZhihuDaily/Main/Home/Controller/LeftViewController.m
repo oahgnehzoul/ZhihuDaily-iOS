@@ -71,13 +71,13 @@
 //    nameArray = @[@"首页",@"日常心理学",@"用户推荐日报",@"电影日报",@"不许无聊",@"设计日报",@"大公司日报",@"财经日报",@"互联网安全",@"开始游戏",@"音乐日报",@"动漫日报",@"体育日报"];
     NSArray *headerArray = [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
     _headerView = [headerArray lastObject];
-    _headerView.frame = CGRectMake(0, 0, KWidth, 150);
+    _headerView.frame = CGRectMake(0, 0, kMainScreenWidth, 150);
     
 
 
    
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 150, 220, KHeight-150-60) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 150, 220, kMainScreenHeight-150-60) style:UITableViewStylePlain];
 //    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -86,7 +86,7 @@
     
      NSArray *bottomArray = [[NSBundle mainBundle] loadNibNamed:@"BottomView" owner:self options:nil];
     _bottomView = [bottomArray lastObject];
-    _bottomView.frame = CGRectMake(0, KHeight-60, KWidth, 60);
+    _bottomView.frame = CGRectMake(0, kMainScreenHeight-60, kMainScreenWidth, 60);
     
     [self.view addSubview:_headerView];
     [self.view addSubview:_tableView];

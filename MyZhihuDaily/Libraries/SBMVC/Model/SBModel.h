@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SBRequest.h"
 // model 的状态
 typedef NS_OPTIONS(NSInteger, SBModelState) {
     SBModelStateError     = -1,
@@ -55,7 +54,6 @@ typedef NS_OPTIONS(NSUInteger, SBModelResponseMode) {
 
 @end
 
-@class SBModel;
 // 与 Controller 相关的接口，传递给 VC
 @protocol SBModelDelegate <NSObject>
 
@@ -66,8 +64,8 @@ typedef NS_OPTIONS(NSUInteger, SBModelResponseMode) {
 
 @end
 
-@class SBItemList;
-@interface SBModel : NSObject<SBModelRequestDelegate,SBRequestDelegate>
+@class SBItemList,SBRequest;
+@interface SBModel : NSObject<SBModelRequestDelegate>
 
 
 @property (nonatomic, assign, readonly) SBModelState state;

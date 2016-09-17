@@ -27,10 +27,10 @@
 }
 
 - (void)_createSubViews {
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, KWidth-120, 60)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, kMainScreenWidth-120, 60)];
     _titleLabel.numberOfLines = 0;
     _titleLabel.font = [UIFont systemFontOfSize:15];
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(KWidth-95, 10, 80, 60)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-95, 10, 80, 60)];
 //    _imgView.backgroundColor = [UIColor blackColor];
     [self.contentView addSubview:_titleLabel];
     [self.contentView addSubview:_imgView];

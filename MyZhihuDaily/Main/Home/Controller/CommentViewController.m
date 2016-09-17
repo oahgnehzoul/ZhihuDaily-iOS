@@ -31,7 +31,7 @@
 
 //底部视图
 - (void)_createBottomView {
-    UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, KHeight-40, KWidth, 40)];
+    UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight-40, kMainScreenWidth, 40)];
     bottomView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Dark_Comment_Bottom_Bg@2x.png"]];
     [self.view addSubview:bottomView];
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
@@ -40,7 +40,7 @@
     [backBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:backBtn];
 //    /Users/oahgnehzoul/Desktop/MyZhihuDaily/MyZhihuDaily/images/Comment_Icon_Compose@2x.png
-    UIButton *commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(KWidth/2-50, 0, 100, 40)];
+    UIButton *commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth/2-50, 0, 100, 40)];
     [commentBtn setImage:[UIImage imageNamed:@"Comment_Icon_Compose@2x.png"] forState:UIControlStateNormal];
     [commentBtn setTitle:@"写点评" forState:UIControlStateNormal];
     [commentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -50,8 +50,8 @@
     [bottomView addSubview:commentBtn];
 }
 - (void)_createTableView {
-//    _tableView = [[CommentTableView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight-40)] ;
-    _tableView = [[CommentTableView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight-40) style:UITableViewStyleGrouped];
+//    _tableView = [[CommentTableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight-40)] ;
+    _tableView = [[CommentTableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight-40) style:UITableViewStyleGrouped];
     _tableView.sectionFooterHeight = 0;
     _tableView.sectionHeaderHeight = 0;
     [self.view addSubview:_tableView];

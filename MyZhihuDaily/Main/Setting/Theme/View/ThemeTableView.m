@@ -90,14 +90,14 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 30)];
+    view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 30)];
     view.backgroundColor = [UIColor whiteColor];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 30, 20)];
     label.text = @"主编";
     label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:12];
     [view addSubview:label];
-    UIImageView *rightImage = [[UIImageView alloc] initWithFrame:CGRectMake(KWidth-40, 10, 20, 20)];
+    UIImageView *rightImage = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth-40, 10, 20, 20)];
     rightImage.image = [UIImage imageNamed:@"Home_Arrow@2x"];
     [view addSubview:rightImage];
     
@@ -110,7 +110,7 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
         [view addSubview:imageView];
     }
-    UIButton *headButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, KWidth, 30)];
+    UIButton *headButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 30)];
     [headButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:headButton];
     return view;

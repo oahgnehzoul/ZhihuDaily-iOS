@@ -33,6 +33,8 @@
 		3483A7BA1B8F642800C71AB0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3483A7B91B8F642800C71AB0 /* Setting.storyboard */; };
 		603826A21D8C5A230020B988 /* SBItemProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A11D8C5A230020B988 /* SBItemProperty.m */; };
 		603826A51D8C61CA0020B988 /* NSDictionary+SBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A41D8C61CA0020B988 /* NSDictionary+SBItem.m */; };
+		603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A71D8D097A0020B988 /* SBTableViewFactory.m */; };
+		603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826AA1D8D32340020B988 /* SBPullRefreshView.m */; };
 		603893BA1BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */; };
 		60473F9E1B9BE828001D79BB /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473F9D1B9BE828001D79BB /* DataService.m */; };
 		60473FE01B9C1889001D79BB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473FDF1B9C1889001D79BB /* BaseModel.m */; };
@@ -954,6 +956,10 @@
 		603826A11D8C5A230020B988 /* SBItemProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBItemProperty.m; sourceTree = "<group>"; };
 		603826A31D8C61CA0020B988 /* NSDictionary+SBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SBItem.h"; sourceTree = "<group>"; };
 		603826A41D8C61CA0020B988 /* NSDictionary+SBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SBItem.m"; sourceTree = "<group>"; };
+		603826A61D8D097A0020B988 /* SBTableViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTableViewFactory.h; sourceTree = "<group>"; };
+		603826A71D8D097A0020B988 /* SBTableViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTableViewFactory.m; sourceTree = "<group>"; };
+		603826A91D8D32340020B988 /* SBPullRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPullRefreshView.h; sourceTree = "<group>"; };
+		603826AA1D8D32340020B988 /* SBPullRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPullRefreshView.m; sourceTree = "<group>"; };
 		603893B81BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
 		603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
 		60473F9C1B9BE828001D79BB /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
@@ -3188,6 +3194,10 @@
 		60BA5D651D8A7C420035E1AF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				603826A61D8D097A0020B988 /* SBTableViewFactory.h */,
+				603826A71D8D097A0020B988 /* SBTableViewFactory.m */,
+				603826A91D8D32340020B988 /* SBPullRefreshView.h */,
+				603826AA1D8D32340020B988 /* SBPullRefreshView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4193,6 +4203,7 @@
 				3483A7B81B8F641D00C71AB0 /* SettingViewController.m in Sources */,
 				604740211B9CB73C001D79BB /* HomeTableViewCell.m in Sources */,
 				3483A7B31B8F63D500C71AB0 /* ProfileViewController.m in Sources */,
+				603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */,
 				60F4171B1BB679A3000D797D /* EditorModel.m in Sources */,
 				3483A7A91B8F62E400C71AB0 /* FavoritesViewController.m in Sources */,
 				3483A7911B8EF70500C71AB0 /* MMDrawerController.m in Sources */,
@@ -4241,6 +4252,7 @@
 				3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */,
 				60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */,
 				3483A7971B8EFCA600C71AB0 /* HomeViewController.m in Sources */,
+				603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@
 }
 
 - (void)_createTableView {
-    _tableView = [[ThemeTableView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight) style:UITableViewStyleGrouped];
+    _tableView = [[ThemeTableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight) style:UITableViewStyleGrouped];
     _tableView.sectionFooterHeight = 0;
     _tableView.sectionHeaderHeight = 0;
     [self.view addSubview:_tableView];

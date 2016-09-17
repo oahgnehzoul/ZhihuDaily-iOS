@@ -33,7 +33,7 @@
     
     startImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     startImageView.image = [UIImage imageNamed:@"LaunchImage-700-568h@2x"];
-    UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:CGRectMake((KWidth-120)/2, KHeight-100, 120, 60)];
+    UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:CGRectMake((kMainScreenWidth-120)/2, kMainScreenHeight-100, 120, 60)];
     loginImageView.image = [UIImage imageNamed:@"Login_Logo@2x"];
     [startImageView addSubview:loginImageView];
     [self.view addSubview:startImageView];
@@ -46,11 +46,11 @@
     _lauchImageView = [[UIImageView alloc] initWithFrame:self.view.bounds
                        ];
     [self.view addSubview:_lauchImageView];
-    NSString *url = [NSString stringWithFormat:@"%@%.f*%.f",Start,KWidth * 2,KHeight * 2];
+    NSString *url = [NSString stringWithFormat:@"%@%.f*%.f",Start,kMainScreenWidth * 2,kMainScreenHeight * 2];
     [DataService requestAFUrl:url httpMethod:@"GET" params:nil data:nil block:^(id result) {
         NSString *imgStr = result[@"url"];
         [_lauchImageView sd_setImageWithURL:[NSURL URLWithString:imgStr] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:CGRectMake((KWidth-120)/2, KHeight-100, 120, 60)];
+            UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:CGRectMake((kMainScreenWidth-120)/2, kMainScreenHeight-100, 120, 60)];
             loginImageView.image = [UIImage imageNamed:@"Login_Logo@2x"];
             [self.view addSubview:loginImageView];
             [UIView animateWithDuration:1 animations:^{

@@ -51,27 +51,27 @@
 
 
 //- (void)_loadWebView {
-//    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight-49)];
+//    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight-49)];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
 //    [self.view addSubview:webView];
 //    [webView loadRequest:request];
 //}
 
 - (void)_createSubViews {
-    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2)];
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight/2-80)];
+    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight/2)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight/2-80)];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, KHeight/2-120-20, KWidth-40, 50)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, kMainScreenHeight/2-120-20, kMainScreenWidth-40, 50)];
     _titleLabel.numberOfLines = 0;
     _titleLabel.font = [UIFont systemFontOfSize:18];
     _titleLabel.textColor = [UIColor whiteColor];
     
-    _sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(KWidth-140, KHeight/2-15-60-20, 130, 10)];
+    _sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(kMainScreenWidth-140, kMainScreenHeight/2-15-60-20, 130, 10)];
     _sourceLabel.font = [UIFont systemFontOfSize:9];
     _sourceLabel.textColor = [UIColor whiteColor];
     [_imgView addSubview:_titleLabel];
     [_imgView addSubview:_sourceLabel];
-    UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, KHeight/2-60, KWidth, 60)];
+    UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight/2-60, kMainScreenWidth, 60)];
     centerView.backgroundColor = [UIColor redColor];
     UILabel *recommender = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 40)];
     recommender.font = [UIFont systemFontOfSize:13];
@@ -83,7 +83,7 @@
 //    [_topView addSubview:centerView]; //加的view 位置不对,待修改
     [_topView addSubview:_imgView];
     
-    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight)];
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight)];
     _webView.backgroundColor = [UIColor whiteColor];
 //    _webView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_webView];
@@ -171,7 +171,7 @@
 }
 - (void)_createBottomBar{
     
-    _bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, KHeight-49, KWidth, 49)];
+    _bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight-49, kMainScreenWidth, 49)];
     _bottomBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_bottomBar];
     
@@ -182,13 +182,13 @@
     
     
     for (int i = 0; i < 5; i++) {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i*KWidth/5, 0, KWidth/5, 49)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i*kMainScreenWidth/5, 0, kMainScreenWidth/5, 49)];
         button.tag = i;
         UIImage *bgImage = [UIImage imageNamed:imageName[i]];
         [button setImage:bgImage forState:UIControlStateNormal];
         [button addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        btnLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(KWidth/5*3-27, 11, 30, 10)];
-        btnLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(KWidth-33, 11, 21, 10)];
+        btnLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(kMainScreenWidth/5*3-27, 11, 30, 10)];
+        btnLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(kMainScreenWidth-33, 11, 21, 10)];
         if (button.tag == 2) {
             [button addSubview:btnLabel1];
             btnLabel1.text = self.populatity;

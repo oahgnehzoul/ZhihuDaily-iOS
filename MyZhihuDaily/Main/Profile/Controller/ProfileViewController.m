@@ -23,13 +23,13 @@
 }
 
 - (void)_createSubViews {
-//    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake((KWidth/2-40), 100, 80, 80)];
+//    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake((kMainScreenWidth/2-40), 100, 80, 80)];
 //    _iconImageView.image = [UIImage imageNamed:@"IMG_1779.jpg"];
 //    _iconImageView.layer.cornerRadius = 40;
 //    _iconImageView.layer.masksToBounds = YES;
 //    [self.view addSubview:_iconImageView];
     //添加头像
-    _iconBtn = [[UIButton alloc] initWithFrame:CGRectMake((KWidth/2-40), 100, 80, 80)];
+    _iconBtn = [[UIButton alloc] initWithFrame:CGRectMake((kMainScreenWidth/2-40), 100, 80, 80)];
     [_iconBtn setImage:[UIImage imageNamed:@"IMG_1779.jpg"] forState:UIControlStateNormal];
     _iconBtn.layer.cornerRadius = 40;
     _iconBtn.layer.masksToBounds = YES;
@@ -38,11 +38,11 @@
     [self.view addSubview:_iconBtn];
     
     //添加昵称
-    _nameTextField = [[UITextField alloc]initWithFrame:CGRectMake((KWidth/2-60), 200, 120, 30)];
+    _nameTextField = [[UITextField alloc]initWithFrame:CGRectMake((kMainScreenWidth/2-60), 200, 120, 30)];
     _nameTextField.text = @"Oahgnehzoul丶";
     [self.view addSubview:_nameTextField];
     
-    UIButton *tencentBtn = [[UIButton alloc] initWithFrame:CGRectMake(KWidth/2-60, 260, 120, 30)];
+    UIButton *tencentBtn = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth/2-60, 260, 120, 30)];
 //    [tencentBtn setTitle:@"绑定腾讯微博" forState:UIControlStateNormal];
 //    tencentBtn.backgroundColor = [UIColor yellowColor];
 //    tencentBtn.tintColor = [UIColor blackColor];
@@ -56,7 +56,7 @@
     tencentBtn.tag = 2;
     [self.view addSubview:tencentBtn];
     
-    UIButton *sinaBtn = [[UIButton alloc] initWithFrame:CGRectMake(KWidth/2-60, 310, 120, 30)];
+    UIButton *sinaBtn = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth/2-60, 310, 120, 30)];
 //    sinaBtn.backgroundColor = [UIColor yellowColor];
     [sinaBtn setTitle:@"绑定新浪微博" forState:UIControlStateNormal];
     sinaBtn.titleLabel.font = [UIFont systemFontOfSize:17];
@@ -65,7 +65,7 @@
     sinaBtn.tag = 3;
     [self.view addSubview:sinaBtn];
     
-    UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(KWidth/2-75, KHeight-130, 150, 40)];
+    UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth/2-75, kMainScreenHeight-130, 150, 40)];
     loginBtn.layer.cornerRadius = 15;
     loginBtn.layer.masksToBounds = YES;
     loginBtn.layer.borderWidth = 1;
@@ -122,9 +122,9 @@
         [params setValue:@"49f9c8d81bce0d2885cdd476d3499de4" forKey:@"access_token"];
         [params setValue:@"4b761720c520a71761809e6a509ca44a" forKey:@"refresh_token"];
         
-        [DataService requestUrl:Login params:params httpMethod:@"POST" block:^(id result) {
-            NSLog(@"%@",result);
-        }];
+//        [DataService requestUrl:Login params:params httpMethod:@"POST" block:^(id result) {
+//            NSLog(@"%@",result);
+//        }];
         
     }
     

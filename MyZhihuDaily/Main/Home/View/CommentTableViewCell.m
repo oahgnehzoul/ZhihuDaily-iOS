@@ -52,7 +52,7 @@
 //    _nameLabel.font = [UIFont systemFontOfSize:14];
     _nameLabel.font = [UIFont boldSystemFontOfSize:14];
     
-    _favBtn.frame = CGRectMake(KWidth-50, 10, 40, 20);
+    _favBtn.frame = CGRectMake(kMainScreenWidth-50, 10, 40, 20);
 //    _favBtn.backgroundColor = [UIColor yellowColor];
     _favBtn.titleLabel.text = self.model.likes.stringValue;
     _favBtn.titleLabel.textColor = [UIColor blackColor];
@@ -71,8 +71,8 @@
     _contentLabel.numberOfLines = 0;
     _contentLabel.font = [UIFont systemFontOfSize:14];
     
-    CGSize size = [self.model.content boundingRectWithSize:CGSizeMake(KWidth-80, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-    _contentLabel.frame = CGRectMake(60, 30, KWidth-80, size.height+60);
+    CGSize size = [self.model.content boundingRectWithSize:CGSizeMake(kMainScreenWidth-80, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    _contentLabel.frame = CGRectMake(60, 30, kMainScreenWidth-80, size.height+60);
 //    _contentLabel.backgroundColor = [UIColor yellowColor];
     _timeLabel.frame = CGRectMake(60, size.height+90, 100, 15);
     _timeLabel.textColor = [UIColor lightGrayColor];

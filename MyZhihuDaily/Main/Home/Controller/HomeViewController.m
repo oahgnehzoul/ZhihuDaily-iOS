@@ -85,14 +85,14 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.itemSize = CGSizeMake(KWidth, 220);
-    headerView = [[HomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 220) collectionViewLayout:layout];
+    layout.itemSize = CGSizeMake(kMainScreenWidth, 220);
+    headerView = [[HomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220) collectionViewLayout:layout];
     headerView.pagingEnabled = YES;
     _topStoryModelArray = [[NSMutableArray alloc] init];
     _storyModelArray = [[NSMutableArray alloc] init];
     _dateArray = [[NSMutableArray alloc] init];
     
-    _tableView = [[HomeTableView alloc] initWithFrame:CGRectMake(0, -64, KWidth, KHeight+64) style:UITableViewStylePlain];
+    _tableView = [[HomeTableView alloc] initWithFrame:CGRectMake(0, -64, kMainScreenWidth, kMainScreenHeight+64) style:UITableViewStylePlain];
 //    _tableView.dataSource = self;
 //    _tableView.delegate = self;
 //    [_tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -236,7 +236,7 @@
 //    if (section == 0) {
 //        return nil;
 //    }else {
-//        UIView *dateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 40)];
+//        UIView *dateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 40)];
 //        UILabel *dateLabel = [[UILabel alloc] initWithFrame:dateView.bounds];
 //        dateLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mask_titlebar64@2x"]];
 //        //        dateLabel.backgroundColor = [UIColor blueColor];
@@ -320,18 +320,18 @@
 //    CGFloat alpha = (offY + 64)/156;
 //    [self.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
 //        if (offY < 0) {
-////            imgView.frame = CGRectMake(0, offY, KWidth, 200-offY);
+////            imgView.frame = CGRectMake(0, offY, kMainScreenWidth, 200-offY);
 //            HomeHeaderViewCell *cell = [headerView cellForItemAtIndexPath:0];
 //            UIImageView *imgView = cell.imgView;
-//            imgView.frame = CGRectMake(0, offY, KWidth, 200-offY);
+//            imgView.frame = CGRectMake(0, offY, kMainScreenWidth, 200-offY);
 //        }
 //    //    if (offY <= -64) {
 //    //        CGFloat newHeight = -offY - 64 +200;
-//    ////        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, newHeight);
+//    ////        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, newHeight);
 //    //    }
 //    //    self.tableHeaderView.bottom = self.top;
 //    //    if (offY <= -64) {
-//    //        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, -offY-64+200);
+//    //        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, -offY-64+200);
 //    //    }
 //    //    UIView *view = self.tableHeaderView;
 //    //    NSLog(@"%f %f",view.frame.size.width,view.size.height);

@@ -10,7 +10,7 @@
 #import "SBItemList.h"
 #import "SBRequest.h"
 
-@interface SBModel ()
+@interface SBModel ()<SBRequestDelegate>
 
 @property (nonatomic, copy) void(^requestCallBack)(SBModel *model,NSError *error);
 @property (nonatomic, strong) id <SBRequest> request;

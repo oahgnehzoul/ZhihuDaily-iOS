@@ -42,12 +42,14 @@
     NSError *error = nil;
     if (![self prepareParseResponse:JSON error:&error] && error) {
         _hasMore = NO;
-        [self requestDidFailWithError:error];
+//        [self requestDidFailWithError:error];
+        [self performSelector:@selector(requestDidFailWithError:) withObject:error];
         return NO;
     }
     NSArray *list = [self parseResponse:JSON error:&error];
     if (error) {
-        [self requestDidFailWithError:error];
+//        [self requestDidFailWithError:error];
+        [self performSelector:@selector(requestDidFailWithError:) withObject:error];
         return NO;
     } else {
         [self.itemList addObjectsFromArray:list];

@@ -10,4 +10,8 @@
 
 @interface SBTableViewItem : SBItem
 
+@property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, assign) CGFloat itemHeight;
+//@property (nonatomic, assign) 
+
 @end

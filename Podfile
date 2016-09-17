@@ -13,7 +13,7 @@ target 'MyZhihuDaily' do
     pod 'Masonry', '~> 1.0.1'
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'BlocksKit', '~> 2.2.5'
-    pod 'SVPullToRefresh', '~> 0.4.1'
+    #pod 'SVPullToRefresh', '~> 0.4.1'
     pod 'RDVTabBarController', '~> 1.1.9'
     pod 'Mantle', '~> 2.0.7'
 end

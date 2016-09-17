@@ -22,7 +22,7 @@ static char overlayKey;
 - (void)hzl_setBackgourndColor:(UIColor *)backgroundColor {
     if (!self.overlay) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, KWidth, self.bounds.size.height + 20)];
+        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, kMainScreenWidth, self.bounds.size.height + 20)];
         self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.overlay atIndex:0];
     }

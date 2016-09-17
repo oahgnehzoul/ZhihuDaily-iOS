@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
 }
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -49,15 +50,15 @@
     [super layoutSubviews];
     
     if (self.model.images == nil) {
-        self.textLabel.frame = CGRectMake(20, 10, KWidth-40, 60);
+        self.textLabel.frame = CGRectMake(20, 10, kMainScreenWidth-40, 60);
         self.textLabel.numberOfLines = 0;
 //        self.textLabel.font = [UIFont fontWithName:@"Helvetica-Blod" size:14];
         self.textLabel.font = [UIFont systemFontOfSize:16];
     }else {
-        self.textLabel.frame = CGRectMake(20, 10, KWidth-140, 60);
+        self.textLabel.frame = CGRectMake(20, 10, kMainScreenWidth-140, 60);
         self.textLabel.numberOfLines = 0;
         self.textLabel.font = [UIFont systemFontOfSize:16];
-        self.imgView.frame = CGRectMake(KWidth-95, 10, 80, 60);
+        self.imgView.frame = CGRectMake(kMainScreenWidth-95, 10, 80, 60);
         NSURL *url = [NSURL URLWithString:self.model.images[0]];
         [self.imgView sd_setImageWithURL:url];
     }

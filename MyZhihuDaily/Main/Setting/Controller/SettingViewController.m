@@ -47,7 +47,7 @@
     return 6;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UISwitch *cellSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(KWidth-70, 5, 60, 30)];
+    UISwitch *cellSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(kMainScreenWidth-70, 5, 60, 30)];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     if (indexPath.section == 0) {
         

@@ -113,7 +113,7 @@
     if (section == 0) {
         return nil;
     }else {
-        UIView *dateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 40)];
+        UIView *dateView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 40)];
         UILabel *dateLabel = [[UILabel alloc] initWithFrame:dateView.bounds];
         dateLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mask_titlebar64@2x"]];
 //        dateLabel.backgroundColor = [UIColor blueColor];
@@ -204,11 +204,11 @@
 //    }
 //    if (offY <= -64) {
 //        CGFloat newHeight = -offY - 64 +200;
-////        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, newHeight);
+////        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, newHeight);
 //    }
 //    self.tableHeaderView.bottom = self.top;
 //    if (offY <= -64) {
-//        self.tableHeaderView.frame = CGRectMake(0, 0, KWidth, -offY-64+200);
+//        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, -offY-64+200);
 //    }
 //    UIView *view = self.tableHeaderView;
 //    NSLog(@"%f %f",view.frame.size.width,view.size.height);

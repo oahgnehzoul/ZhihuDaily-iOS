@@ -44,13 +44,13 @@
 //    return 80;
     CommentModel *model = [self.commentDicArray[indexPath.section] objectForKey:@"array"][indexPath.row];
     
-//    CGFloat macLabelWidth = KWidth-140;
+//    CGFloat macLabelWidth = kMainScreenWidth-140;
 //    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:18]};
 //    CGFloat textHeight = [model.content boundingRectWithSize:CGSizeMake(macLabelWidth, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
 //    return textHeight +100;
     
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:13]};
-    CGSize size = [model.content boundingRectWithSize:CGSizeMake(KWidth-80, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    CGSize size = [model.content boundingRectWithSize:CGSizeMake(kMainScreenWidth-80, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
 //#warning 高度要根据 content的高度来计算
     return size.height + 120;
 }
@@ -61,8 +61,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *commentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 40)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, 30)];
+    UIView *commentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 40)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 30)];
     [commentView addSubview:label];
     NSString *count = [self.commentDicArray[section] objectForKey:@"count"];
     if (section == 0) {
