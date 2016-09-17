@@ -12,7 +12,7 @@
 #import "MMDrawerController.h"
 #import "LeftViewController.h"
 #import "MainViewController.h"
-#import "MMExampleDrawerVisualStateManager.h"
+//#import "MMExampleDrawerVisualStateManager.h"
 #import "AppDelegate.h"
 @interface LaunchViewController ()
 {
@@ -75,14 +75,14 @@
     [mmDraw setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [mmDraw setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
-    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeParallax];
-    [mmDraw setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-        MMDrawerControllerDrawerVisualStateBlock block;
-        block = [[MMExampleDrawerVisualStateManager sharedManager] drawerVisualStateBlockForDrawerSide:drawerSide];
-        if (block) {
-            block(drawerController,drawerSide,percentVisible);
-        }
-    }];
+//    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeParallax];
+//    [mmDraw setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+//        MMDrawerControllerDrawerVisualStateBlock block;
+//        block = [[MMExampleDrawerVisualStateManager sharedManager] drawerVisualStateBlockForDrawerSide:drawerSide];
+//        if (block) {
+//            block(drawerController,drawerSide,percentVisible);
+//        }
+//    }];
     delegate.mainVC = MainVC;
     delegate.window.rootViewController = mmDraw;
     delegate.window.backgroundColor = [UIColor whiteColor];

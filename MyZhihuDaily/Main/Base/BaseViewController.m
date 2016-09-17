@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
-#import "MMExampleDrawerVisualStateManager.h"
+//#import "MMExampleDrawerVisualStateManager.h"
 @interface BaseViewController ()
 
 @end

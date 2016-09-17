@@ -60,7 +60,7 @@ static inline id SBTransformNormalValueForClass(id val, NSString *className) {
         NSString *JSONKey = propertyName; //返回的JSON数据的 key，默认为 model 中定义的 属性名，
         // 如果方法中重定义，覆盖
         if ([JSONKeyPathsByPropertyKey objectForKey:propertyName]) {
-            JSONKey = propertyName;
+            JSONKey = JSONKeyPathsByPropertyKey[propertyName];
         }
         
         id value = [dictionary sb_valueForJSONKeyPath:JSONKey];

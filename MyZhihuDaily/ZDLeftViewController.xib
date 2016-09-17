@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDLeftViewController">
+            <connections>
+                <outlet property="tableView" destination="2qi-oo-69n" id="Np9-QA-4JI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIa-mH-NIW">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2UP-kM-Ed2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="请登录" image="Menu_Avatar.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-AW-GYr" userLabel="收藏">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Fxt-uO-rAL"/>
+                        <constraint firstAttribute="height" constant="44" id="Qci-1k-dCF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="5" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="-20" minY="20" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="收藏" image="Menu_Icon_Collect.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-L2-Tvq" userLabel="消息">
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="5" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="-20" minY="20" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="消息" image="Menu_Icon_Message.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDo-Aa-vHZ" userLabel="设置">
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="5" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="-20" minY="20" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="设置" image="Menu_Icon_Setting.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-jj-zBz">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="uGa-NV-yIB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="完成" image="Menu_Download.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taj-eA-GUk">
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="夜间" image="Menu_Dark.png"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-oo-69n">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.13725490196078433" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b9L-L2-Tvq" firstAttribute="height" secondItem="Rho-AW-GYr" secondAttribute="height" id="6oy-0S-cVp"/>
+                <constraint firstItem="QIa-mH-NIW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="7Dy-Wl-pbc"/>
+                <constraint firstItem="gDo-Aa-vHZ" firstAttribute="top" secondItem="b9L-L2-Tvq" secondAttribute="top" id="A2f-iF-T0N"/>
+                <constraint firstItem="2qi-oo-69n" firstAttribute="top" secondItem="gDo-Aa-vHZ" secondAttribute="bottom" id="Hob-Ec-T9g"/>
+                <constraint firstItem="2qi-oo-69n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IhM-t7-nKh"/>
+                <constraint firstItem="taj-eA-GUk" firstAttribute="width" secondItem="bIt-jj-zBz" secondAttribute="width" id="P00-Vh-xZ0"/>
+                <constraint firstItem="gDo-Aa-vHZ" firstAttribute="width" secondItem="b9L-L2-Tvq" secondAttribute="width" id="PaY-BS-eC0"/>
+                <constraint firstItem="b9L-L2-Tvq" firstAttribute="top" secondItem="Rho-AW-GYr" secondAttribute="top" id="SXJ-jS-QRB"/>
+                <constraint firstAttribute="bottom" secondItem="bIt-jj-zBz" secondAttribute="bottom" id="SZ5-tk-Msa"/>
+                <constraint firstItem="Rho-AW-GYr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WFK-2g-g6g"/>
+                <constraint firstItem="taj-eA-GUk" firstAttribute="top" secondItem="bIt-jj-zBz" secondAttribute="top" id="WSZ-Lw-Hh1"/>
+                <constraint firstItem="taj-eA-GUk" firstAttribute="top" secondItem="2qi-oo-69n" secondAttribute="bottom" id="cby-jf-cva"/>
+                <constraint firstItem="taj-eA-GUk" firstAttribute="leading" secondItem="bIt-jj-zBz" secondAttribute="trailing" id="fG2-yR-61N"/>
+                <constraint firstItem="bIt-jj-zBz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gfE-jW-Pf0"/>
+                <constraint firstItem="b9L-L2-Tvq" firstAttribute="width" secondItem="Rho-AW-GYr" secondAttribute="width" id="irm-cs-auE"/>
+                <constraint firstItem="bIt-jj-zBz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="jhn-UA-0rd"/>
+                <constraint firstAttribute="trailing" secondItem="QIa-mH-NIW" secondAttribute="trailing" constant="30" id="lhi-LX-Zsd"/>
+                <constraint firstItem="gDo-Aa-vHZ" firstAttribute="height" secondItem="b9L-L2-Tvq" secondAttribute="height" id="lqb-YE-iNh"/>
+                <constraint firstItem="QIa-mH-NIW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mzb-1x-gsF"/>
+                <constraint firstAttribute="trailing" secondItem="2qi-oo-69n" secondAttribute="trailing" id="nmO-Ix-Zlc"/>
+                <constraint firstItem="Rho-AW-GYr" firstAttribute="top" secondItem="QIa-mH-NIW" secondAttribute="bottom" id="odF-8G-xwW"/>
+                <constraint firstItem="gDo-Aa-vHZ" firstAttribute="leading" secondItem="b9L-L2-Tvq" secondAttribute="trailing" id="sT2-59-8Us"/>
+                <constraint firstItem="taj-eA-GUk" firstAttribute="height" secondItem="bIt-jj-zBz" secondAttribute="height" id="urz-LH-DYh"/>
+                <constraint firstItem="b9L-L2-Tvq" firstAttribute="leading" secondItem="Rho-AW-GYr" secondAttribute="trailing" id="ygB-Ud-NII"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Menu_Avatar.png" width="35" height="35"/>
+        <image name="Menu_Dark.png" width="22" height="22"/>
+        <image name="Menu_Download.png" width="22" height="22"/>
+        <image name="Menu_Icon_Collect.png" width="20" height="20"/>
+        <image name="Menu_Icon_Message.png" width="20" height="20"/>
+        <image name="Menu_Icon_Setting.png" width="20" height="20"/>
+    </resources>
+</document>

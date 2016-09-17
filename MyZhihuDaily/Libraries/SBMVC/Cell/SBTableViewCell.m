@@ -17,6 +17,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.contentView.backgroundColor = [UIColor clearColor];
+        //设置 cell 的背景色为透明！
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }

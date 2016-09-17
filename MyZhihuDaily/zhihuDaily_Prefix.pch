@@ -20,8 +20,26 @@
 #define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define WEAKSELF __weak typeof (self) weakSelf = self;
 #define kColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
+
+#define kZDLeftViewControllerWidth 224/375.0*kMainScreenWidth
+
+#define kZDLeftInsetX 15
+#define kZDLeftViewAvtarRadius 18
+#define kZDLeftHeaderViewHeight 104
+#define kZDLeftCellHeight 50
+#define kZDLeftBottomViewHeight 65
+
+#import "HexColors.h"
+#define kZDLeftBackgroundViewColor @"#232a32"
+#define kZDLeftCellSelectedColor @"#1b222a"
+#define kZDLeftCellLabelDefaultTextColor @"#959aa0"
+#define kZDLeftCellLabelSelectedTextColor @"#f4f8fb"
+#define kZDLeftLineColor @"#20272f"
+
 #import "Common.h"
 #import "Utils.h"
 #import "UIView+Additions.h"
 #import "SBMVC.h"
+#import "Masonry.h"
+#import "ReactiveCocoa.h"
 #endif

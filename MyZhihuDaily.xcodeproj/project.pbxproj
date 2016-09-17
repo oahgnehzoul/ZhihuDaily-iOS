@@ -15,11 +15,6 @@
 		3483A77D1B8EEE5200C71AB0 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A77C1B8EEE5200C71AB0 /* ThemeManager.m */; };
 		3483A7811B8EF10F00C71AB0 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7801B8EF10F00C71AB0 /* ThemeButton.m */; };
 		3483A7841B8EF6D500C71AB0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7831B8EF6D500C71AB0 /* BaseViewController.m */; };
-		3483A7901B8EF70500C71AB0 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7871B8EF70500C71AB0 /* MMDrawerBarButtonItem.m */; };
-		3483A7911B8EF70500C71AB0 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7891B8EF70500C71AB0 /* MMDrawerController.m */; };
-		3483A7921B8EF70500C71AB0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A78B1B8EF70500C71AB0 /* MMDrawerVisualState.m */; };
-		3483A7931B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A78D1B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.m */; };
-		3483A7941B8EF70500C71AB0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A78F1B8EF70500C71AB0 /* UIViewController+MMDrawerController.m */; };
 		3483A7971B8EFCA600C71AB0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7961B8EFCA600C71AB0 /* HomeViewController.m */; };
 		3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7A31B8F61E900C71AB0 /* BaseNavController.m */; };
 		3483A7A61B8F621700C71AB0 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3483A7A51B8F621700C71AB0 /* Favorites.storyboard */; };
@@ -874,6 +869,17 @@
 		607F541F1B9B0EC3005F6C25 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607F541E1B9B0EC3005F6C25 /* HeaderView.xib */; };
 		607F54221B9B0EE8005F6C25 /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607F54211B9B0EE8005F6C25 /* BottomView.m */; };
 		607F54241B9B0EF6005F6C25 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607F54231B9B0EF6005F6C25 /* BottomView.xib */; };
+		60869D751D8D635700936170 /* ZDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D741D8D635700936170 /* ZDRootViewController.m */; };
+		60869D781D8D63D900936170 /* ZDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D771D8D63D900936170 /* ZDHomeViewController.m */; };
+		60869D7E1D8D647800936170 /* ZDLaunchAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D7D1D8D647800936170 /* ZDLaunchAdvertiseView.m */; };
+		60869D811D8D7D1A00936170 /* ZDLeftHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D801D8D7D1A00936170 /* ZDLeftHeaderView.m */; };
+		60869D871D8D86B100936170 /* ZDLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D851D8D86B100936170 /* ZDLeftViewController.m */; };
+		60869D881D8D86B100936170 /* ZDLeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60869D861D8D86B100936170 /* ZDLeftViewController.xib */; };
+		60869D8B1D8D8FC900936170 /* ZDGetThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D8A1D8D8FC900936170 /* ZDGetThemeModel.m */; };
+		60869D8E1D8D905100936170 /* ZDAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D8D1D8D905100936170 /* ZDAFRequest.m */; };
+		60869D911D8D993600936170 /* ZDListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D901D8D993600936170 /* ZDListModel.m */; };
+		60869D971D8D9D5900936170 /* ZDLeftThemeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D961D8D9D5800936170 /* ZDLeftThemeItem.m */; };
+		60869D9A1D8DA7C400936170 /* ZDLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D991D8DA7C400936170 /* ZDLeftTableViewCell.m */; };
 		60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D671D8A7D520035E1AF /* SBTableViewCell.m */; };
 		60BA5D6B1D8A7DE60035E1AF /* SBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D6A1D8A7DE60035E1AF /* SBItem.m */; };
 		60BA5D6E1D8A7DFC0035E1AF /* SBTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D6D1D8A7DFC0035E1AF /* SBTableViewItem.m */; };
@@ -925,16 +931,6 @@
 		3483A7801B8EF10F00C71AB0 /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
 		3483A7821B8EF6D500C71AB0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		3483A7831B8EF6D500C71AB0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		3483A7861B8EF70500C71AB0 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		3483A7871B8EF70500C71AB0 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		3483A7881B8EF70500C71AB0 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		3483A7891B8EF70500C71AB0 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
-		3483A78A1B8EF70500C71AB0 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
-		3483A78B1B8EF70500C71AB0 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		3483A78C1B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
-		3483A78D1B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
-		3483A78E1B8EF70500C71AB0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		3483A78F1B8EF70500C71AB0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		3483A7951B8EFCA600C71AB0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3483A7961B8EFCA600C71AB0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3483A7A21B8F61E900C71AB0 /* BaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
@@ -1823,6 +1819,27 @@
 		607F54201B9B0EE8005F6C25 /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
 		607F54211B9B0EE8005F6C25 /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		607F54231B9B0EF6005F6C25 /* BottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
+		60869D731D8D635700936170 /* ZDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRootViewController.h; sourceTree = "<group>"; };
+		60869D741D8D635700936170 /* ZDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRootViewController.m; sourceTree = "<group>"; };
+		60869D761D8D63D900936170 /* ZDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHomeViewController.h; sourceTree = "<group>"; };
+		60869D771D8D63D900936170 /* ZDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHomeViewController.m; sourceTree = "<group>"; };
+		60869D7C1D8D647800936170 /* ZDLaunchAdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLaunchAdvertiseView.h; sourceTree = "<group>"; };
+		60869D7D1D8D647800936170 /* ZDLaunchAdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLaunchAdvertiseView.m; sourceTree = "<group>"; };
+		60869D7F1D8D7D1900936170 /* ZDLeftHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLeftHeaderView.h; sourceTree = "<group>"; };
+		60869D801D8D7D1A00936170 /* ZDLeftHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLeftHeaderView.m; sourceTree = "<group>"; };
+		60869D841D8D86B100936170 /* ZDLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLeftViewController.h; sourceTree = "<group>"; };
+		60869D851D8D86B100936170 /* ZDLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLeftViewController.m; sourceTree = "<group>"; };
+		60869D861D8D86B100936170 /* ZDLeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDLeftViewController.xib; sourceTree = "<group>"; };
+		60869D891D8D8FC900936170 /* ZDGetThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGetThemeModel.h; sourceTree = "<group>"; };
+		60869D8A1D8D8FC900936170 /* ZDGetThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGetThemeModel.m; sourceTree = "<group>"; };
+		60869D8C1D8D905100936170 /* ZDAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAFRequest.h; sourceTree = "<group>"; };
+		60869D8D1D8D905100936170 /* ZDAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAFRequest.m; sourceTree = "<group>"; };
+		60869D8F1D8D993600936170 /* ZDListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDListModel.h; sourceTree = "<group>"; };
+		60869D901D8D993600936170 /* ZDListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDListModel.m; sourceTree = "<group>"; };
+		60869D951D8D9D5800936170 /* ZDLeftThemeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLeftThemeItem.h; sourceTree = "<group>"; };
+		60869D961D8D9D5800936170 /* ZDLeftThemeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLeftThemeItem.m; sourceTree = "<group>"; };
+		60869D981D8DA7C400936170 /* ZDLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLeftTableViewCell.h; sourceTree = "<group>"; };
+		60869D991D8DA7C400936170 /* ZDLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLeftTableViewCell.m; sourceTree = "<group>"; };
 		60BA5D661D8A7D520035E1AF /* SBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTableViewCell.h; sourceTree = "<group>"; };
 		60BA5D671D8A7D520035E1AF /* SBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTableViewCell.m; sourceTree = "<group>"; };
 		60BA5D691D8A7DE60035E1AF /* SBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBItem.h; sourceTree = "<group>"; };
@@ -1910,6 +1927,27 @@
 				3483A3C31B8EB76900C71AB0 /* Common */,
 				3483A3A11B8EB74C00C71AB0 /* AppDelegate.h */,
 				3483A3A21B8EB74C00C71AB0 /* AppDelegate.m */,
+				60869D8C1D8D905100936170 /* ZDAFRequest.h */,
+				60869D8D1D8D905100936170 /* ZDAFRequest.m */,
+				60869D8F1D8D993600936170 /* ZDListModel.h */,
+				60869D901D8D993600936170 /* ZDListModel.m */,
+				60869D731D8D635700936170 /* ZDRootViewController.h */,
+				60869D741D8D635700936170 /* ZDRootViewController.m */,
+				60869D761D8D63D900936170 /* ZDHomeViewController.h */,
+				60869D771D8D63D900936170 /* ZDHomeViewController.m */,
+				60869D7C1D8D647800936170 /* ZDLaunchAdvertiseView.h */,
+				60869D7D1D8D647800936170 /* ZDLaunchAdvertiseView.m */,
+				60869D841D8D86B100936170 /* ZDLeftViewController.h */,
+				60869D851D8D86B100936170 /* ZDLeftViewController.m */,
+				60869D861D8D86B100936170 /* ZDLeftViewController.xib */,
+				60869D981D8DA7C400936170 /* ZDLeftTableViewCell.h */,
+				60869D991D8DA7C400936170 /* ZDLeftTableViewCell.m */,
+				60869D951D8D9D5800936170 /* ZDLeftThemeItem.h */,
+				60869D961D8D9D5800936170 /* ZDLeftThemeItem.m */,
+				60869D7F1D8D7D1900936170 /* ZDLeftHeaderView.h */,
+				60869D801D8D7D1A00936170 /* ZDLeftHeaderView.m */,
+				60869D891D8D8FC900936170 /* ZDGetThemeModel.h */,
+				60869D8A1D8D8FC900936170 /* ZDGetThemeModel.m */,
 				607F54121B9B0949005F6C25 /* MainViewController.h */,
 				607F54131B9B0949005F6C25 /* MainViewController.m */,
 				60C38B0E1BA2F02200A6A21D /* LaunchViewController.h */,
@@ -1954,7 +1992,6 @@
 			isa = PBXGroup;
 			children = (
 				606E152D1BA2C946004D2462 /* UIViewExt */,
-				3483A7851B8EF70500C71AB0 /* MMDrawerController */,
 				3483A77A1B8EEE3200C71AB0 /* ThemeManager */,
 				60473F9C1B9BE828001D79BB /* DataService.h */,
 				60473F9D1B9BE828001D79BB /* DataService.m */,
@@ -2251,23 +2288,6 @@
 				3483A7801B8EF10F00C71AB0 /* ThemeButton.m */,
 			);
 			path = ThemeManager;
-			sourceTree = "<group>";
-		};
-		3483A7851B8EF70500C71AB0 /* MMDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				3483A7861B8EF70500C71AB0 /* MMDrawerBarButtonItem.h */,
-				3483A7871B8EF70500C71AB0 /* MMDrawerBarButtonItem.m */,
-				3483A7881B8EF70500C71AB0 /* MMDrawerController.h */,
-				3483A7891B8EF70500C71AB0 /* MMDrawerController.m */,
-				3483A78A1B8EF70500C71AB0 /* MMDrawerVisualState.h */,
-				3483A78B1B8EF70500C71AB0 /* MMDrawerVisualState.m */,
-				3483A78C1B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.h */,
-				3483A78D1B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.m */,
-				3483A78E1B8EF70500C71AB0 /* UIViewController+MMDrawerController.h */,
-				3483A78F1B8EF70500C71AB0 /* UIViewController+MMDrawerController.m */,
-			);
-			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		606E152D1BA2C946004D2462 /* UIViewExt */ = {
@@ -3266,7 +3286,7 @@
 		3483A3921B8EB74C00C71AB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = "";
+				CLASSPREFIX = ZD;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = oahgnehzoul;
 				TargetAttributes = {
@@ -3722,6 +3742,7 @@
 				6071A83C1D795132009EB51C /* composedingwei@2x.png in Resources */,
 				6071A7D01D795132009EB51C /* bluebubble@2x.png in Resources */,
 				6071A7F51D795132009EB51C /* close@2x.png in Resources */,
+				60869D881D8D86B100936170 /* ZDLeftViewController.xib in Resources */,
 				6071AA0B1D795132009EB51C /* powerplushome-29.png in Resources */,
 				6071A7CA1D795132009EB51C /* Back@2x.png in Resources */,
 				6071A84C1D795132009EB51C /* composepic_biankuang@2x.png in Resources */,
@@ -4195,23 +4216,25 @@
 			files = (
 				603826A51D8C61CA0020B988 /* NSDictionary+SBItem.m in Sources */,
 				603893BA1BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m in Sources */,
-				3483A7941B8EF70500C71AB0 /* UIViewController+MMDrawerController.m in Sources */,
+				60869D751D8D635700936170 /* ZDRootViewController.m in Sources */,
 				606E15261BA2ADA9004D2462 /* CommentTableViewCell.m in Sources */,
 				60473FE31B9C18FE001D79BB /* storyModel.m in Sources */,
 				3483A7841B8EF6D500C71AB0 /* BaseViewController.m in Sources */,
 				607F54171B9B0A22005F6C25 /* ThemeViewController.m in Sources */,
+				60869D911D8D993600936170 /* ZDListModel.m in Sources */,
 				3483A7B81B8F641D00C71AB0 /* SettingViewController.m in Sources */,
 				604740211B9CB73C001D79BB /* HomeTableViewCell.m in Sources */,
 				3483A7B31B8F63D500C71AB0 /* ProfileViewController.m in Sources */,
 				603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */,
+				60869D8B1D8D8FC900936170 /* ZDGetThemeModel.m in Sources */,
 				60F4171B1BB679A3000D797D /* EditorModel.m in Sources */,
+				60869D9A1D8DA7C400936170 /* ZDLeftTableViewCell.m in Sources */,
 				3483A7A91B8F62E400C71AB0 /* FavoritesViewController.m in Sources */,
-				3483A7911B8EF70500C71AB0 /* MMDrawerController.m in Sources */,
 				60F4171E1BB680CD000D797D /* EditorViewController.m in Sources */,
 				606E15231BA2A76D004D2462 /* CommentModel.m in Sources */,
+				60869D7E1D8D647800936170 /* ZDLaunchAdvertiseView.m in Sources */,
 				60BA5D811D8A7EFC0035E1AF /* SBListModel.m in Sources */,
 				604740241B9CC440001D79BB /* DetailViewController.m in Sources */,
-				3483A7921B8EF70500C71AB0 /* MMDrawerVisualState.m in Sources */,
 				607F541A1B9B0DAA005F6C25 /* LeftViewController.m in Sources */,
 				60473F9E1B9BE828001D79BB /* DataService.m in Sources */,
 				60BA5D721D8A7E450035E1AF /* SBTableViewDelegate.m in Sources */,
@@ -4225,12 +4248,14 @@
 				60F417211BB681E3000D797D /* EditorCell.m in Sources */,
 				60BA5D7E1D8A7EC30035E1AF /* SBModel.m in Sources */,
 				603826A21D8C5A230020B988 /* SBItemProperty.m in Sources */,
+				60869D8E1D8D905100936170 /* ZDAFRequest.m in Sources */,
 				6047401B1B9C9FF6001D79BB /* HomeHeaderViewCell.m in Sources */,
 				60C363321BA01AD400581D5B /* UIView+UIViewController.m in Sources */,
 				6047402D1B9D7E4A001D79BB /* ThemeTableViewCell.m in Sources */,
 				60BA5D751D8A7E540035E1AF /* SBTableViewDataSource.m in Sources */,
 				60BA5D7B1D8A7E770035E1AF /* SBTableViewController.m in Sources */,
 				606E151D1BA29B54004D2462 /* CommentViewController.m in Sources */,
+				60869D871D8D86B100936170 /* ZDLeftViewController.m in Sources */,
 				6071AABC1D79585F009EB51C /* UIView+Additions.m in Sources */,
 				607F54221B9B0EE8005F6C25 /* BottomView.m in Sources */,
 				607F541D1B9B0EAA005F6C25 /* HeaderView.m in Sources */,
@@ -4240,15 +4265,16 @@
 				604740331B9DC1D0001D79BB /* ThemeCellModel.m in Sources */,
 				3483A3A01B8EB74C00C71AB0 /* main.m in Sources */,
 				60BA5D841D8A7F420035E1AF /* SBRequest.m in Sources */,
+				60869D971D8D9D5900936170 /* ZDLeftThemeItem.m in Sources */,
+				60869D781D8D63D900936170 /* ZDHomeViewController.m in Sources */,
 				60473FE01B9C1889001D79BB /* BaseModel.m in Sources */,
 				604740301B9D8059001D79BB /* ThemeModel.m in Sources */,
 				3483A77D1B8EEE5200C71AB0 /* ThemeManager.m in Sources */,
+				60869D811D8D7D1A00936170 /* ZDLeftHeaderView.m in Sources */,
 				6047401E1B9CB711001D79BB /* HomeTableView.m in Sources */,
-				3483A7901B8EF70500C71AB0 /* MMDrawerBarButtonItem.m in Sources */,
 				60C131181BA08B2400E81489 /* Utils.m in Sources */,
 				60C38B101BA2F02200A6A21D /* LaunchViewController.m in Sources */,
 				606E15201BA2A17F004D2462 /* CommentTableView.m in Sources */,
-				3483A7931B8EF70500C71AB0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */,
 				60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */,
 				3483A7971B8EFCA600C71AB0 /* HomeViewController.m in Sources */,
@@ -4382,6 +4408,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyZhihuDaily/zhihuDaily_Prefix.pch";
 				INFOPLIST_FILE = MyZhihuDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4429,6 +4456,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyZhihuDaily/zhihuDaily_Prefix.pch";
 				INFOPLIST_FILE = MyZhihuDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

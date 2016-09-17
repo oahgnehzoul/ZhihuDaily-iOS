@@ -12,9 +12,11 @@
 #import "MMDrawerController.h"
 #import "BaseNavController.h"
 #import "LeftViewController.h"
-#import "MMExampleDrawerVisualStateManager.h"
+//#import "MMExampleDrawerVisualStateManager.h"
 
 #import "LaunchViewController.h"
+
+#import "ZDRootViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -50,8 +52,10 @@
 //    }];
 //    self.window.rootViewController = mmDraw;
     
-    LaunchViewController *vc = [[LaunchViewController alloc] init];
-    self.window.rootViewController = vc;
+//    LaunchViewController *vc = [[LaunchViewController alloc] init];
+//    self.window.rootViewController = vc;
+    
+    self.window.rootViewController = [[ZDRootViewController alloc] init];
     return YES;
 }
 
