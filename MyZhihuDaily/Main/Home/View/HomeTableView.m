@@ -189,38 +189,16 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offY = scrollView.contentOffset.y;
-//    NSLog(@"%f",offY);
-//    NSLog(@"count:%ld",rowArray.count);
-//    NSLog(@"array:%@",[self offYarray]);
-//    NSLog(@"%f",alpha);
     UIColor *color = [UIColor colorWithRed:0 green: 175/255.0 blue:240/255.0 alpha:1];
     CGFloat alpha = (offY + 64)/156;
     [self.viewController.navigationController.navigationBar hzl_setBackgourndColor:[color colorWithAlphaComponent:alpha]];
-//    if (offY < 0) {
-//        HomeHeaderView *view = self.tableHeaderView;
-//        UIImageView *imgView = view.imgView;
-//        NSLog(@"%@",imgView);
-//        
-//    }
-//    if (offY <= -64) {
-//        CGFloat newHeight = -offY - 64 +200;
-////        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, newHeight);
-//    }
-//    self.tableHeaderView.bottom = self.top;
-//    if (offY <= -64) {
-//        self.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, -offY-64+200);
-//    }
-//    UIView *view = self.tableHeaderView;
-//    NSLog(@"%f %f",view.frame.size.width,view.size.height);
+
     
     NSArray *offArray = [self offYarray];
     if (offArray.count > 1) {
         
         for ( i = 0; i < offArray.count - 1; i++) {
             if (offY >= [offArray[i] integerValue] && offY <= [offArray[i+1] integerValue]) {
-//                if (offY >= ([offArray[0] integerValue]+[offArray[1] integerValue] )) {
-//                    [self setNavigationBarTransformProgress:1];
-//                }
                 NSDictionary *dic = self.dataDicArray[i+1];
                 NSString *date = dic[@"date"];
                 NSString *text = [self dateWithString:date];

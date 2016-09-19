@@ -66,6 +66,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self requestDidFinish:response];
+//            NSLog(@"#ZAFRequest requestDidFinish:%@",response);
         });
     };
     
@@ -78,6 +79,7 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self requestDidFailWithError:error];
+            NSLog(@"#ZDAFRequest requestDidFailWithError:%@",error);
         });
     };
     

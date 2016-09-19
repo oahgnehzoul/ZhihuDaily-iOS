@@ -14,5 +14,6 @@ target 'MyZhihuDaily' do
     pod 'RDVTabBarController', '~> 1.1.9'
     pod 'Mantle', '~> 2.0.7'
     pod 'ReactiveCocoa', '~> 2.5'
-
+    pod 'Routable', '~> 0.2.0'
+	pod 'DACircularProgress', '~> 2.3.1'
 end

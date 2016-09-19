@@ -29,6 +29,9 @@
 #define kZDLeftCellHeight 50
 #define kZDLeftBottomViewHeight 65
 
+//375 / 220  =   w / h
+#define kZDHomeHeaderViewHeight kMainScreenWidth *220/375.0
+
 #import "HexColors.h"
 #define kZDLeftBackgroundViewColor @"#232a32"
 #define kZDLeftCellSelectedColor @"#1b222a"
@@ -36,10 +39,19 @@
 #define kZDLeftCellLabelSelectedTextColor @"#f4f8fb"
 #define kZDLeftLineColor @"#20272f"
 
+#define kZDHomeNavDefaultColor @"#008dd5"
+#define kZDHomeCellDefaultColor @"#383838"
+
+#define weakObj(type) __weak typeof(type) weak##type = type;
+#define strongObj(type) __strong typeof(type) type = weak##type;
 #import "Common.h"
 #import "Utils.h"
 #import "UIView+Additions.h"
 #import "SBMVC.h"
 #import "Masonry.h"
 #import "ReactiveCocoa.h"
+#import "BlocksKit.h"
+#import "BlocksKit+UIKit.h"
+#import "Routable.h"
+#import "UIImageView+WebCache.h"
 #endif

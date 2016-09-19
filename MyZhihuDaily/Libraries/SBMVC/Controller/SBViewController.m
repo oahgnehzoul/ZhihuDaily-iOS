@@ -20,20 +20,22 @@
 @implementation SBViewController
 - (instancetype)init {
     if (self = [super init]) {
-        _modelDictionary = @{}.mutableCopy;
+        _modelDictInternal = @{}.mutableCopy;
         _lock = OS_SPINLOCK_INIT;
-        NSLog(@"%@ init",[self class]);
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"SBViewController viewDidLoad");
 }
 
 - (void)dealloc {
     NSLog(@"[%@-->dealloc]",[self class]);
+}
+
+- (NSDictionary *)modelDictionary {
+    return [_modelDictInternal copy];
 }
 
 - (void)registerModel:(SBModel *)model {

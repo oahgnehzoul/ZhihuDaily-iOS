@@ -23,7 +23,7 @@
 }
 
 - (NSArray *)parseResponse:(id)object error:(NSError *__autoreleasing *)error {
-    NSLog(@"object:%@",object);
+//    NSLog(@"object:%@",object);
     NSMutableArray *items = @[].mutableCopy;
     ZDLeftThemeItem *firstItem = [ZDLeftThemeItem itemWithDictioinary:@{
                                                                         @"name":@"首页"

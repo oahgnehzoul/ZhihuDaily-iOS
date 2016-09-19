@@ -52,6 +52,7 @@
 - (SBTableViewDataSource *)dataSource {
     if (!_dataSource) {
         _dataSource = [[SBTableViewDataSource alloc] init];
+        _dataSource.controller = self;
     }
     return _dataSource;
 }
@@ -65,6 +66,7 @@
 - (SBTableViewDelegate *)delegate {
     if (!_delegate) {
         _delegate = [[SBTableViewDelegate alloc] init];
+        _delegate.controller = self;
     }
     return _delegate;
 }
@@ -76,6 +78,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:[self tableViewStyle]];
+        _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _tableView.dataSource = nil;
         _tableView.delegate = nil;
     }
@@ -164,6 +167,7 @@
 }
 
 - (void)showModel:(SBListModel *)model {
+    NSLog(@"[%@-->showModel:{key:%@,section:%ld}]",[self class],model.key,(long)model.sectionNubmer);
     [self endRefreshing];
     [self reloadTableView];
     self.tableView.tableFooterView = self.footerViewComplete;
@@ -231,7 +235,7 @@
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    
+
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

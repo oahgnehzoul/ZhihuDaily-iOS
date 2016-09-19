@@ -12,11 +12,11 @@
 #import "MMDrawerController.h"
 #import "BaseNavController.h"
 #import "LeftViewController.h"
-//#import "MMExampleDrawerVisualStateManager.h"
-
 #import "LaunchViewController.h"
-
 #import "ZDRootViewController.h"
+
+#import "ZDHomeViewController.h"
+#import "ZDThemeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -31,31 +31,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-//    LeftViewController *leftVC = [[LeftViewController alloc] init];
-//    
-//    MainViewController *MainVC = [[MainViewController alloc] init];
-//    self.mainVC = MainVC;
-//    MMDrawerController *mmDraw = [[MMDrawerController alloc] initWithCenterViewController:MainVC leftDrawerViewController:leftVC];
-//    
-//    [mmDraw setMaximumLeftDrawerWidth:220.0];
-//    [mmDraw setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-//    [mmDraw setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-//    
-//    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeParallax];
-//    [mmDraw setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-//        MMDrawerControllerDrawerVisualStateBlock block;
-//        block = [[MMExampleDrawerVisualStateManager sharedManager] drawerVisualStateBlockForDrawerSide:drawerSide];
-//        if (block) {
-//            block(drawerController,drawerSide,percentVisible);
-//        }
-//    }];
-//    self.window.rootViewController = mmDraw;
-    
-//    LaunchViewController *vc = [[LaunchViewController alloc] init];
-//    self.window.rootViewController = vc;
-    
     self.window.rootViewController = [[ZDRootViewController alloc] init];
+    
+    [[Routable sharedRouter] map:@"home" toController:[ZDHomeViewController class]];
+    [[Routable sharedRouter] map:@"theme" toController:[ZDThemeViewController class]];
+    
+    
     return YES;
 }
 

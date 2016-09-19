@@ -10,8 +10,8 @@
 
 @interface SBTableViewDataSource ()
 {
-    NSMutableDictionary *_itemForSectionInternal;
-    NSMutableDictionary *_totalCountForSectionInternal;
+    NSMutableDictionary *_itemsForSectionInternal;
+//    NSMutableDictionary *_totalCountForSectionInternal;
 }
 
 @end
@@ -19,37 +19,40 @@
 @implementation SBTableViewDataSource
 
 - (NSDictionary *)itemsForSection {
-    return [_itemForSectionInternal copy];
+    return [_itemsForSectionInternal copy];
 }
 
-- (NSDictionary *)totalCountForSection {
-    return [_totalCountForSection copy];
-}
+//- (NSDictionary *)totalCountForSection {
+//    return [_totalCountForSectionInternal copy];
+//}
 
 - (instancetype)init {
     if (self = [super init]) {
-        _itemForSectionInternal = @{}.mutableCopy;
-        _totalCountForSectionInternal = @{}.mutableCopy;
+        _itemsForSectionInternal = [NSMutableDictionary dictionary];
+//        _totalCountForSectionInternal = @{}.mutableCopy;
     }
     return self;
 }
 
 - (void)dealloc {
     NSLog(@"[%@-->dealloc]",self.class);
+    [_itemsForSectionInternal removeAllObjects];
+    _itemsForSectionInternal = nil;
+    _controller = nil;
 }
 
 - (void)setItems:(NSArray *)items ForSection:(NSInteger)section {
-    [_itemForSectionInternal setObject:items.mutableCopy forKey:@(section)];
+    [_itemsForSectionInternal setObject:items.mutableCopy forKey:@(section)];
 
 }
 
 - (NSArray *)getItems:(NSInteger)section {
-    return section < _itemForSectionInternal.count ? _itemForSectionInternal[@(section)] : @[];
+    return section < _itemsForSectionInternal.count ? _itemsForSectionInternal[@(section)] : @[];
 }
 
 - (void)removeItem:(SBTableViewItem *)item ForSection:(NSInteger)section {
-    if (section >= 0 && section < _itemForSectionInternal.count) {
-        NSMutableArray *items = [_itemForSectionInternal objectForKey:@(section)];
+    if (section >= 0 && section < _itemsForSectionInternal.count) {
+        NSMutableArray *items = [_itemsForSectionInternal objectForKey:@(section)];
         for (id obj in items) {
             if ([obj isEqual:item]) {
                 [items removeObject:obj];
@@ -59,13 +62,13 @@
 }
 
 - (void)removeItemsForSection:(NSInteger)section {
-    if (section >= 0 && section < _itemForSectionInternal.count) {
-        [_itemForSectionInternal removeObjectForKey:@(section)];
+    if (section >= 0 && section < _itemsForSectionInternal.count) {
+        [_itemsForSectionInternal removeObjectForKey:@(section)];
     }
 }
 
 - (void)removeAllItems {
-    [_itemForSectionInternal removeAllObjects];
+    [_itemsForSectionInternal removeAllObjects];
 }
 
 #pragma mark - UITableViewDataSource
@@ -75,11 +78,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *items = _itemForSectionInternal[@(section)];
+    NSArray *items = _itemsForSectionInternal[@(section)];
     return items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
     SBTableViewItem *item = [self itemForCellAtIndexPath:indexPath];
     Class cellClass = [self cellClassForItem:item AtIndex:indexPath];
     NSString *cellIdentifier = NSStringFromClass(cellClass);
@@ -121,7 +125,7 @@
 
 - (SBTableViewItem *)itemForCellAtIndexPath:(NSIndexPath *)indexPath {
     SBTableViewItem *ret = nil;
-    NSArray *items = _itemForSectionInternal[@(indexPath.section)];
+    NSArray *items = _itemsForSectionInternal[@(indexPath.section)];
     if (indexPath.row < items.count) {
         ret = items[indexPath.row];
     } else {
@@ -135,7 +139,7 @@
 }
 
 - (void)tableViewControllerDidLoadModel:(SBListModel *)model ForSection:(NSInteger)section {
-    [_totalCountForSectionInternal setObject:@(model.itemList.count) forKey:@(section)];
+//    [_totalCountForSectionInternal setObject:@(model.itemList.count) forKey:@(section)];
     [self setItems:[model.itemList.array mutableCopy] ForSection:section];
 }
 

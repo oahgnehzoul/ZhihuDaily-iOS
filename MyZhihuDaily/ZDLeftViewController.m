@@ -10,11 +10,16 @@
 #import "ZDGetThemeModel.h"
 #import "ZDLeftTableViewCell.h"
 #import "ZDLeftThemeItem.h"
+#import "ZDLeftBackView.h"
+#import "ZDHomeViewController.h"
+#import "ZDRootViewController.h"
+#import "ZDThemeViewController.h"
 @interface ZDLeftViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) ZDGetThemeModel *themeModel;
 
+@property (nonatomic, strong) ZDLeftBackView *topView;
 @end
 
 @implementation ZDLeftViewController
@@ -59,7 +64,13 @@
         item.isSelected = (idx == indexPath.row) ? YES : NO;
         [self.tableView reloadData];
     }];
-    
+    if (indexPath.row == 0) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ZDHomeViewController alloc] init]];
+        [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
+    } else {
+        ZDLeftThemeItem *item = self.themeModel.itemList.array[indexPath.row];
+        [self.mmDraw setCenterViewController:[[ZDThemeViewController alloc] initWithThemeId:item.themeId] withCloseAnimation:YES completion:nil];
+    }
     
 }
 

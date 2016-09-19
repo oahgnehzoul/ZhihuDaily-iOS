@@ -85,20 +85,23 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
+    [self.controller scrollViewDidScroll:scrollView];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.controller scrollViewWillBeginDragging:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.controller scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    [self.controller scrollViewWillBeginDragging:scrollView];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-
+    [self.controller scrollViewDidEndDecelerating:scrollView];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
