@@ -1,5 +1,5 @@
 //
-//  ZDLeftHeaderView.h
+//  ZDLaunchAdvertiseView.h
 //  MyZhihuDaily
 //
 //  Created by oahgnehzoul on 16/9/17.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDLeftHeaderView : UIView
+@interface ZDLaunchAdvertiseView : UIView
+
+
 
 @end

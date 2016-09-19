@@ -1,14 +1,14 @@
 //
-//  ZDLeftHeaderView.m
+//  ZDLaunchAdvertiseView.m
 //  MyZhihuDaily
 //
 //  Created by oahgnehzoul on 16/9/17.
 //  Copyright © 2016年 oahgnehzoul. All rights reserved.
 //
 
-#import "ZDLeftHeaderView.h"
+#import "ZDLaunchAdvertiseView.h"
 
-@implementation ZDLeftHeaderView
+@implementation ZDLaunchAdvertiseView
 
 /*
 // Only override drawRect: if you perform custom drawing.
