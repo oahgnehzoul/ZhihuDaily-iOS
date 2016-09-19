@@ -33,11 +33,6 @@
             make.edges.equalTo(self);
         }];
         
-//        [self.menuButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(30, 30));
-//            make.left.equalTo(self.containView).offset(10);
-//            make.bottom.equalTo(self.containView).offset(-5);
-//        }];
         
         NSLog(@"button.nextResponder:%@",self.menuButton.nextResponder);
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,9 +55,10 @@
         self.progressBlock = ^(CGFloat progress) {
             @strongify(self);
             progress = fabs(progress);
-            if (progress >= 0 && progress <= 1) {
+            if (progress > 0 && progress <= 1) {
                 self.progressView.progress = progress;
                 self.progressView.hidden = NO;
+                self.progressView.hidden = progress <= 0.007143;
             }
         };
 //        NSLog(@"button.nextResponder:%@",self.menuButton.nextResponder);
@@ -83,6 +79,7 @@
 
 - (void)showLoadingWithBlock:(void (^)())refreshBlock {
     self.indicator.hidden = NO;
+    self.isAnimating = YES;
     if (!self.progressView.hidden) {
         self.progressView.hidden = YES;
     }
@@ -94,6 +91,7 @@
 
 - (void)hideLoading {
     [self.indicator stopAnimating];
+    self.isAnimating = NO;
     self.indicator.hidden = YES;
 }
 
@@ -127,10 +125,12 @@
     if (!_progressView) {
         _progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
         _progressView.progress = 0.f;
-        _progressView.trackTintColor = [UIColor clearColor]; //背景颜色
+        _progressView.thicknessRatio = 0.2; //设置外圈宽度
+        _progressView.trackTintColor = [UIColor  hx_colorWithHexRGBAString:@"faf9f9" alpha:0.5]; //背景颜色
         _progressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"]; //进度颜色
         CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI);
         [_progressView setTransform:trans];
+        _progressView.hidden = YES;
     }
     return _progressView;
 }

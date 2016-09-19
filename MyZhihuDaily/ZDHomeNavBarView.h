@@ -26,5 +26,6 @@
 
 @property (nonatomic, assign) CGFloat alpha;
 
+@property (nonatomic, assign) BOOL isAnimating;
 //@property (nonatomic, weak) id<ZDLeftButtonProtocol> delegate;
 @end

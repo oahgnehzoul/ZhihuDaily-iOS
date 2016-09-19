@@ -908,6 +908,7 @@
 		60F4171B1BB679A3000D797D /* EditorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F4171A1BB679A3000D797D /* EditorModel.m */; };
 		60F4171E1BB680CD000D797D /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F4171D1BB680CD000D797D /* EditorViewController.m */; };
 		60F417211BB681E3000D797D /* EditorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F417201BB681E3000D797D /* EditorCell.m */; };
+		60FD7E6A1D900F6900B7C2CE /* ZDHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FD7E691D900F6900B7C2CE /* ZDHeaderCollectionViewCell.xib */; };
 		F499A55BE54D71968E4D8408 /* libPods-MyZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D7C0F7FD7F54666A24935D /* libPods-MyZhihuDaily.a */; };
 /* End PBXBuildFile section */
 
@@ -1906,6 +1907,7 @@
 		60F4171D1BB680CD000D797D /* EditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
 		60F4171F1BB681E3000D797D /* EditorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorCell.h; sourceTree = "<group>"; };
 		60F417201BB681E3000D797D /* EditorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorCell.m; sourceTree = "<group>"; };
+		60FD7E691D900F6900B7C2CE /* ZDHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		67D7C0F7FD7F54666A24935D /* libPods-MyZhihuDaily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyZhihuDaily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1975,6 +1977,7 @@
 				600E0D891D8EDFEE002B71F9 /* ZDHomeHeaderView.m */,
 				600E0D8B1D8FB92C002B71F9 /* ZDHeaderCollectionViewCell.h */,
 				600E0D8C1D8FB92C002B71F9 /* ZDHeaderCollectionViewCell.m */,
+				60FD7E691D900F6900B7C2CE /* ZDHeaderCollectionViewCell.xib */,
 				600E0D7F1D8E90DD002B71F9 /* ZDHomeDataSource.h */,
 				600E0D801D8E90DD002B71F9 /* ZDHomeDataSource.m */,
 				600E0D821D8E90F1002B71F9 /* ZDHomeTableViewCell.h */,
@@ -4079,6 +4082,7 @@
 				6071A8B61D795132009EB51C /* Dark_Profile_Editname_Button@2x.png in Resources */,
 				6071AA5E1D795132009EB51C /* Share_Evernote@2x.png in Resources */,
 				6071A8851D795132009EB51C /* Dark_Image_Preview@2x.png in Resources */,
+				60FD7E6A1D900F6900B7C2CE /* ZDHeaderCollectionViewCell.xib in Resources */,
 				6071AA5D1D795132009EB51C /* Share_Email@2x.png in Resources */,
 				6071A81D1D795132009EB51C /* Comment_Share_Tencent_Cancel_Highlight@2x.png in Resources */,
 				6071A99D1D795132009EB51C /* News_Commented@2x.png in Resources */,

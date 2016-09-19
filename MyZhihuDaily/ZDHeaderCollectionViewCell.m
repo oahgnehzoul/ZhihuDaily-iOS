@@ -7,12 +7,14 @@
 //
 
 #import "ZDHeaderCollectionViewCell.h"
-//#import "ZDHomeStoryItem.h"
+
 @interface ZDHeaderCollectionViewCell ()
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UILabel *sourceLabel;
-//- (void)setItem:(ZDHomeStoryItem *)item;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *maskView;
 @end
 
 @implementation ZDHeaderCollectionViewCell
@@ -20,12 +22,20 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.imageView];
+        [self addSubview:self.maskView];
         [self addSubview:self.textLabel];
     }
     return self;
 }
 
 - (void)setItem:(ZDHomeStoryItem *)item {
+    
+//    [self.contentImage sd_setImageWithURL:[NSURL URLWithString:item.image]];
+//    self.titleLabel.text = item.title;
+    
+//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.image]];
+//    self.textLabel.text = item.title;
+
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.image]];
     self.textLabel.text = item.title;
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -36,7 +46,11 @@
         make.right.equalTo(self).offset(-20);
         make.bottom.equalTo(self).offset(-25);
     }];
+    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
 }
+
 
 - (UIImageView *)imageView {
     if (!_imageView) {
@@ -47,12 +61,21 @@
     return _imageView;
 }
 
+- (UIImageView *)maskView {
+    if (!_maskView) {
+        _maskView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Home_Image_Mask"]];
+        _maskView.contentMode = UIViewContentModeScaleToFill;
+    }
+    return _maskView;
+}
 - (UILabel *)textLabel {
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
         _textLabel.font = [UIFont boldSystemFontOfSize:18];
         _textLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"];
-        _textLabel.numberOfLines = 0;
+        _textLabel.numberOfLines = -1;
+        // !!
+        [_textLabel setPreferredMaxLayoutWidth:200.0];
     }
     return _textLabel;
 }

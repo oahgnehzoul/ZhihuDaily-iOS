@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) UIButton *menuButton;
 //@property (nonatomic, assign) BOOL isOpen;
+@property (nonatomic, assign) CGFloat progress;
 @end
 
 @implementation ZDHomeViewController
@@ -45,10 +46,11 @@
     //默认为 yes，会让 viewcontroller 根据 status bar ,navigation bar,toolbar,tabbar自动调整 insets
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight)];
-    [self.view addSubview:self.headerView];
-//    self.headerView.backgroundColor = [UIColor grayColor];
-    
+    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220 / 375.0 * CGRectGetWidth(self.view.frame))];
+    // 这里只设置 tableHeaderView 就可以了，不需要 addSubView;
+//    [self.view addSubview:self.headerView];
+    self.tableView.tableHeaderView = self.headerView;
+
     [self.view addSubview:self.menuButton];
     [self setNavBar];
     [self.view bringSubviewToFront:self.menuButton];
@@ -59,13 +61,9 @@
     }];
     self.tableView.frame = self.view.bounds;
     self.tableView.showsVerticalScrollIndicator = NO;
+//    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.dataSource = self.ds;
     self.delegate = self.dl;
-    
-//    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight)];
-//    [self.view addSubview:self.headerView];
-//    self.headerView.backgroundColor = [UIColor grayColor];
-//    self.tableView.tableHeaderView = self.headerView;
     
     self.bNeedLoadMore = YES;
     [self registerModel:self.model];
@@ -122,9 +120,6 @@
     [self.view addSubview:self.navBarView];
 }
 
-- (void)openMenu {
-    NSLog(@"openMenu");
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",(long)indexPath.row);
@@ -136,35 +131,50 @@
     if (offSetY > 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight + 30);
     }
-    if (offSetY < 0) {
+    if (offSetY < 0 ) {
         self.navBarView.alpha = 0.f;
-        CGFloat x = ABS(offSetY) / 120;
-        if (x <= 1 && x >= 0) {
-            self.navBarView.progressBlock(offSetY / 120.f);
+        CGFloat x = ABS(offSetY) / 70.f;
+        self.progress = x;
+        if (x <= 1 && x >= 0 && !self.navBarView.isAnimating) {
+            self.navBarView.progressBlock(offSetY / 70.f);
         }
-        self.headerView.top = self.view.top ;
-        self.headerView.height = kZDHomeHeaderViewHeight - offSetY;
-    } else {
-        self.headerView.top = self.tableView.top - offSetY;
+        //设置下拉的最大距离
+        self.tableView.contentOffset = CGPointMake(0, MAX(offSetY, -100));
+        CGFloat h = 220 / 375.0 * CGRectGetWidth(self.view.frame);
+        //改变 h 会调用 setFrame 方法，从而调用 collection 重新布局 subView，拉伸效果
+        self.headerView.height = h - offSetY;
+        [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(CGRectGetWidth(self.view.frame), h - offSetY));
+            make.top.equalTo(self.tableView).offset(offSetY);
+            make.left.equalTo(self.tableView);
+        }];
+        
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    if (offSetY < 0) {
-        CGFloat progress = fabs(offSetY / 120.f);
-        NSLog(@"%f",progress);
-        if (progress >= 1) {
+    
+    if (self.progress >= 1) {
+        if (!self.navBarView.isAnimating) {
+            
+            @weakify(self);
             [self.navBarView showLoadingWithBlock:^{
-                @weakify(self);
-                [self.model reloadWithCompletioin:^(SBModel *model, NSError *error) {
-                    @strongify(self);
-                    //数据回来太快，延迟一秒
-                    [self.navBarView performSelector:@selector(hideLoading) withObject:nil afterDelay:1];
-                }];
+                 @strongify(self);
+                // 延迟一秒 ，不然会马上弹回去，有点丑。
+                [self performSelector:@selector(refresh) withObject:nil afterDelay:1];
             }];
-        } 
+        }
     }
+    self.navBarView.progressBlock(self.progress);
+}
+
+- (void)refresh {
+    @weakify(self);
+    [self.model reloadWithCompletioin:^(SBModel *model, NSError *error) {
+        @strongify(self);
+        [self.navBarView hideLoading];
+//        [self.tableView reloadData];
+    }];
 }
 
 @end

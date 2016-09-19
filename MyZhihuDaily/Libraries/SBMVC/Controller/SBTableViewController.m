@@ -167,7 +167,7 @@
 }
 
 - (void)showModel:(SBListModel *)model {
-    NSLog(@"[%@-->showModel:{key:%@,section:%ld}]",[self class],model.key,(long)model.sectionNubmer);
+//    NSLog(@"[%@-->showModel:{key:%@,section:%ld}]",[self class],model.key,(long)model.sectionNubmer);
     [self endRefreshing];
     [self reloadTableView];
     self.tableView.tableFooterView = self.footerViewComplete;
