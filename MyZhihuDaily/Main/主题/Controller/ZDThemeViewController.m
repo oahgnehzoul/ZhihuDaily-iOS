@@ -34,8 +34,8 @@
     
     self.title = @"主题页面";
     
-    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.view.bounds];
-    [launchView startLaunch];
+//    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.view.bounds];
+//    [launchView startLaunch];
     
 }
 

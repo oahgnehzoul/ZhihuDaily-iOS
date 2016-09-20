@@ -83,9 +83,9 @@
 //            block(drawerController,drawerSide,percentVisible);
 //        }
 //    }];
-    delegate.mainVC = MainVC;
-    delegate.window.rootViewController = mmDraw;
-    delegate.window.backgroundColor = [UIColor whiteColor];
+//    delegate.mainVC = MainVC;
+//    delegate.window.rootViewController = mmDraw;
+//    delegate.window.backgroundColor = [UIColor whiteColor];
 
     
 }

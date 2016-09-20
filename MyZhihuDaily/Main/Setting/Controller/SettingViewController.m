@@ -97,11 +97,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        [UIView animateWithDuration:1 animations:^{
-            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-            MainViewController *vc = delegate.mainVC;
-            vc.selectIndex = 1;
-        }];
+//        [UIView animateWithDuration:1 animations:^{
+//            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//            MainViewController *vc = delegate.mainVC;
+//            vc.selectIndex = 1;
+//        }];
        
     }else if (indexPath.section == 5) {
         NSLog(@"清除缓存");

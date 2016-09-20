@@ -131,18 +131,18 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
-        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-        MainViewController *vc = delegate.mainVC;
-        vc.selectIndex = 0;
-    }else {
-        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-        MainViewController *vc = delegate.mainVC;
-        
-        vc.model = _modelArray[indexPath.row - 1];
-//        vc.themeId = [NSString stringWithFormat:@"%ld",indexPath.row+1];
-        vc.selectIndex = 5;
-    }
+//    if (indexPath.row == 0) {
+//        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//        MainViewController *vc = delegate.mainVC;
+//        vc.selectIndex = 0;
+//    }else {
+//        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//        MainViewController *vc = delegate.mainVC;
+//        
+//        vc.model = _modelArray[indexPath.row - 1];
+////        vc.themeId = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+//        vc.selectIndex = 5;
+//    }
 }
 
 - (void)_loadThemeData {

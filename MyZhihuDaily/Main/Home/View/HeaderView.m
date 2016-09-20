@@ -45,34 +45,34 @@
     }
     
 }
-- (IBAction)ProfileBtn:(id)sender {
-    NSLog(@"个人页面");
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    MainViewController *vc = delegate.mainVC;
-    UIButton *btn = (UIButton *)sender;
-    vc.selectIndex = btn.tag;
-}
-///Users/oahgnehzoul/Desktop/MyZhihuDaily/MyZhihuDaily/images/Dark_Browser_Navibar@2x.png
-- (IBAction)collectBtn:(id)sender {
-    NSLog(@"收藏页面");
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    MainViewController *vc = delegate.mainVC;
-    UIButton *btn = (UIButton *)sender;
-    vc.selectIndex = btn.tag;
-}
-- (IBAction)MesgBtn:(id)sender {
-    NSLog(@"消息页面");
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    MainViewController *vc = delegate.mainVC;
-    UIButton *btn = (UIButton *)sender;
-    vc.selectIndex = btn.tag;
-}
-- (IBAction)settingBtn:(id)sender {
-    NSLog(@"设置页面");
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    MainViewController *vc = delegate.mainVC;
-    UIButton *btn = (UIButton *)sender;
-    vc.selectIndex = btn.tag;
-}
+//- (IBAction)ProfileBtn:(id)sender {
+//    NSLog(@"个人页面");
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    MainViewController *vc = delegate.mainVC;
+//    UIButton *btn = (UIButton *)sender;
+//    vc.selectIndex = btn.tag;
+//}
+/////Users/oahgnehzoul/Desktop/MyZhihuDaily/MyZhihuDaily/images/Dark_Browser_Navibar@2x.png
+//- (IBAction)collectBtn:(id)sender {
+//    NSLog(@"收藏页面");
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    MainViewController *vc = delegate.mainVC;
+//    UIButton *btn = (UIButton *)sender;
+//    vc.selectIndex = btn.tag;
+//}
+//- (IBAction)MesgBtn:(id)sender {
+//    NSLog(@"消息页面");
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    MainViewController *vc = delegate.mainVC;
+//    UIButton *btn = (UIButton *)sender;
+//    vc.selectIndex = btn.tag;
+//}
+//- (IBAction)settingBtn:(id)sender {
+//    NSLog(@"设置页面");
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    MainViewController *vc = delegate.mainVC;
+//    UIButton *btn = (UIButton *)sender;
+//    vc.selectIndex = btn.tag;
+//}
 
 @end

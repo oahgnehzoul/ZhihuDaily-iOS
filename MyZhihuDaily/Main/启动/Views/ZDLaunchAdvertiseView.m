@@ -107,7 +107,7 @@
     }
     self.index = 3;
     
-    [UIView animateWithDuration:1 animations:^{
+    [UIView animateWithDuration:0.8 animations:^{
         self.bottomBackView.bottom = self.bottom;
     } completion:^(BOOL finished) {
         [self.progressView setProgress:0.8 animated:YES initialDelay:0 withDuration:2];
@@ -138,7 +138,7 @@
     if (!_authorLabel) {
         _authorLabel = [UILabel new];
         _authorLabel.font = [UIFont systemFontOfSize:10];
-        _authorLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"b3b3b4"];
+        _authorLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"faf9f9"];
     }
     return _authorLabel;
 }
@@ -171,9 +171,9 @@
 - (DACircularProgressView *)progressView {
     if (!_progressView) {
         _progressView = [[DACircularProgressView alloc] init];
-        _progressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"bec2c9"];
+        _progressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"faf9f9"];
         _progressView.innerTintColor = [UIColor clearColor];
-        _progressView.thicknessRatio = 0.25;
+        _progressView.thicknessRatio = 0.3;
         _progressView.transform = CGAffineTransformMakeRotation(M_PI);
     }
     return _progressView;
@@ -183,7 +183,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.font = [UIFont systemFontOfSize:20];
-        _titleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#bec2c9"];
+        _titleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"];
         _titleLabel.text = @"知乎日报";
     }
     return _titleLabel;
