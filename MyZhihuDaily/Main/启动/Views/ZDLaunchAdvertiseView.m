@@ -111,7 +111,9 @@
         self.bottomBackView.bottom = self.bottom;
     } completion:^(BOOL finished) {
         [self.progressView setProgress:0.8 animated:YES initialDelay:0 withDuration:2];
+        @weakify(self);
         self.timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0 block:^(NSTimer *timer) {
+            @strongify(self);
             self.index--;
             if (self.index == 0) {
                 [self dissmiss];
@@ -122,8 +124,15 @@
     
 }
 
+- (void)dealloc {
+    NSLog(@"[%@-->dealloc]",self.class);
+}
 
 - (void)dissmiss {
+    if ([self.timer isValid]) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
     [self removeFromSuperview];
 }
 
@@ -172,7 +181,7 @@
     if (!_progressView) {
         _progressView = [[DACircularProgressView alloc] init];
         _progressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"faf9f9"];
-        _progressView.innerTintColor = [UIColor clearColor];
+        _progressView.trackTintColor = [UIColor clearColor];
         _progressView.thicknessRatio = 0.3;
         _progressView.transform = CGAffineTransformMakeRotation(M_PI);
     }

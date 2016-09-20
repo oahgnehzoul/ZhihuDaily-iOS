@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UIPageControl *pageControl;
 //加上首尾两项
 @property (nonatomic, strong) NSMutableArray *sourceItems;
+
+@property (nonatomic, strong) NSTimer *timer;
 @end
 @implementation ZDHomeHeaderView
 
@@ -53,8 +55,28 @@
     //  5 1 2 3 4 5 1
     // 滚到1
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
-    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     [self setPageIndex:indexPath];
+    
+    @weakify(self);
+    self.timer = [NSTimer bk_scheduledTimerWithTimeInterval:5 block:^(NSTimer *timer) {
+        @strongify(self);
+        [self collectionViewScroll];
+    } repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)dealloc {
+    
+    NSLog(@"[%@-->dealloc]",self.class);
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (void)collectionViewScroll {
+    CGPoint point = self.collectionView.contentOffset;
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
+    NSIndexPath *newPath = [NSIndexPath indexPathForItem:indexPath.row + 1 inSection:indexPath.section];
+    [self setPageIndex:newPath];
 }
 
 #pragma mark - UICollectionDatasource
@@ -89,7 +111,6 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.sourceItems.count - 2) inSection:0];
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
-
 }
 
 
@@ -112,6 +133,7 @@
     } else {
         _pageControl.currentPage = indexPath.row - 1;
     }
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
 }
 
 - (UICollectionView *)collectionView {
@@ -120,8 +142,6 @@
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.minimumLineSpacing = 0.f;
-        //设置 collectionView 里面的 内容,好像并没有效果
-//        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.pagingEnabled = YES;
