@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZDStroyBottomBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qz-5N-7Xo" userLabel="left">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Flw-gP-AA1"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="News_Navigation_Arrow.png"/>
+                    <state key="highlighted" image="News_Navigation_Arrow_Highlight.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-bF-two" userLabel="bottom">
+                    <state key="normal" title="Button" image="News_Navigation_Next.png"/>
+                    <state key="highlighted" image="News_Navigation_Next_Highlight.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-K2-1wg" userLabel="like">
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <inset key="titleEdgeInsets" minX="-35" minY="-16" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="1037" image="News_Navigation_Vote.png">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="News_Navigation_Voted.png"/>
+                    <state key="highlighted" image="News_Navigation_Vote"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU3-jZ-BQr" userLabel="share">
+                    <state key="normal" title="Button" image="News_Navigation_Share.png"/>
+                    <state key="highlighted" image="News_Navigation_Share_Highlight.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz8-2y-EIz" userLabel="comment">
+                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <inset key="titleEdgeInsets" minX="-47" minY="-16" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="104" image="News_Navigation_Comment.png">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </state>
+                    <state key="highlighted" image="News_Navigation_Comment_Highlight.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Fz8-2y-EIz" firstAttribute="width" secondItem="XU3-jZ-BQr" secondAttribute="width" id="00G-2U-eVA"/>
+                <constraint firstItem="3Qz-5N-7Xo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Uw-Dz-8BD" userLabel="left.leading = leading "/>
+                <constraint firstItem="VZj-K2-1wg" firstAttribute="bottom" secondItem="WcA-bF-two" secondAttribute="bottom" id="2Dx-Ce-g5P"/>
+                <constraint firstItem="XU3-jZ-BQr" firstAttribute="leading" secondItem="VZj-K2-1wg" secondAttribute="trailing" id="5UB-d2-JXD" userLabel="share.leading = like.trailing"/>
+                <constraint firstItem="VZj-K2-1wg" firstAttribute="height" secondItem="WcA-bF-two" secondAttribute="height" id="BWu-Le-lGN"/>
+                <constraint firstItem="WcA-bF-two" firstAttribute="height" secondItem="3Qz-5N-7Xo" secondAttribute="height" id="Cpa-Xf-HcJ"/>
+                <constraint firstItem="Fz8-2y-EIz" firstAttribute="bottom" secondItem="XU3-jZ-BQr" secondAttribute="bottom" id="ET4-Ep-qgA"/>
+                <constraint firstItem="WcA-bF-two" firstAttribute="bottom" secondItem="3Qz-5N-7Xo" secondAttribute="bottom" id="Q74-s7-FYQ"/>
+                <constraint firstItem="XU3-jZ-BQr" firstAttribute="height" secondItem="VZj-K2-1wg" secondAttribute="height" id="Rhd-Tz-pKC"/>
+                <constraint firstItem="XU3-jZ-BQr" firstAttribute="width" secondItem="VZj-K2-1wg" secondAttribute="width" id="TUa-ga-1EZ"/>
+                <constraint firstItem="Fz8-2y-EIz" firstAttribute="height" secondItem="XU3-jZ-BQr" secondAttribute="height" id="Ukf-qW-T9h"/>
+                <constraint firstItem="XU3-jZ-BQr" firstAttribute="bottom" secondItem="VZj-K2-1wg" secondAttribute="bottom" id="Zce-AQ-3mV"/>
+                <constraint firstItem="Fz8-2y-EIz" firstAttribute="leading" secondItem="XU3-jZ-BQr" secondAttribute="trailing" id="bLW-T8-SlE" userLabel="comment.leading = share.trailing "/>
+                <constraint firstAttribute="trailing" secondItem="Fz8-2y-EIz" secondAttribute="trailing" id="bTB-jW-B1I" userLabel="trailing = comment.trailing"/>
+                <constraint firstItem="VZj-K2-1wg" firstAttribute="leading" secondItem="WcA-bF-two" secondAttribute="trailing" id="he5-5T-DB4" userLabel="like.leading = bottom.trailing "/>
+                <constraint firstAttribute="bottom" secondItem="3Qz-5N-7Xo" secondAttribute="bottom" id="jiP-I7-Rgo"/>
+                <constraint firstItem="VZj-K2-1wg" firstAttribute="width" secondItem="WcA-bF-two" secondAttribute="width" id="mLT-KJ-7q4"/>
+                <constraint firstItem="WcA-bF-two" firstAttribute="leading" secondItem="3Qz-5N-7Xo" secondAttribute="trailing" id="pua-oa-wUH" userLabel="bottom.leading = left.trailing"/>
+                <constraint firstItem="WcA-bF-two" firstAttribute="width" secondItem="3Qz-5N-7Xo" secondAttribute="width" id="scb-k6-7ET"/>
+            </constraints>
+            <point key="canvasLocation" x="66.5" y="88.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="News_Navigation_Arrow.png" width="64" height="43"/>
+        <image name="News_Navigation_Arrow_Highlight.png" width="64" height="43"/>
+        <image name="News_Navigation_Comment.png" width="64" height="43"/>
+        <image name="News_Navigation_Comment_Highlight.png" width="64" height="43"/>
+        <image name="News_Navigation_Next.png" width="64" height="43"/>
+        <image name="News_Navigation_Next_Highlight.png" width="64" height="43"/>
+        <image name="News_Navigation_Share.png" width="64" height="43"/>
+        <image name="News_Navigation_Share_Highlight.png" width="64" height="43"/>
+        <image name="News_Navigation_Vote" width="64" height="43"/>
+        <image name="News_Navigation_Vote.png" width="64" height="43"/>
+        <image name="News_Navigation_Voted.png" width="64" height="43"/>
+    </resources>
+</document>

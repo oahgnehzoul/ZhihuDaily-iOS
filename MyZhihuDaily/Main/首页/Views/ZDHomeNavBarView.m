@@ -24,7 +24,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.containView];
-//        [self.containView addSubview:self.menuButton];
         [self.containView addSubview:self.titleLabel];
         [self.containView addSubview:self.progressView];
         [self.containView addSubview:self.indicator];
@@ -61,7 +60,6 @@
                 self.progressView.hidden = progress <= 0.007143;
             }
         };
-//        NSLog(@"button.nextResponder:%@",self.menuButton.nextResponder);
 
     }
     return self;

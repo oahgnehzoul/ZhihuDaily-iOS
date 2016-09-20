@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface ZDLaunchAdvertiseView : UIView
 
-
+- (void)startLaunch;
 
 @end

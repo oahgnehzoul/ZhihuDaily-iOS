@@ -32,7 +32,8 @@
 //375 / 220  =   w / h
 #define kZDHomeHeaderViewHeight kMainScreenWidth *220/375.0
 
-//#define <#macro#>
+#define kZDBootImageUrl @"kZDBootImageUrl"
+#define kZDBootImageAuthor @"kZDBootImageAuthor"
 
 #import "HexColors.h"
 #define kZDLeftBackgroundViewColor @"#232a32"

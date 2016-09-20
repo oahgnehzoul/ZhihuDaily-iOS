@@ -19,12 +19,6 @@
 @end
 @implementation ZDHomeHeaderView
 
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    UIView *view = [super hitTest:point withEvent:event];
-//    NSLog(@"%@:%@",[self class],view);
-//    return [super hitTest:point withEvent:event];
-//}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.collectionView];
@@ -61,7 +55,6 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     [self setPageIndex:indexPath];
-//    NSLog(@"%f",self.collectionView.contentOffset.x);
 }
 
 #pragma mark - UICollectionDatasource
@@ -136,7 +129,6 @@
         _collectionView.dataSource = self;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.translatesAutoresizingMaskIntoConstraints = NO;
-//        [_collectionView registerNib:[UINib nibWithNibName:@"ZDHeaderCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
         [_collectionView registerClass:[ZDHeaderCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
 
     }

@@ -7,7 +7,7 @@
 //
 
 #import "ZDThemeViewController.h"
-
+#import "ZDLaunchAdvertiseView.h"
 @interface ZDThemeViewController ()
 
 @property (nonatomic, copy) NSString *themeId;
@@ -32,9 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"用户推荐日报";
+    self.title = @"主题页面";
     
-    
+    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.view.bounds];
+    [launchView startLaunch];
     
 }
 

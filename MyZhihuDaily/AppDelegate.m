@@ -17,6 +17,7 @@
 
 #import "ZDHomeViewController.h"
 #import "ZDThemeViewController.h"
+#import "ZDLaunchAdvertiseView.h"
 @interface AppDelegate ()
 
 @end
@@ -32,6 +33,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[ZDRootViewController alloc] init];
+    
+    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.window.bounds];
+    [launchView startLaunch];
     
     [[Routable sharedRouter] map:@"home" toController:[ZDHomeViewController class]];
     [[Routable sharedRouter] map:@"theme" toController:[ZDThemeViewController class]];

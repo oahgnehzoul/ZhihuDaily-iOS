@@ -12,8 +12,6 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UILabel *sourceLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *maskView;
 @end
 
@@ -30,12 +28,6 @@
 
 - (void)setItem:(ZDHomeStoryItem *)item {
     
-//    [self.contentImage sd_setImageWithURL:[NSURL URLWithString:item.image]];
-//    self.titleLabel.text = item.title;
-    
-//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.image]];
-//    self.textLabel.text = item.title;
-
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.image]];
     self.textLabel.text = item.title;
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {

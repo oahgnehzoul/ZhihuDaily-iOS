@@ -15,6 +15,7 @@
 #import "ZDHomeNavBarView.h"
 #import "ZDHomeHeaderView.h"
 #import "ZDRootViewController.h"
+#import "ZDStoryViewController.h"
 @interface ZDHomeViewController ()
 @property (nonatomic, strong) ZDHomeDataSource *ds;
 @property (nonatomic, strong) ZDHomeStoryModel *model;
@@ -24,7 +25,6 @@
 @property (nonatomic, strong) ZDHomeHeaderView *headerView;
 
 @property (nonatomic, strong) UIButton *menuButton;
-//@property (nonatomic, assign) BOOL isOpen;
 @property (nonatomic, assign) CGFloat progress;
 @end
 
@@ -39,16 +39,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.navigationController.navigationBar.translucent = YES;
+
     self.navigationController.navigationBar.hidden = YES;
     
     //默认为 yes，会让 viewcontroller 根据 status bar ,navigation bar,toolbar,tabbar自动调整 insets
     self.automaticallyAdjustsScrollViewInsets = NO;
 
     self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220 / 375.0 * CGRectGetWidth(self.view.frame))];
-    // 这里只设置 tableHeaderView 就可以了，不需要 addSubView;
-//    [self.view addSubview:self.headerView];
     self.tableView.tableHeaderView = self.headerView;
 
     [self.view addSubview:self.menuButton];
@@ -61,7 +58,6 @@
     }];
     self.tableView.frame = self.view.bounds;
     self.tableView.showsVerticalScrollIndicator = NO;
-//    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.dataSource = self.ds;
     self.delegate = self.dl;
     
@@ -122,7 +118,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld",(long)indexPath.row);
+//    NSLog(@"%ld",(long)indexPath.row);
+    [self.navigationController pushViewController:[[ZDStoryViewController alloc] initWithStoryId:@"1"] animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -173,7 +170,6 @@
     [self.model reloadWithCompletioin:^(SBModel *model, NSError *error) {
         @strongify(self);
         [self.navBarView hideLoading];
-//        [self.tableView reloadData];
     }];
 }
 

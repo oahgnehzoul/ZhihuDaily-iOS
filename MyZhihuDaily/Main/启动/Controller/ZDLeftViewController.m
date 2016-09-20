@@ -69,7 +69,9 @@
         [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
     } else {
         ZDLeftThemeItem *item = self.themeModel.itemList.array[indexPath.row];
-        [self.mmDraw setCenterViewController:[[ZDThemeViewController alloc] initWithThemeId:item.themeId] withCloseAnimation:YES completion:nil];
+        ZDThemeViewController *themeVc = [[ZDThemeViewController alloc] initWithThemeId:item.themeId];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:themeVc];
+        [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
     }
     
 }

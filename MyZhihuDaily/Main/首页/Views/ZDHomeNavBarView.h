@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//@protocol ZDLeftButtonProtocol <NSObject>
-//
-//- (void)openMenu;
-//
-//@end
-
 @interface ZDHomeNavBarView : UIView
 
 - (void)showLoadingWithBlock:(void(^)())refreshBlock;
@@ -27,5 +21,5 @@
 @property (nonatomic, assign) CGFloat alpha;
 
 @property (nonatomic, assign) BOOL isAnimating;
-//@property (nonatomic, weak) id<ZDLeftButtonProtocol> delegate;
+
 @end

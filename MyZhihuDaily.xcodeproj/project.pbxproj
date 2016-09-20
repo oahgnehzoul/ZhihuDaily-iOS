@@ -898,7 +898,6 @@
 		60FD7E8F1D9047A200B7C2CE /* ZDGetThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E801D9047A200B7C2CE /* ZDGetThemeModel.m */; };
 		60FD7E901D9047A200B7C2CE /* ZDHomeStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E821D9047A200B7C2CE /* ZDHomeStoryModel.m */; };
 		60FD7E911D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E851D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m */; };
-		60FD7E921D9047A200B7C2CE /* ZDHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FD7E861D9047A200B7C2CE /* ZDHeaderCollectionViewCell.xib */; };
 		60FD7E931D9047A200B7C2CE /* ZDHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E881D9047A200B7C2CE /* ZDHomeHeaderView.m */; };
 		60FD7E941D9047A200B7C2CE /* ZDHomeNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E8A1D9047A200B7C2CE /* ZDHomeNavBarView.m */; };
 		60FD7E9F1D9048CD00B7C2CE /* ZDThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E991D9048CD00B7C2CE /* ZDThemeViewController.m */; };
@@ -908,6 +907,14 @@
 		60FD7EB61D9048D800B7C2CE /* ZDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EA91D9048D800B7C2CE /* ZDRootViewController.m */; };
 		60FD7EB71D9048D800B7C2CE /* ZDLeftThemeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EAE1D9048D800B7C2CE /* ZDLeftThemeItem.m */; };
 		60FD7EB81D9048D800B7C2CE /* ZDLaunchAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EB21D9048D800B7C2CE /* ZDLaunchAdvertiseView.m */; };
+		60FD7EC31D905BB200B7C2CE /* ZDThemeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EC21D905BB200B7C2CE /* ZDThemeItem.m */; };
+		60FD7EC61D905C1E00B7C2CE /* ZDThemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EC51D905C1E00B7C2CE /* ZDThemeTableViewCell.m */; };
+		60FD7EC91D905C6A00B7C2CE /* ZDStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EC81D905C6A00B7C2CE /* ZDStoryViewController.m */; };
+		60FD7ED11D905F0C00B7C2CE /* ZDStoryBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7ED01D905F0C00B7C2CE /* ZDStoryBottomBar.m */; };
+		60FD7ED31D905F1C00B7C2CE /* ZDStoryBottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FD7ED21D905F1C00B7C2CE /* ZDStoryBottomBar.xib */; };
+		60FD7ED61D90680700B7C2CE /* ZDStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7ED51D90680700B7C2CE /* ZDStoryModel.m */; };
+		60FD7ED91D9068F600B7C2CE /* ZDStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7ED81D9068F600B7C2CE /* ZDStoryItem.m */; };
+		60FD7EDC1D90EA9B00B7C2CE /* ZDLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7EDB1D90EA9B00B7C2CE /* ZDLaunchModel.m */; };
 		F499A55BE54D71968E4D8408 /* libPods-MyZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D7C0F7FD7F54666A24935D /* libPods-MyZhihuDaily.a */; };
 /* End PBXBuildFile section */
 
@@ -1887,7 +1894,6 @@
 		60FD7E821D9047A200B7C2CE /* ZDHomeStoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHomeStoryModel.m; sourceTree = "<group>"; };
 		60FD7E841D9047A200B7C2CE /* ZDHeaderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHeaderCollectionViewCell.h; sourceTree = "<group>"; };
 		60FD7E851D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHeaderCollectionViewCell.m; sourceTree = "<group>"; };
-		60FD7E861D9047A200B7C2CE /* ZDHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		60FD7E871D9047A200B7C2CE /* ZDHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHomeHeaderView.h; sourceTree = "<group>"; };
 		60FD7E881D9047A200B7C2CE /* ZDHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHomeHeaderView.m; sourceTree = "<group>"; };
 		60FD7E891D9047A200B7C2CE /* ZDHomeNavBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHomeNavBarView.h; sourceTree = "<group>"; };
@@ -1905,6 +1911,21 @@
 		60FD7EAE1D9048D800B7C2CE /* ZDLeftThemeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLeftThemeItem.m; sourceTree = "<group>"; };
 		60FD7EB11D9048D800B7C2CE /* ZDLaunchAdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLaunchAdvertiseView.h; sourceTree = "<group>"; };
 		60FD7EB21D9048D800B7C2CE /* ZDLaunchAdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLaunchAdvertiseView.m; sourceTree = "<group>"; };
+		60FD7EC11D905BB200B7C2CE /* ZDThemeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemeItem.h; sourceTree = "<group>"; };
+		60FD7EC21D905BB200B7C2CE /* ZDThemeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemeItem.m; sourceTree = "<group>"; };
+		60FD7EC41D905C1E00B7C2CE /* ZDThemeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemeTableViewCell.h; sourceTree = "<group>"; };
+		60FD7EC51D905C1E00B7C2CE /* ZDThemeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemeTableViewCell.m; sourceTree = "<group>"; };
+		60FD7EC71D905C6A00B7C2CE /* ZDStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDStoryViewController.h; path = "../../主题/Controller/ZDStoryViewController.h"; sourceTree = "<group>"; };
+		60FD7EC81D905C6A00B7C2CE /* ZDStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDStoryViewController.m; path = "../../主题/Controller/ZDStoryViewController.m"; sourceTree = "<group>"; };
+		60FD7ECF1D905F0C00B7C2CE /* ZDStoryBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDStoryBottomBar.h; sourceTree = "<group>"; };
+		60FD7ED01D905F0C00B7C2CE /* ZDStoryBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDStoryBottomBar.m; sourceTree = "<group>"; };
+		60FD7ED21D905F1C00B7C2CE /* ZDStoryBottomBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDStoryBottomBar.xib; sourceTree = "<group>"; };
+		60FD7ED41D90680700B7C2CE /* ZDStoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDStoryModel.h; sourceTree = "<group>"; };
+		60FD7ED51D90680700B7C2CE /* ZDStoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDStoryModel.m; sourceTree = "<group>"; };
+		60FD7ED71D9068F600B7C2CE /* ZDStoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDStoryItem.h; sourceTree = "<group>"; };
+		60FD7ED81D9068F600B7C2CE /* ZDStoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDStoryItem.m; sourceTree = "<group>"; };
+		60FD7EDA1D90EA9B00B7C2CE /* ZDLaunchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLaunchModel.h; sourceTree = "<group>"; };
+		60FD7EDB1D90EA9B00B7C2CE /* ZDLaunchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLaunchModel.m; sourceTree = "<group>"; };
 		67D7C0F7FD7F54666A24935D /* libPods-MyZhihuDaily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyZhihuDaily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -3268,6 +3289,8 @@
 			children = (
 				60FD7E751D9047A200B7C2CE /* ZDHomeViewController.h */,
 				60FD7E761D9047A200B7C2CE /* ZDHomeViewController.m */,
+				60FD7EC71D905C6A00B7C2CE /* ZDStoryViewController.h */,
+				60FD7EC81D905C6A00B7C2CE /* ZDStoryViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3293,6 +3316,8 @@
 			children = (
 				60FD7E7C1D9047A200B7C2CE /* ZDHomeStoryItem.h */,
 				60FD7E7D1D9047A200B7C2CE /* ZDHomeStoryItem.m */,
+				60FD7ED71D9068F600B7C2CE /* ZDStoryItem.h */,
+				60FD7ED81D9068F600B7C2CE /* ZDStoryItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -3302,6 +3327,8 @@
 			children = (
 				60FD7E811D9047A200B7C2CE /* ZDHomeStoryModel.h */,
 				60FD7E821D9047A200B7C2CE /* ZDHomeStoryModel.m */,
+				60FD7ED41D90680700B7C2CE /* ZDStoryModel.h */,
+				60FD7ED51D90680700B7C2CE /* ZDStoryModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3311,11 +3338,13 @@
 			children = (
 				60FD7E841D9047A200B7C2CE /* ZDHeaderCollectionViewCell.h */,
 				60FD7E851D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m */,
-				60FD7E861D9047A200B7C2CE /* ZDHeaderCollectionViewCell.xib */,
 				60FD7E871D9047A200B7C2CE /* ZDHomeHeaderView.h */,
 				60FD7E881D9047A200B7C2CE /* ZDHomeHeaderView.m */,
 				60FD7E891D9047A200B7C2CE /* ZDHomeNavBarView.h */,
 				60FD7E8A1D9047A200B7C2CE /* ZDHomeNavBarView.m */,
+				60FD7ECF1D905F0C00B7C2CE /* ZDStoryBottomBar.h */,
+				60FD7ED01D905F0C00B7C2CE /* ZDStoryBottomBar.m */,
+				60FD7ED21D905F1C00B7C2CE /* ZDStoryBottomBar.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3337,6 +3366,8 @@
 		60FD7E961D9048CD00B7C2CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				60FD7EC41D905C1E00B7C2CE /* ZDThemeTableViewCell.h */,
+				60FD7EC51D905C1E00B7C2CE /* ZDThemeTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3367,6 +3398,8 @@
 		60FD7E9C1D9048CD00B7C2CE /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				60FD7EC11D905BB200B7C2CE /* ZDThemeItem.h */,
+				60FD7EC21D905BB200B7C2CE /* ZDThemeItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -3441,6 +3474,8 @@
 		60FD7EAF1D9048D800B7C2CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60FD7EDA1D90EA9B00B7C2CE /* ZDLaunchModel.h */,
+				60FD7EDB1D90EA9B00B7C2CE /* ZDLaunchModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3591,7 +3626,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZD;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = oahgnehzoul;
 				TargetAttributes = {
 					3483A3991B8EB74C00C71AB0 = {
@@ -3884,6 +3919,7 @@
 				6071A9E31D795132009EB51C /* onefinger-28.png in Resources */,
 				6071A98A1D795132009EB51C /* micro@2x.png in Resources */,
 				6071AA7B1D795132009EB51C /* timeline_relationship_icon_addattention@3x.png in Resources */,
+				60FD7ED31D905F1C00B7C2CE /* ZDStoryBottomBar.xib in Resources */,
 				6071A9491D795132009EB51C /* InAppFeedback@3x.png in Resources */,
 				6071A9591D795132009EB51C /* LaunchImage-700@2x.png in Resources */,
 				6071AA2B1D795132009EB51C /* separatorLine.png in Resources */,
@@ -3969,7 +4005,6 @@
 				6071AA7D1D795132009EB51C /* timeline_relationship_icon_attention@2x.png in Resources */,
 				6071A7E31D795132009EB51C /* bug-IBGColorThemeDark@2x.png in Resources */,
 				6071AA751D795132009EB51C /* Theme_Follow@2x.png in Resources */,
-				60FD7E921D9047A200B7C2CE /* ZDHeaderCollectionViewCell.xib in Resources */,
 				6071A7D81D795132009EB51C /* Browser_Icon_Back@2x.png in Resources */,
 				6071A8091D795132009EB51C /* Comment_Avatar@2x.png in Resources */,
 				6071A8191D795132009EB51C /* Comment_Share_Sina_Cancel_Highlight@2x.png in Resources */,
@@ -4537,10 +4572,12 @@
 				3483A7A91B8F62E400C71AB0 /* FavoritesViewController.m in Sources */,
 				60F4171E1BB680CD000D797D /* EditorViewController.m in Sources */,
 				606E15231BA2A76D004D2462 /* CommentModel.m in Sources */,
+				60FD7EDC1D90EA9B00B7C2CE /* ZDLaunchModel.m in Sources */,
 				60FD7EB41D9048D800B7C2CE /* ZDLeftViewController.m in Sources */,
 				60FD7E911D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m in Sources */,
 				60BA5D811D8A7EFC0035E1AF /* SBListModel.m in Sources */,
 				60FD7E8C1D9047A200B7C2CE /* ZDHomeViewController.m in Sources */,
+				60FD7ED91D9068F600B7C2CE /* ZDStoryItem.m in Sources */,
 				604740241B9CC440001D79BB /* DetailViewController.m in Sources */,
 				607F541A1B9B0DAA005F6C25 /* LeftViewController.m in Sources */,
 				60473F9E1B9BE828001D79BB /* DataService.m in Sources */,
@@ -4551,13 +4588,16 @@
 				60BA5D871D8A7F6E0035E1AF /* SBItemList.m in Sources */,
 				60FD7EB61D9048D800B7C2CE /* ZDRootViewController.m in Sources */,
 				6047402A1B9D7DB8001D79BB /* ThemeTableView.m in Sources */,
+				60FD7ED11D905F0C00B7C2CE /* ZDStoryBottomBar.m in Sources */,
 				607F54141B9B0949005F6C25 /* MainViewController.m in Sources */,
 				3483A7811B8EF10F00C71AB0 /* ThemeButton.m in Sources */,
 				60FD7EB71D9048D800B7C2CE /* ZDLeftThemeItem.m in Sources */,
 				60F417211BB681E3000D797D /* EditorCell.m in Sources */,
 				60FD7EB81D9048D800B7C2CE /* ZDLaunchAdvertiseView.m in Sources */,
+				60FD7EC61D905C1E00B7C2CE /* ZDThemeTableViewCell.m in Sources */,
 				60869D9D1D8DCD7000936170 /* ZDLeftBackView.m in Sources */,
 				60FD7E8B1D9047A200B7C2CE /* ZDHomeTableViewCell.m in Sources */,
+				60FD7ED61D90680700B7C2CE /* ZDStoryModel.m in Sources */,
 				60869DA31D8E82FA00936170 /* ZDNavigator.m in Sources */,
 				60BA5D7E1D8A7EC30035E1AF /* SBModel.m in Sources */,
 				603826A21D8C5A230020B988 /* SBItemProperty.m in Sources */,
@@ -4590,8 +4630,10 @@
 				60C38B101BA2F02200A6A21D /* LaunchViewController.m in Sources */,
 				606E15201BA2A17F004D2462 /* CommentTableView.m in Sources */,
 				3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */,
+				60FD7EC91D905C6A00B7C2CE /* ZDStoryViewController.m in Sources */,
 				60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */,
 				3483A7971B8EFCA600C71AB0 /* HomeViewController.m in Sources */,
+				60FD7EC31D905BB200B7C2CE /* ZDThemeItem.m in Sources */,
 				603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4630,6 +4672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -4639,8 +4682,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4674,6 +4719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -4683,8 +4729,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
