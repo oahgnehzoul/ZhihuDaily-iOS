@@ -29,7 +29,7 @@
     self.leftDrawerViewController = leftMenuVc;
     
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
+    BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:homeVc];
     self.centerViewController = nav;
     
     [self setMaximumLeftDrawerWidth:kZDLeftViewControllerWidth];
@@ -38,7 +38,7 @@
     //滑动到最大距离不能再向右
     [self setShouldStretchDrawer:NO];
     
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     @weakify(self);
     [self.launchModel loadWithCompletion:^(SBModel *model, NSError *error) {

@@ -58,19 +58,21 @@
     [cell setItem:self.themeModel.itemList.array[indexPath.row]];
     return cell;
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.themeModel.itemList.array enumerateObjectsUsingBlock:^(ZDLeftThemeItem *  _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
         item.isSelected = (idx == indexPath.row) ? YES : NO;
         [self.tableView reloadData];
     }];
     if (indexPath.row == 0) {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ZDHomeViewController alloc] init]];
+        BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:[[ZDHomeViewController alloc] init]];
         [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
     } else {
         ZDLeftThemeItem *item = self.themeModel.itemList.array[indexPath.row];
         ZDThemeViewController *themeVc = [[ZDThemeViewController alloc] initWithThemeId:item.themeId];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:themeVc];
+        BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:themeVc];
         [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
     }
     

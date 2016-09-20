@@ -117,8 +117,11 @@
 }
 
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%ld",(long)indexPath.row);
     [self.navigationController pushViewController:[[ZDStoryViewController alloc] initWithStoryId:@"1"] animated:YES];
 }
 

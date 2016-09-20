@@ -63,6 +63,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - Reveal-iOS-SDK (1.6.2)
   - Routable (0.2.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - MMDrawerController (~> 0.6.0)
   - RDVTabBarController (~> 1.1.9)
   - ReactiveCocoa (~> 2.5)
+  - Reveal-iOS-SDK
   - Routable (~> 0.2.0)
   - SDWebImage (~> 3.7.3)
 
@@ -95,9 +97,10 @@ SPEC CHECKSUMS:
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-PODFILE CHECKSUM: be54e03b9d3ffad43f8f7ad272671ecca5429213
+PODFILE CHECKSUM: fa8bcf81e07fcf21ec0ac83d88d81725aff5158c
 
 COCOAPODS: 1.0.1

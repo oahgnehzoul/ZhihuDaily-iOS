@@ -20,6 +20,7 @@
 
 - (NSArray *)parseResponse:(id)object error:(NSError *__autoreleasing *)error {
     ZDStoryItem *item = [ZDStoryItem itemWithDictioinary:object];
+    self.item = object;
     return @[item];
 }
 

@@ -16,5 +16,7 @@
 @property (nonatomic, copy) NSArray *images;
 @property (nonatomic, copy) NSString *ga_prefix;
 @property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *source;
 
+@property (nonatomic, assign) BOOL isHome;
 @end

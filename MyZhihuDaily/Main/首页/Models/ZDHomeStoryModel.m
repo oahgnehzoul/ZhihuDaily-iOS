@@ -25,7 +25,11 @@
     }
     
     if (object[@"top_stories"]) {
-        self.stories = [ZDHomeStoryItem itemsWithArray:object[@"top_stories"]];
+        NSArray *items = [ZDHomeStoryItem itemsWithArray:object[@"top_stories"]];
+        [items enumerateObjectsUsingBlock:^(ZDHomeStoryItem *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.isHome = YES;
+        }];
+        self.stories = items;
     }
     if (object[@"stories"]) {
         return [ZDHomeStoryItem itemsWithArray:object[@"stories"]];

@@ -2059,9 +2059,9 @@
 			isa = PBXGroup;
 			children = (
 				3483A7821B8EF6D500C71AB0 /* BaseViewController.h */,
+				3483A7831B8EF6D500C71AB0 /* BaseViewController.m */,
 				60473FDE1B9C1889001D79BB /* BaseModel.h */,
 				60473FDF1B9C1889001D79BB /* BaseModel.m */,
-				3483A7831B8EF6D500C71AB0 /* BaseViewController.m */,
 				3483A7A21B8F61E900C71AB0 /* BaseNavController.h */,
 				3483A7A31B8F61E900C71AB0 /* BaseNavController.m */,
 				60869D8C1D8D905100936170 /* ZDAFRequest.h */,

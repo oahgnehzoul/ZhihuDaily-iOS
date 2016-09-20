@@ -12,7 +12,8 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UILabel *sourceLabel;
-@property (nonatomic, strong) UIImageView *maskView;
+@property (nonatomic, strong) UIImageView *topMaskView;
+@property (nonatomic, strong) UIImageView *bottomMaskView;
 @end
 
 @implementation ZDHeaderCollectionViewCell
@@ -20,8 +21,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.imageView];
-        [self addSubview:self.maskView];
+        [self addSubview:self.topMaskView];
+        [self addSubview:self.bottomMaskView];
         [self addSubview:self.textLabel];
+        self.clipsToBounds = YES;
     }
     return self;
 }
@@ -38,9 +41,30 @@
         make.right.equalTo(self).offset(-20);
         make.bottom.equalTo(self).offset(-25);
     }];
-    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+    [self.bottomMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(self);
+        make.height.mas_equalTo(100);
     }];
+    
+    [self.topMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.height.mas_equalTo(64);
+        if (item.isHome) {
+            make.bottom.equalTo(self.mas_top);
+        } else {
+            make.bottom.equalTo(self.bottomMaskView.mas_top).offset(-(kZDHomeHeaderViewHeight - 100));
+        }
+    }];
+    if (item.source.length > 0) {
+        [self addSubview:self.sourceLabel];
+        self.sourceLabel.text = [NSString stringWithFormat:@"图片:%@",item.source];
+        [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.mas_right).offset(-15);
+            make.bottom.equalTo(self.mas_bottom).offset(-8);
+        }];
+    } else {
+        [self.sourceLabel removeFromSuperview];
+    }
 }
 
 
@@ -52,13 +76,17 @@
     }
     return _imageView;
 }
-
-- (UIImageView *)maskView {
-    if (!_maskView) {
-        _maskView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Home_Image_Mask"]];
-        _maskView.contentMode = UIViewContentModeScaleToFill;
+- (UIImageView *)bottomMaskView {
+    if (!_bottomMaskView) {
+        _bottomMaskView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Home_Image_Mask"]];
     }
-    return _maskView;
+    return _bottomMaskView;
+}
+- (UIImageView *)topMaskView {
+    if (!_topMaskView) {
+        _topMaskView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Home_Topmask"]];
+    }
+    return _topMaskView;
 }
 - (UILabel *)textLabel {
     if (!_textLabel) {
@@ -66,10 +94,19 @@
         _textLabel.font = [UIFont boldSystemFontOfSize:18];
         _textLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"];
         _textLabel.numberOfLines = -1;
-        // !!
+        // !!autolayout 下 label 显示不了多行.
         [_textLabel setPreferredMaxLayoutWidth:200.0];
     }
     return _textLabel;
+}
+
+- (UILabel *)sourceLabel {
+    if (!_sourceLabel) {
+        _sourceLabel = [[UILabel alloc] init];
+        _sourceLabel.font = [UIFont systemFontOfSize:8];
+        _sourceLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#ffffff"];
+    }
+    return _sourceLabel;
 }
 
 

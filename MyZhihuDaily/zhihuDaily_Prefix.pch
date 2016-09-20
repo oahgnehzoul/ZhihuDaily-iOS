@@ -57,4 +57,5 @@
 #import "BlocksKit+UIKit.h"
 #import "Routable.h"
 #import "UIImageView+WebCache.h"
+#import "BaseNavController.h"
 #endif

@@ -10,4 +10,6 @@
 
 @interface BaseNavController : UINavigationController
 
+//@property (nonatomic, assign) BOOL isStatusBarLightContent;
+
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 oahgnehzoul. All rights reserved.
 //
 
-#import "SBListModel.h"
+#import "ZDListModel.h"
 
-@interface ZDStoryModel : SBListModel
+@interface ZDStoryModel : ZDListModel
 
 
 @end
