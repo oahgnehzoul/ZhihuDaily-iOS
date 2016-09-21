@@ -49,7 +49,9 @@
     self.tableView.tableHeaderView = self.headerView;
 
     [self.view addSubview:self.menuButton];
+
     [self setNavBar];
+    NSLog(@"%f",self.navBarView.height);
     [self.view bringSubviewToFront:self.menuButton];
     [self.menuButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(30, 30));
