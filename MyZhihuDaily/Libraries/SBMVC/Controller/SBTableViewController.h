@@ -68,6 +68,11 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView ;
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section;
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section;
+
+
 @end
 
 @interface SBTableViewController (Subclassing)

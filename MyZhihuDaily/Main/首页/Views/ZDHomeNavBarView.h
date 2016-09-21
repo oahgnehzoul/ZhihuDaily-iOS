@@ -14,6 +14,8 @@
 - (void)hideLoading;
 
 - (void)hideProgress;
+
+- (void)setLabelAlpha:(CGFloat)alpha;
 @property (nonatomic, copy) void (^progressBlock)(CGFloat progerss);
 
 @property (nonatomic, copy) void (^menuTouchBlock)();

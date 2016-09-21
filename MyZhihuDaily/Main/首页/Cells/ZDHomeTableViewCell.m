@@ -46,7 +46,7 @@ static const CGFloat kZDHomeImageWidth = 75;
     
     [self.contentImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(kZDHomeImageWidth, kZDHomeImageHeight));
-        make.right.equalTo(self.contentView).offset(-25);
+        make.right.equalTo(self.contentView).offset(-15);
         make.centerY.equalTo(self.contentView);
     }];
     

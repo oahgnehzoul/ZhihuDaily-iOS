@@ -34,4 +34,6 @@ typedef NS_OPTIONS(NSUInteger, SBModelPageMode) {
 @property (nonatomic, assign) NSUInteger pageSize;
 @property (nonatomic, assign) NSUInteger sectionNubmer;
 
+@property (nonatomic, assign) BOOL clearBeforeAdd;
+
 @end

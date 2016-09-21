@@ -66,6 +66,9 @@
 }
 
 
+- (void)setLabelAlpha:(CGFloat)alpha {
+    self.titleLabel.alpha = alpha;
+}
 
 - (void)setAlpha:(CGFloat)alpha {
     self.containView.backgroundColor = [UIColor hx_colorWithHexRGBAString:kZDHomeNavDefaultColor alpha:alpha];

@@ -10,6 +10,10 @@
 
 @protocol SBTableViewDelegate <UITableViewDelegate>
 
+//- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section;
+//
+//- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section;
+
 @end
 
 @protocol SBListPullToRefreshViewDelegate <NSObject>

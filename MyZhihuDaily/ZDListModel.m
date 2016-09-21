@@ -21,4 +21,8 @@
     return self;
 }
 
+- (NSUInteger)pageSize {
+    return 13;
+}
+
 @end

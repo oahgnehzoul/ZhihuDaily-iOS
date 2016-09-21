@@ -52,6 +52,10 @@
         [self performSelector:@selector(requestDidFailWithError:) withObject:error];
         return NO;
     } else {
+        // add 9.21.by oahgnehzoul
+        if (self.clearBeforeAdd) {
+            [self.itemList removeAlObjects];
+        }
         [self.itemList addObjectsFromArray:list];
     }
     switch (self.pageMode) {
@@ -59,7 +63,7 @@
             _hasMore = list.count > 0;
             break;
         case SBModelPageReturnCount:
-            _hasMore = list.count > self.pageSize;
+            _hasMore = list.count >= self.pageSize;
             break;
         case SBModelPageCustomize:
 //            _hasMore = self.pageSize

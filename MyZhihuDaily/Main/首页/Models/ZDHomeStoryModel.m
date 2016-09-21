@@ -12,7 +12,7 @@
 
 - (NSString *)urlPath {
     //4.0以后需要登录
-    return @"http://news-at.zhihu.com/api/4/stories/latest";
+    return self.isLatest ? @"http://news-at.zhihu.com/api/4/stories/latest" :[NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/news/before/%@",self.dateStr ?:@"20160910"];
 }
 
 - (NSDictionary *)dataParams {
