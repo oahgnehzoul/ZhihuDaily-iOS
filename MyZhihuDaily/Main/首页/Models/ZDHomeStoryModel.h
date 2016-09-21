@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *dateStr;
 
-
+@property (nonatomic, copy) NSArray *dates;
 @property (nonatomic, copy) NSArray *stories;
 
 @property (nonatomic, assign) BOOL isLatest;

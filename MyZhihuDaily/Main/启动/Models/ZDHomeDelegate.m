@@ -16,22 +16,29 @@
     return section == 0 ? 0.f : 38;
 }
 
+- (NSString *)getDateFromStr:(NSString *)str {
+    NSDateFormatter *dateFormate = [[NSDateFormatter alloc] init];
+    [dateFormate setDateFormat:@"yyyyMMdd"];
+    NSDate *date = [dateFormate dateFromString:str];
+    [dateFormate setDateFormat:@"MM月dd日 EEEE"];
+    return [dateFormate stringFromDate:date];
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 38)];
-    view.backgroundColor = [UIColor hx_colorWithHexRGBAString:kZDHomeNavDefaultColor];
-    UILabel *dateLabel = [UILabel new];
-//    ZDHomeDataSource *ds = (ZDHomeDataSource *)self.controller.dataSource;
-    ZDHomeStoryModel *model = (ZDHomeStoryModel *)self.controller.keyModel;
-    dateLabel.text = [model.dateStr mutableCopy];
-    dateLabel.textColor = [UIColor whiteColor];
-    dateLabel.font = [UIFont systemFontOfSize:14];
-    [view addSubview:dateLabel];
-    [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(view);
-    }];
-    if (section == 0) {
+        if (section == 0) {
         return nil;
     } else {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 38)];
+        view.backgroundColor = [UIColor hx_colorWithHexRGBAString:kZDHomeNavDefaultColor];
+        UILabel *dateLabel = [UILabel new];
+        ZDHomeStoryModel *model = (ZDHomeStoryModel *)self.controller.keyModel;
+        dateLabel.text = [self getDateFromStr:model.dates[section - 1]];
+        dateLabel.textColor = [UIColor whiteColor];
+        dateLabel.font = [UIFont systemFontOfSize:14];
+        [view addSubview:dateLabel];
+        [dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(view);
+        }];
         return view;
     }
 }

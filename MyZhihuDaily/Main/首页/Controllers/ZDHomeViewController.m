@@ -27,8 +27,8 @@
 
 @property (nonatomic, strong) UIButton *menuButton;
 @property (nonatomic, assign) CGFloat progress;
-@property (nonatomic, assign) NSInteger count;
-@property (nonatomic, assign) BOOL has;
+@property (nonatomic, assign) NSInteger firstPageCount;
+
 @end
 
 @implementation ZDHomeViewController
@@ -50,24 +50,24 @@
 
     self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220 / 375.0 * CGRectGetWidth(self.view.frame))];
     [self.view addSubview:self.headerView];
-//    self.tableView.tableHeaderView = self.headerView;
+
+    //把 tableview 顶下去.相当于改变 UIEdgeInset,但是直接改变 inset会影响 sectionHeader.
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight - 20)];
     self.tableView.tableHeaderView = view;
     [self.view addSubview:self.menuButton];
 
     [self setNavBar];
-    NSLog(@"%f",self.navBarView.height);
     [self.view bringSubviewToFront:self.menuButton];
     [self.menuButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(30, 30));
         make.left.equalTo(self.view).offset(10);
-        make.bottom.equalTo(self.navBarView).offset(-5);
+        make.top.equalTo(self.view).offset(24);
     }];
-//    self.tableView.frame = self.view.bounds;
+
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 0));
     }];
-//    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.dataSource = self.ds;
     self.delegate = self.dl;
     
@@ -81,7 +81,7 @@
 
 - (void)didLoadModel:(ZDHomeStoryModel *)model {
     if (model.currentPageIndex == 0) {
-        self.count = model.itemList.count;
+        self.firstPageCount = model.itemList.count;
     }
     [super didLoadModel:model];
     if ([model.stories count]) {
@@ -125,6 +125,8 @@
 }
 
 
+
+
 - (void)setNavBar {
     self.navBarView = [[ZDHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 58)];
     self.navBarView.alpha = 0;
@@ -160,12 +162,21 @@
     CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
     if (offSetY > 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight - 20);
-        CGFloat h = (self.count * 90 + kZDHomeHeaderViewHeight);
+        CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight);
         if (offSetY > h) {
             if (self.model.sectionNubmer != self.model.currentPageIndex) {
                 [self loadMore];
             }
         }
+        
+        if (offSetY > (self.firstPageCount * 90 + kZDHomeHeaderViewHeight - 20)) {
+            [self.navBarView setLabelAlpha:0];
+            self.navBarView.height = 20;
+        } else {
+            self.navBarView.height = 58;
+            [self.navBarView setLabelAlpha:1];
+        }
+        
         [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(kMainScreenWidth, kZDHomeHeaderViewHeight));
             make.bottom.equalTo(self.view.mas_top).offset(kZDHomeHeaderViewHeight - offSetY);
@@ -183,7 +194,6 @@
         //设置下拉的最大距离
         self.tableView.contentOffset = CGPointMake(0, MAX(offSetY, -80));
 
-//        CGFloat h = 220 / 375.0 * CGRectGetWidth(self.view.frame);
         //改变 h 会调用 setFrame 方法，从而调用 collection 重新布局 subView，拉伸效果
         self.headerView.height = kZDHomeHeaderViewHeight - offSetY;
         [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {

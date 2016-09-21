@@ -20,8 +20,12 @@
 }
 
 - (NSArray *)parseResponse:(id)object error:(NSError *__autoreleasing *)error {
+    NSMutableArray *array = @[].mutableCopy;
+    [array addObjectsFromArray:self.dates];
     if (object[@"date"]) {
         self.dateStr = object[@"date"];
+        [array addObject:self.dateStr];
+        self.dates = array;
     }
     
     if (object[@"top_stories"]) {

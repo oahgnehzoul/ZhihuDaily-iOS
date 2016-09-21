@@ -12,7 +12,7 @@
 @interface ZDHomeNavBarView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIView *containView;
-@property (nonatomic, strong) UIButton *menuButton;
+//@property (nonatomic, strong) UIButton *menuButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @property (nonatomic, strong) DACircularProgressView *progressView;
@@ -32,8 +32,6 @@
             make.edges.equalTo(self);
         }];
         
-        
-        NSLog(@"button.nextResponder:%@",self.menuButton.nextResponder);
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.containView);
             make.bottom.equalTo(self.containView).offset(-10);
@@ -105,14 +103,14 @@
 //    return [super hitTest:point withEvent:event];
 //}
 
-- (UIButton *)menuButton {
-    if (!_menuButton) {
-        _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_menuButton setImage:[UIImage imageNamed:@"Home_Icon"] forState:UIControlStateNormal];
-        [_menuButton setImage:[UIImage imageNamed:@"home_Icon_Highlight"] forState:UIControlStateHighlighted];
-    }
-    return _menuButton;
-}
+//- (UIButton *)menuButton {
+//    if (!_menuButton) {
+//        _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_menuButton setImage:[UIImage imageNamed:@"Home_Icon"] forState:UIControlStateNormal];
+//        [_menuButton setImage:[UIImage imageNamed:@"home_Icon_Highlight"] forState:UIControlStateHighlighted];
+//    }
+//    return _menuButton;
+//}
 
 
 - (UIView *)containView {
@@ -146,7 +144,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:16];
         _titleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"];
         _titleLabel.text = @"今日热闻";
     }

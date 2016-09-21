@@ -15,14 +15,12 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     ZDHomeStoryModel *model = (ZDHomeStoryModel *)self.controller.keyModel;
     return (model.currentPageIndex + 1);
-//    return 1;
 }
 
 - (Class)cellClassForItem:(SBTableViewItem *)item AtIndex:(NSIndexPath *)indexPath {
     return [ZDHomeTableViewCell class];
 }
 
-//
 - (void)tableViewControllerDidLoadModel:(SBListModel *)model ForSection:(NSInteger)section {
     NSLog(@"%ld",model.sectionNubmer);
     [self setItems:model.itemList.array ForSection:model.sectionNubmer];
