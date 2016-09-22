@@ -30,8 +30,8 @@
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[ZDRootViewController alloc] init];
     
-//    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.window.bounds];
-//    [launchView startLaunch];
+    ZDLaunchAdvertiseView *launchView = [[ZDLaunchAdvertiseView alloc] initWithFrame:self.window.bounds];
+    [launchView startLaunch];
     
     [[Routable sharedRouter] map:@"home" toController:[ZDHomeViewController class]];
     [[Routable sharedRouter] map:@"theme" toController:[ZDThemeViewController class]];

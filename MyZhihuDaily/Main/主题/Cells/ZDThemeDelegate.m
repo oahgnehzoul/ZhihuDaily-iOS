@@ -29,6 +29,14 @@
         make.left.equalTo(view).offset(15);
         make.centerY.equalTo(view);
     }];
+    
+    UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Editor_Arrow"]];
+    [view addSubview:arrow];
+    [arrow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(label);
+        make.right.equalTo(view).offset(-15);
+    }];
+    
     ZDThemeModel *model = (ZDThemeModel *)self.controller.keyModel;
     ZDThemeItem *item = (ZDThemeItem *)model.item;
     [item.editors enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
