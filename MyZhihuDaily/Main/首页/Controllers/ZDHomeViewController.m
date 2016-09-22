@@ -106,6 +106,7 @@
 - (ZDHomeStoryModel *)model {
     if (!_model) {
         _model = [[ZDHomeStoryModel alloc] init];
+        _model.sectionNubmer = 0;
     }
     return _model;
 }
@@ -130,6 +131,15 @@
 - (void)setNavBar {
     self.navBarView = [[ZDHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 58)];
     self.navBarView.alpha = 0;
+    
+    @weakify(self);
+    self.navBarView.touchBlock = ^{
+        @strongify(self);
+        if (self.navBarView.height == 20) {
+//            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        }
+    };
+    
     [self.view addSubview:self.navBarView];
 }
 
@@ -160,9 +170,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
     CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
+    NSLog(@"%f",offSetY);
     if (offSetY > 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight - 20);
-        CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight);
+        CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight - kMainScreenHeight);
+        NSLog(@"h:%f",h);
         if (offSetY > h) {
             if (self.model.sectionNubmer != self.model.currentPageIndex) {
                 [self loadMore];

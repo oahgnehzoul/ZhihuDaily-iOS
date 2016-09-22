@@ -16,7 +16,8 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.pageMode = SBModelPageReturnCount;
+        //因为 返回的数据条数不固定，// changed 9.22
+        self.pageMode = SBModelPageDefault;
     }
     return self;
 }

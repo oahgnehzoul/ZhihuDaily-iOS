@@ -58,6 +58,10 @@
                 self.progressView.hidden = progress <= 0.007143;
             }
         };
+        
+        [self bk_whenTapped:^{
+            self.touchBlock();
+        }];
 
     }
     return self;
@@ -94,14 +98,17 @@
     self.indicator.hidden = YES;
 }
 
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-////    if (self pointInside:<#(CGPoint)#> withEvent:<#(nullable UIEvent *)#>) {
-////        <#statements#>
-////    }
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+
 //    id object = [super hitTest:point withEvent:event];
 //    NSLog(@"%@",object);
-//    return [super hitTest:point withEvent:event];
-//}
+    
+    if (self.touchBlock) {
+        self.touchBlock();
+    }
+    
+    return [super hitTest:point withEvent:event];
+}
 
 //- (UIButton *)menuButton {
 //    if (!_menuButton) {

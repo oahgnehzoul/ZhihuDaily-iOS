@@ -25,6 +25,7 @@
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.collectionView];
         self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.collectionView.scrollsToTop = NO;
         [self addSubview:self.pageControl];
         [self bringSubviewToFront:self.pageControl];
         self.backgroundColor = [UIColor grayColor];
