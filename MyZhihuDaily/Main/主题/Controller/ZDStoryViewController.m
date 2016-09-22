@@ -27,13 +27,15 @@
 @property (nonatomic, strong) UIView *statusView;
 @property (nonatomic, assign) BOOL isFirst;
 @property (nonatomic, assign) BOOL isLast;
+@property (nonatomic, assign) BOOL hasHeaderView;
 @end
 
 @implementation ZDStoryViewController
 
-- (id)initWithStoryId:(NSString *)storyId {
+- (id)initWithStoryId:(NSString *)storyId andHeader:(BOOL)has{
     if (self = [super init]) {
         self.model.storyId = storyId;
+        self.hasHeaderView = has;
     }
     return self;
 }
@@ -91,18 +93,20 @@
         make.height.mas_equalTo(44);
     }];
     [self.view addSubview:self.webView];
-    [self.webView.scrollView addSubview:self.headerView];
+    if (self.hasHeaderView) {
+        [self.webView.scrollView addSubview:self.headerView];
+        [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(kMainScreenWidth, kZDHomeHeaderViewHeight));
+        }];
+    } else {
+        [self.headerView removeFromSuperview];
+    }
 //    [self.webView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 44, 0));
     }];
-    
-    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(kMainScreenWidth, kZDHomeHeaderViewHeight));
-    }];
-    
-   
+
     [self.webView.scrollView addSubview:self.topButton];
     [self.webView.scrollView addSubview:self.bottomButton];
     [self.topButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -209,10 +213,13 @@
     self.statusView.hidden = offSetY < kZDHomeHeaderViewHeight;
     if (offSetY < 0) {
         self.webView.scrollView.contentOffset = CGPointMake(0, MAX(-55, offSetY));
-        [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.webView.scrollView).offset(offSetY);
-            make.height.mas_equalTo(kZDHomeHeaderViewHeight - offSetY);
-        }];
+        if (self.hasHeaderView) {
+            [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.webView.scrollView).offset(offSetY);
+                make.height.mas_equalTo(kZDHomeHeaderViewHeight - offSetY);
+            }];
+        }
+        
         [self.topButton setTitle:self.isFirst ? @"已经是第一篇了":@"载入上一篇" forState:UIControlStateNormal];
         if (offSetY < -32) {
             [UIView animateWithDuration:0.25 animations:^{
@@ -254,8 +261,7 @@
 
 #pragma mark - webviewdelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"load:%f",webView.scrollView.contentSize.height);
-//    CGFloat offSetY = webView.scrollView.contentSize.height - (kMainScreenHeight - 44);
+
     [self.bottomButton mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(webView.mas_bottom).offset(offSetY);
         // 非常得奇怪，设置 bottom,top 都不管用，但是设置 centerY 可以，为什么？？？,找到原因了，因为之前上面设置了 centerY，感觉是冲突了，且没有设置优先级，所以没有起作用。

@@ -58,7 +58,6 @@
         if (item.isHome) {
             make.bottom.equalTo(self.mas_top).offset(64);
         } else {
-//            make.bottom.equalTo(self.bottomMaskView.mas_top).offset(-(kZDHomeHeaderViewHeight - 100));
             make.bottom.equalTo(self.bottomMaskView.mas_top);
         }
     }];

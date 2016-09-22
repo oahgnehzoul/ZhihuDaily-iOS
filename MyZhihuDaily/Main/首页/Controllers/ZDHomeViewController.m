@@ -53,7 +53,7 @@
     @weakify(self);
     self.headerView.touchBlock = ^(NSString *storyId) {
         @strongify(self);
-        ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:storyId];
+        ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:storyId andHeader:YES];
         vc.vc = self;
         [self.navigationController pushViewController:vc animated:YES];
     };
@@ -151,7 +151,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDHomeStoryItem *item = [self.ds getItems:indexPath.section][indexPath.row];
-    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId];
+    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId andHeader:YES];
     vc.vc = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -193,11 +193,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
     CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
-//    NSLog(@"%f",offSetY);
     if (offSetY > 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight - 20);
         CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight - kMainScreenHeight);
-//        NSLog(@"h:%f",h);
         if (offSetY > h) {
             if (self.model.sectionNubmer != self.model.currentPageIndex) {
                 [self loadMore];

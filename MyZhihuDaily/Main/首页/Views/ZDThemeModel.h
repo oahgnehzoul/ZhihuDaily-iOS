@@ -10,4 +10,7 @@
 
 @interface ZDThemeModel : ZDListModel
 
+@property (nonatomic, copy) NSString *themeId;
+@property (nonatomic, copy) NSString *storyId;
+
 @end

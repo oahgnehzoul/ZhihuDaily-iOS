@@ -8,6 +8,14 @@
 
 #import "ZDThemeItem.h"
 
+@implementation ZDThemeEditorItem
+
+
+
+@end
+
 @implementation ZDThemeItem
+
+
 
 @end

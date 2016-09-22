@@ -41,7 +41,7 @@ static const CGFloat kZDHomeImageWidth = 75;
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);
         make.top.equalTo(self.contentView).offset(20);
-        make.right.equalTo(self.contentImage.mas_left).offset(-25);
+        make.right.equalTo(self.contentImage.mas_left).offset(-20);
     }];
     
     [self.contentImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -55,7 +55,7 @@ static const CGFloat kZDHomeImageWidth = 75;
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textColor = [UIColor hx_colorWithHexRGBAString:kZDHomeCellDefaultColor];
     }

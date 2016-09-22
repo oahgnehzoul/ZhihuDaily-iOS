@@ -18,7 +18,7 @@
 + (instancetype)itemWithDictioinary:(NSDictionary *)dictionary;
 + (NSArray *)itemsWithArray:(NSArray *)array;
 - (void)autoKVCBinding:(NSDictionary *)dictionary;
-//- (NSDictionary *)convertToDictionary;
+
 
 // 返回所有的属性名称集合，
 + (NSSet *)propertyKeys;

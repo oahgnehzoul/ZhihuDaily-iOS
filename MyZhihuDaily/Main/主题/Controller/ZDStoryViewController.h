@@ -11,7 +11,7 @@
 #import "ZDHomeViewController.h"
 @interface ZDStoryViewController : SBViewController
 
-- (id)initWithStoryId:(NSString *)storyId;
+- (id)initWithStoryId:(NSString *)storyId andHeader:(BOOL)has;
 
 @property (nonatomic, strong) ZDHomeViewController *vc;
 
