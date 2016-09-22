@@ -6,22 +6,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDStoryViewController">
+            <connections>
+                <outlet property="bottomBar" destination="iN0-l3-epB" id="qLh-Ka-xnq"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZDStroyBottomBar">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZDStoryBottomBar">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qz-5N-7Xo" userLabel="left">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qz-5N-7Xo" userLabel="left">
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Flw-gP-AA1"/>
                     </constraints>
                     <state key="normal" title="Button" image="News_Navigation_Arrow.png"/>
                     <state key="highlighted" image="News_Navigation_Arrow_Highlight.png"/>
+                    <connections>
+                        <action selector="bottomBarClicked:" destination="-1" eventType="touchUpInside" id="4U4-nO-ZMN"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-bF-two" userLabel="bottom">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-bF-two" userLabel="bottom">
                     <state key="normal" title="Button" image="News_Navigation_Next.png"/>
                     <state key="highlighted" image="News_Navigation_Next_Highlight.png"/>
+                    <connections>
+                        <action selector="bottomBarClicked:" destination="-1" eventType="touchUpInside" id="6XF-Dj-3NS"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-K2-1wg" userLabel="like">
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -31,10 +41,16 @@
                     </state>
                     <state key="selected" image="News_Navigation_Voted.png"/>
                     <state key="highlighted" image="News_Navigation_Vote"/>
+                    <connections>
+                        <action selector="bottomBarClicked:" destination="-1" eventType="touchUpInside" id="4za-QG-poE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU3-jZ-BQr" userLabel="share">
                     <state key="normal" title="Button" image="News_Navigation_Share.png"/>
                     <state key="highlighted" image="News_Navigation_Share_Highlight.png"/>
+                    <connections>
+                        <action selector="bottomBarClicked:" destination="-1" eventType="touchUpInside" id="9BT-sy-zNW"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz8-2y-EIz" userLabel="comment">
                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
@@ -43,6 +59,9 @@
                         <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </state>
                     <state key="highlighted" image="News_Navigation_Comment_Highlight.png"/>
+                    <connections>
+                        <action selector="bottomBarClicked:" destination="-1" eventType="touchUpInside" id="xgY-zk-Kk3"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,9 +13,10 @@
 #import "ZDStoryItem.h"
 #import "ZDHomeStoryItem.h"
 #import "ZDHeaderCollectionViewCell.h"
+#import "ZDRootViewController.h"
 @interface ZDStoryViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 
-@property (nonatomic, strong) ZDStoryBottomBar *bottomBar;
+@property (strong, nonatomic) IBOutlet ZDStoryBottomBar *bottomBar;
 @property (nonatomic, strong) ZDStoryModel *model;
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) ZDHeaderCollectionViewCell *headerView;
@@ -24,13 +25,15 @@
 @property (nonatomic, strong) UIButton *bottomButton;
 @property (nonatomic, assign) BOOL isStatusBarStyleDefault;
 @property (nonatomic, strong) UIView *statusView;
+@property (nonatomic, assign) BOOL isFirst;
+@property (nonatomic, assign) BOOL isLast;
 @end
 
 @implementation ZDStoryViewController
 
 - (id)initWithStoryId:(NSString *)storyId {
     if (self = [super init]) {
-        
+        self.model.storyId = storyId;
     }
     return self;
 }
@@ -40,6 +43,42 @@
         
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    ZDRootViewController *root = (ZDRootViewController *)window.rootViewController;
+    [root setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+}
+
+- (void)dealloc {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    ZDRootViewController *root = (ZDRootViewController *)window.rootViewController;
+    [root setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+
+}
+- (IBAction)bottomBarClicked:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    switch (button.tag) {
+        case 1:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case 2:
+            [self loadNext];
+            break;
+        case 3:
+            NSLog(@"点赞");
+            break;
+        case 4:
+            NSLog(@"分享");
+            break;
+        case 5:
+            NSLog(@"讨论");
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)viewDidLoad {
@@ -53,7 +92,7 @@
     }];
     [self.view addSubview:self.webView];
     [self.webView.scrollView addSubview:self.headerView];
-    [self.webView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    [self.webView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 44, 0));
@@ -68,7 +107,7 @@
     [self.webView.scrollView addSubview:self.bottomButton];
     [self.topButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 32));
+        make.size.mas_equalTo(CGSizeMake(150, 32));
         make.centerY.equalTo(self.webView.scrollView.mas_top).offset(-(64-32)/2);
     }];
 
@@ -92,8 +131,64 @@
         [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
         ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
         [self.headerView setItem:headerItem];
-        NSLog(@"%f,%f",self.webView.scrollView.contentSize.height,self.webView.scrollView.contentOffset.y);
     }];
+}
+
+- (void)loadLast {
+    NSString *str = [self.vc getPreviousStoryIdWithCurrentId:self.model.storyId];
+    if (str) {
+        self.model.storyId = str;
+        @weakify(self);
+        [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
+            @strongify(self);
+            
+            [UIView animateWithDuration:0.4 animations:^{
+                [self.webView.scrollView setContentOffset:CGPointMake(0, kMainScreenHeight)];
+            } completion:^(BOOL finished) {
+                self.webView.scrollView.contentOffset = CGPointMake(0, 0);
+                ZDStoryItem *item = model.itemList.array[0];
+                [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
+                ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
+                [self.headerView setItem:headerItem];
+                self.isLast = NO;
+            }];
+            
+            
+        }];
+    } else {
+        self.isLast = NO;
+        self.isFirst = YES;
+    }
+    
+}
+
+- (void)loadNext {
+    NSString *str = [self.vc getNextStoryIdWithCurrentId:self.model.storyId];
+    if (str) {
+        self.model.storyId = str;
+        @weakify(self);
+        [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
+            @strongify(self);
+            
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.webView.scrollView setContentOffset:CGPointMake(0, kMainScreenHeight)];
+            } completion:^(BOOL finished) {
+                ZDStoryItem *item = model.itemList.array[0];
+//                self.webView.scrollView.contentOffset = CGPointMake(0, 0);
+                [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
+                ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
+                [self.headerView setItem:headerItem];
+                self.isFirst = NO;
+            }];
+            
+            
+        }];
+    } else {
+        self.isLast = YES;
+        self.isFirst = NO;
+    }
+    
 }
 
 - (UIView *)statusView {
@@ -105,7 +200,6 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-//    self.statusView.hidden = self.isStatusBarStyleDefault;
     return self.isStatusBarStyleDefault ? UIStatusBarStyleDefault: UIStatusBarStyleLightContent;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -119,6 +213,7 @@
             make.top.equalTo(self.webView.scrollView).offset(offSetY);
             make.height.mas_equalTo(kZDHomeHeaderViewHeight - offSetY);
         }];
+        [self.topButton setTitle:self.isFirst ? @"已经是第一篇了":@"载入上一篇" forState:UIControlStateNormal];
         if (offSetY < -32) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.topButton.imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, M_PI);
@@ -131,8 +226,7 @@
     } else  {
         self.isStatusBarStyleDefault = offSetY > kZDHomeHeaderViewHeight;
         [self setNeedsStatusBarAppearanceUpdate];
-        
-//        NSLog(@"%f,%f",offSetY,self.webView.scrollView.contentSize.height - 524);
+        [self.bottomButton setTitle:self.isLast ?@"已经是最后一篇了":@"载入下一篇" forState:UIControlStateNormal];
         if (offSetY > self.webView.scrollView.contentSize.height - (kMainScreenHeight - 44) + 32) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.bottomButton.imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, M_PI);
@@ -146,6 +240,16 @@
 
 
     
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    CGFloat offSetY = scrollView.contentOffset.y;
+    if (offSetY > self.webView.scrollView.contentSize.height - (kMainScreenHeight - 44) + 32) {
+        [self loadNext];
+    }
+    if (offSetY < -32) {
+        [self loadLast];
+    }
 }
 
 #pragma mark - webviewdelegate

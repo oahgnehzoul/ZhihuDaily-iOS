@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UIButton *menuButton;
 @property (nonatomic, assign) CGFloat progress;
 @property (nonatomic, assign) NSInteger firstPageCount;
-
+@property (nonatomic, strong) NSMutableArray *storyIds;
 @end
 
 @implementation ZDHomeViewController
@@ -49,6 +49,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 
     self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220 / 375.0 * CGRectGetWidth(self.view.frame))];
+    
+    @weakify(self);
+    self.headerView.touchBlock = ^(NSString *storyId) {
+        @strongify(self);
+        ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:storyId];
+        vc.vc = self;
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    
     [self.view addSubview:self.headerView];
 
     //把 tableview 顶下去.相当于改变 UIEdgeInset,但是直接改变 inset会影响 sectionHeader.
@@ -71,6 +80,7 @@
     self.dataSource = self.ds;
     self.delegate = self.dl;
     
+    
     self.loadMoreAutomatically = YES;
     self.bNeedLoadMore = YES;
     [self registerModel:self.model];
@@ -84,7 +94,7 @@
         self.firstPageCount = model.itemList.count;
     }
     [super didLoadModel:model];
-    if ([model.stories count]) {
+    if ([model.stories count] && model.currentPageIndex == 0) {
         self.headerView.items = model.stories;
     }
 }
@@ -131,15 +141,6 @@
 - (void)setNavBar {
     self.navBarView = [[ZDHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 58)];
     self.navBarView.alpha = 0;
-    
-    @weakify(self);
-    self.navBarView.touchBlock = ^{
-        @strongify(self);
-        if (self.navBarView.height == 20) {
-//            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-        }
-    };
-    
     [self.view addSubview:self.navBarView];
 }
 
@@ -149,7 +150,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[[ZDStoryViewController alloc] initWithStoryId:@"1"] animated:YES];
+    ZDHomeStoryItem *item = [self.ds getItems:indexPath.section][indexPath.row];
+    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId];
+    vc.vc = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)loadMore {
@@ -158,6 +162,25 @@
     self.model.sectionNubmer = self.model.currentPageIndex + 1;
     [super loadMore];
 }
+
+// 暂时就取只从前主页获取到的数据吧，看官方的应该是详情页调了主页的接口。
+- (NSString *)getNextStoryIdWithCurrentId:(NSString *)currentId {
+    
+    NSInteger index = [self.model.storyIds indexOfObject:currentId];
+    if (index < [self.model.storyIds count]) {
+        return [self.model.storyIds objectAtIndex:(index+1)];
+    }
+    return nil;
+}
+
+- (NSString *)getPreviousStoryIdWithCurrentId:(NSString *)currentId {
+    NSInteger index = [self.model.storyIds indexOfObject:currentId];
+    if (index != 0) {
+        return [self.model.storyIds objectAtIndex:(index - 1)];
+    }
+    return nil;
+}
+
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
 
@@ -170,11 +193,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
     CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    NSLog(@"%f",offSetY);
+//    NSLog(@"%f",offSetY);
     if (offSetY > 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight - 20);
         CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight - kMainScreenHeight);
-        NSLog(@"h:%f",h);
+//        NSLog(@"h:%f",h);
         if (offSetY > h) {
             if (self.model.sectionNubmer != self.model.currentPageIndex) {
                 [self loadMore];

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SBViewController.h"
+#import "ZDHomeViewController.h"
 @interface ZDStoryViewController : SBViewController
 
 - (id)initWithStoryId:(NSString *)storyId;
+
+@property (nonatomic, strong) ZDHomeViewController *vc;
 
 @end

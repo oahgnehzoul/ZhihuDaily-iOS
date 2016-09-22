@@ -1,13 +1,13 @@
 //
-//  ZDGetThemeModel.h
+//  ZDThemeModel.h
 //  MyZhihuDaily
 //
-//  Created by oahgnehzoul on 16/9/17.
+//  Created by oahgnehzoul on 16/9/22.
 //  Copyright © 2016年 oahgnehzoul. All rights reserved.
 //
 
 #import "ZDListModel.h"
 
-@interface ZDGetThemeModel : ZDListModel
+@interface ZDThemeModel : ZDListModel
 
 @end

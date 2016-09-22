@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong, readonly) NSArray *items;
 
+@property (nonatomic, copy) void(^touchBlock)(NSString *storyId);
+
 @end

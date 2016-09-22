@@ -43,7 +43,13 @@
     }];
     [self.bottomMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self);
-        make.height.mas_equalTo(100);
+
+        if (item.isHome) {
+            make.height.mas_equalTo(100);
+
+        } else {
+            make.height.mas_equalTo(kZDHomeHeaderViewHeight);
+        }
     }];
     
     [self.topMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,7 +58,8 @@
         if (item.isHome) {
             make.bottom.equalTo(self.mas_top).offset(64);
         } else {
-            make.bottom.equalTo(self.bottomMaskView.mas_top).offset(-(kZDHomeHeaderViewHeight - 100));
+//            make.bottom.equalTo(self.bottomMaskView.mas_top).offset(-(kZDHomeHeaderViewHeight - 100));
+            make.bottom.equalTo(self.bottomMaskView.mas_top);
         }
     }];
     if (item.source.length > 0) {

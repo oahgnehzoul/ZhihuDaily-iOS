@@ -42,7 +42,6 @@
     //滑动到最大距离不能再向右
     [self setShouldStretchDrawer:NO];
     
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     @weakify(self);
     [self.launchModel loadWithCompletion:^(SBModel *model, NSError *error) {

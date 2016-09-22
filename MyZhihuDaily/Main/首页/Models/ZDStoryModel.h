@@ -10,5 +10,5 @@
 
 @interface ZDStoryModel : ZDListModel
 
-
+@property (nonatomic, strong) NSString *storyId;
 @end

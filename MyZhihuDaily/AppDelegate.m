@@ -7,14 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
-#import "MainViewController.h"
 #import "MMDrawerController.h"
 #import "BaseNavController.h"
-#import "LeftViewController.h"
-#import "LaunchViewController.h"
-#import "ZDRootViewController.h"
 
+#import "ZDRootViewController.h"
 #import "ZDHomeViewController.h"
 #import "ZDThemeViewController.h"
 #import "ZDLaunchAdvertiseView.h"

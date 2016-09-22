@@ -92,7 +92,12 @@
 #pragma mark - UICollectionDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld",indexPath.row);
+//    NSLog(@"%ld",indexPath.row);
+    
+    ZDHomeStoryItem *item = self.sourceItems[indexPath.row];
+    if (self.touchBlock) {
+        self.touchBlock(item.storyId);
+    }
 }
 
 #pragma mark - uicollectionflowlayout

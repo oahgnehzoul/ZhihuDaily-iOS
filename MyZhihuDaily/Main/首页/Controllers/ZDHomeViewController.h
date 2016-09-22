@@ -13,4 +13,9 @@
 
 @property (nonatomic, weak) ZDRootViewController *mmDraw;
 
+- (NSString *)getPreviousStoryIdWithCurrentId:(NSString *)currentId;
+
+- (NSString *)getNextStoryIdWithCurrentId:(NSString *)currentId;
+
+
 @end

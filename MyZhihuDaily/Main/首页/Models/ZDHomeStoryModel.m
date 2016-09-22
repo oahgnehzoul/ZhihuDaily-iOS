@@ -35,7 +35,15 @@
         }];
         self.stories = items;
     }
+    NSMutableArray *ids = @[].mutableCopy;
+    [ids addObjectsFromArray:self.storyIds];
     if (object[@"stories"]) {
+        NSArray *items = [ZDHomeStoryItem itemsWithArray:object[@"stories"]];
+        [items enumerateObjectsUsingBlock:^(ZDHomeStoryItem *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [ids addObject:obj.storyId];
+        }];
+        self.storyIds = ids;
+        
         return [ZDHomeStoryItem itemsWithArray:object[@"stories"]];
     }
     return @[];

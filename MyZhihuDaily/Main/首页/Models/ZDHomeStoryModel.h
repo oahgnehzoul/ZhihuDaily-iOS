@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSArray *stories;
 
 @property (nonatomic, assign) BOOL isLatest;
+
+@property (nonatomic, copy) NSArray *storyIds;
 @end
