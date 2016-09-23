@@ -17,4 +17,5 @@ target 'MyZhihuDaily' do
     pod 'Routable', '~> 0.2.0'
 	pod 'DACircularProgress', '~> 2.3.1'
     pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+	pod 'MLeaksFinder', '~> 0.2.0'
 end

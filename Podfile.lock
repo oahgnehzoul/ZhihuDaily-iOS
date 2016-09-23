@@ -36,6 +36,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - DACircularProgress (2.3.1)
+  - FBRetainCycleDetector (0.1.2)
   - HexColors (4.0.0)
   - Mantle (2.0.7):
     - Mantle/extobjc (= 2.0.7)
@@ -43,6 +44,8 @@ PODS:
   - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (2.4.12)
+  - MLeaksFinder (0.2.0):
+    - FBRetainCycleDetector
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -78,6 +81,7 @@ DEPENDENCIES:
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 2.4.12)
+  - MLeaksFinder (~> 0.2.0)
   - MMDrawerController (~> 0.6.0)
   - RDVTabBarController (~> 1.1.9)
   - ReactiveCocoa (~> 2.5)
@@ -89,11 +93,13 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FBRetainCycleDetector: 45462f9ed1af0cd77224a4cc4e6dacaca47371b4
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  MLeaksFinder: 07ab450d72d3bf5ef4201b74047d74ceae66d605
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
@@ -101,6 +107,6 @@ SPEC CHECKSUMS:
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-PODFILE CHECKSUM: fa8bcf81e07fcf21ec0ac83d88d81725aff5158c
+PODFILE CHECKSUM: f2b8234fe271c300113d4087e55342031cca817d
 
 COCOAPODS: 1.0.1

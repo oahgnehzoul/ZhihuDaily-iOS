@@ -22,6 +22,7 @@
 @property (nonatomic, assign) NSInteger index;
 
 @property (nonatomic, strong) UIImageView *maskView;
+@property (nonatomic, strong) UIButton *skipButton;
 
 @end
 @implementation ZDLaunchAdvertiseView
@@ -36,6 +37,7 @@
         [self.leftView addSubview:self.progressView];
         [self.bottomBackView addSubview:self.titleLabel];
         [self.bottomBackView addSubview:self.subTitleLabel];
+        [self.bottomBackView addSubview:self.skipButton];
         self.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"#17181a"];
         [self layout];
     }
@@ -79,6 +81,19 @@
         make.bottom.equalTo(self.leftView.mas_bottom).offset(-2);
     }];
     
+//    [self.skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(84, 28));
+//        make.right.equalTo(self.bottomBackView).offset(-2);
+//        make.centerY.equalTo(self.leftView);
+//    }];
+//    [self.skipButton sizeToFit];
+//    self.skipButton.size = CGSizeMake(self.skipButton.width + 20, self.skipButton.height + 5);
+    [self.skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 28));
+        make.right.equalTo(self.bottomBackView).offset(-2);
+        make.centerY.equalTo(self.leftView);
+    }];
+
 }
 
 - (void)startLaunch {
@@ -111,6 +126,11 @@
         self.bottomBackView.bottom = self.bottom;
     } completion:^(BOOL finished) {
         [self.progressView setProgress:0.8 animated:YES initialDelay:0 withDuration:2];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.skipButton.hidden = YES;
+        } completion:^(BOOL finished) {
+            self.skipButton.hidden = NO;
+        }];
         @weakify(self);
         self.timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0 block:^(NSTimer *timer) {
             @strongify(self);
@@ -207,4 +227,23 @@
     }
     return _subTitleLabel;
 }
+
+- (UIButton *)skipButton {
+    if (!_skipButton) {
+        _skipButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_skipButton setTitle:@"跳过广告" forState: UIControlStateNormal];
+        [_skipButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"74777a"] forState:UIControlStateNormal];
+        _skipButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        _skipButton.hidden = YES;
+        _skipButton.layer.cornerRadius = 3;
+        _skipButton.layer.borderWidth = 1;
+        _skipButton.layer.borderColor = [UIColor hx_colorWithHexRGBAString:@"74777a"].CGColor;
+        WEAKSELF
+        [_skipButton bk_whenTapped:^{
+            [weakSelf dissmiss];
+        }];
+    }
+    return _skipButton;
+}
+
 @end
