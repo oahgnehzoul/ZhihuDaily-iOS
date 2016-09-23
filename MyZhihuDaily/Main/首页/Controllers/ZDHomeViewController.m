@@ -48,7 +48,7 @@
     //默认为 yes，会让 viewcontroller 根据 status bar ,navigation bar,toolbar,tabbar自动调整 insets
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 220 / 375.0 * CGRectGetWidth(self.view.frame))];
+    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight)];
     
     @weakify(self);
     self.headerView.touchBlock = ^(NSString *storyId) {
@@ -181,19 +181,11 @@
     return nil;
 }
 
-
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-
-}
-
-- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section {
-
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
     CGFloat offSetY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    if (offSetY > 0) {
+    //之前没有= 0，加上后解决了 scrollToTop 造成的偏移的问题
+    if (offSetY >= 0) {
         self.navBarView.alpha = offSetY / (kZDHomeHeaderViewHeight - 20);
         CGFloat h = (self.firstPageCount * 90 + kZDHomeHeaderViewHeight - kMainScreenHeight);
         if (offSetY > h) {
