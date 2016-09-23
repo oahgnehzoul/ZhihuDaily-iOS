@@ -8,10 +8,7 @@
 
 #import "SBTableViewController.h"
 
-@class ZDRootViewController;
 @interface ZDHomeViewController : SBTableViewController
-
-@property (nonatomic, weak) ZDRootViewController *mmDraw;
 
 - (NSString *)getPreviousStoryIdWithCurrentId:(NSString *)currentId;
 

@@ -58,7 +58,6 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
-  - RDVTabBarController (1.1.9)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -81,9 +80,8 @@ DEPENDENCIES:
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 2.4.12)
-  - MLeaksFinder (~> 0.2.0)
+  - MLeaksFinder
   - MMDrawerController (~> 0.6.0)
-  - RDVTabBarController (~> 1.1.9)
   - ReactiveCocoa (~> 2.5)
   - Reveal-iOS-SDK
   - Routable (~> 0.2.0)
@@ -101,12 +99,11 @@ SPEC CHECKSUMS:
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   MLeaksFinder: 07ab450d72d3bf5ef4201b74047d74ceae66d605
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
-  RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-PODFILE CHECKSUM: f2b8234fe271c300113d4087e55342031cca817d
+PODFILE CHECKSUM: 4346c75fca29d3032ac88fce3a5b65486c420b79
 
 COCOAPODS: 1.0.1

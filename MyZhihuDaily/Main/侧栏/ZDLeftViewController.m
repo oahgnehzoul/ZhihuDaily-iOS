@@ -68,12 +68,12 @@
     }];
     if (indexPath.row == 0) {
         BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:[[ZDHomeViewController alloc] init]];
-        [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
+        [[ZDUtils rootViewController] setCenterViewController:nav withCloseAnimation:YES completion:nil];
     } else {
         ZDLeftThemeItem *item = self.themeModel.itemList.array[indexPath.row];
         ZDThemeViewController *themeVc = [[ZDThemeViewController alloc] initWithThemeId:item.themeId];
         BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:themeVc];
-        [self.mmDraw setCenterViewController:nav withCloseAnimation:YES completion:nil];
+        [[ZDUtils rootViewController] setCenterViewController:nav withCloseAnimation:YES completion:nil];
     }
     
 }

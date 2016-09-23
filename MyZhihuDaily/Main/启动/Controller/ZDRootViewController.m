@@ -25,14 +25,10 @@
     [super viewDidLoad];
 
     ZDLeftViewController *leftMenuVc = [[ZDLeftViewController alloc] init];
-    leftMenuVc.mmDraw = self;
-
     ZDHomeViewController *homeVc = [[ZDHomeViewController alloc] init];
-    homeVc.mmDraw = self;
     
     self.leftDrawerViewController = leftMenuVc;
-    
-    
+
     BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:homeVc];
     self.centerViewController = nav;
     

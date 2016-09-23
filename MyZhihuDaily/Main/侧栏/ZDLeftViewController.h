@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ZDRootViewController;
 @interface ZDLeftViewController : SBViewController
 
-@property (nonatomic, weak) ZDRootViewController *mmDraw;
 
 @end

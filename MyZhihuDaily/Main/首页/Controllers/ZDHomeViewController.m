@@ -126,11 +126,9 @@
         _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_menuButton setImage:[UIImage imageNamed:@"Home_Icon"] forState:UIControlStateNormal];
         [_menuButton setImage:[UIImage imageNamed:@"home_Icon_Highlight"] forState:UIControlStateHighlighted];
-        @weakify(self);
-        [_menuButton bk_addEventHandler:^(id sender) {
-            @strongify(self);
-            [self.mmDraw toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-        } forControlEvents:UIControlEventTouchUpInside];
+        [_menuButton bk_whenTapped:^{
+            [ZDUtils toggleMMDrawerMenu];
+        }];
     }
     return _menuButton;
 }
