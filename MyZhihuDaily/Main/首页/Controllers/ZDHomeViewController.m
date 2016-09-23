@@ -224,9 +224,7 @@
         if (x <= 1 && x >= 0 && !self.navBarView.isAnimating) {
             self.navBarView.progressBlock(offSetY / 70.f);
         }
-        //设置下拉的最大距离
-        self.tableView.contentOffset = CGPointMake(0, MAX(offSetY, -80));
-
+        
         //改变 h 会调用 setFrame 方法，从而调用 collection 重新布局 subView，拉伸效果
         self.headerView.height = kZDHomeHeaderViewHeight - offSetY;
         [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -234,7 +232,9 @@
             make.left.equalTo(self.view);
             make.bottom.equalTo(self.view.mas_top).offset(-offSetY + kZDHomeHeaderViewHeight);
         }];
-        
+        //设置下拉的最大距离, 先改变 headerview 高度，再设置 contentOffset 解决抖动问题
+        self.tableView.contentOffset = CGPointMake(0, MAX(offSetY, -80));
+
     }
 }
 
@@ -258,6 +258,7 @@
 
 - (void)refresh {
     @weakify(self);
+    self.model.isLatest = YES;
     [self.model reloadWithCompletioin:^(SBModel *model, NSError *error) {
         @strongify(self);
         [self.navBarView hideLoading];

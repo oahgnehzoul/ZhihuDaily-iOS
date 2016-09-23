@@ -14,41 +14,45 @@
 
 #import<UIKit/UIKit.h>
 
-#define kMainScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kMainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kSystemVersion [UIDevice currentDevice].systemVersion.floatValue
 #define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+// 强弱引用
 #define WEAKSELF __weak typeof (self) weakSelf = self;
-#define kColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
+#define STRONGSELF __strong type (self) self = weakSelf;
+#define weakObj(type) __weak typeof(type) weak##type = type;
+#define strongObj(type) __strong typeof(type) type = weak##type;
 
+// 一些常量
+#define kMainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kMainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kZDLeftViewControllerWidth 224/375.0*kMainScreenWidth
-
 #define kZDLeftInsetX 15
 #define kZDLeftViewAvtarRadius 18
 #define kZDLeftHeaderViewHeight 104
 #define kZDLeftCellHeight 50
 #define kZDLeftBottomViewHeight 65
-
 //375 / 220  =   w / h
 #define kZDHomeHeaderViewHeight kMainScreenWidth *220/375.0
 
+// 启动广告页相关
 #define kZDBootImageUrl @"kZDBootImageUrl"
 #define kZDBootImageAuthor @"kZDBootImageAuthor"
 
-#import "HexColors.h"
+// 一些可公用颜色
 #define kZDLeftBackgroundViewColor @"#232a32"
 #define kZDLeftCellSelectedColor @"#1b222a"
 #define kZDLeftCellLabelDefaultTextColor @"#959aa0"
 #define kZDLeftCellLabelSelectedTextColor @"#f4f8fb"
 #define kZDLeftLineColor @"#20272f"
-
 #define kZDHomeNavDefaultColor @"#008dd5"
 #define kZDHomeCellDefaultColor @"#383838"
+#define kColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
 
-#define weakObj(type) __weak typeof(type) weak##type = type;
-#define strongObj(type) __strong typeof(type) type = weak##type;
-#import "Common.h"
-#import "Utils.h"
+// 常用
+#import "HexColors.h"
+#import "CommonAPI.h"
+#import "ZDUtils.h"
 #import "UIView+Additions.h"
 #import "SBMVC.h"
 #import "Masonry.h"
@@ -58,4 +62,5 @@
 #import "Routable.h"
 #import "UIImageView+WebCache.h"
 #import "BaseNavController.h"
+
 #endif

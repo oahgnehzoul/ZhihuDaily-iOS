@@ -8,7 +8,7 @@
 
 #import "SBPullRefreshView.h"
 
-static const NSInteger kRefreshViewHeight = 65;
+//static const NSInteger kRefreshViewHeight = 65;
 
 @implementation SBPullRefreshView
 

@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utils : NSObject
+@interface ZDUtils : NSObject
+
+//  20160923 -->  09月23日 星期 X
 + (NSString *)dateWithString:(NSString *)string;
 
 @end
