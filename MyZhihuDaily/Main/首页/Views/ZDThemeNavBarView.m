@@ -77,7 +77,9 @@
         [self.subcribeButton setImage:[UIImage imageNamed:@"Field_Follow"] forState:UIControlStateNormal];
     }
     
+    @weakify(self);
     [self.subcribeButton bk_whenTapped:^{
+        @strongify(self);
         item.subscribed = !item.subscribed;
         NSString *str = item.subscribed ?@"Field_Unfollow":@"Field_Follow";
         [self.subcribeButton setImage:[UIImage imageNamed:str] forState:UIControlStateNormal];
@@ -85,6 +87,7 @@
     }];
     
     [self.backButton bk_whenTapped:^{
+        @strongify(self);
         if (self.BackBlock) {
             self.BackBlock();
         }
@@ -114,15 +117,12 @@
     }
     return _maskView;
 }
-///Users/oahgnehzoul/Desktop/dev/ZhihuDaily-iOS/MyZhihuDaily/Images/Field_Mask@2x.png
-///Users/oahgnehzoul/Desktop/dev/ZhihuDaily-iOS/MyZhihuDaily/Images/Fie/Users/oahgnehzoul/Desktop/dev/ZhihuDaily-iOS/MyZhihuDaily/Images/Field_Unfollow@2x.pngld_Follow@2x.png
-///Users/oahgnehzoul/Desktop/dev/ZhihuDaily-iOS/MyZhihuDaily/Images/Field_Back@2x.png
+
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont boldSystemFontOfSize:16];
         _titleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"#faf9f9"];
-//        _titleLabel.text = @"今日热闻";
     }
     return _titleLabel;
 
@@ -133,6 +133,10 @@
         _subcribeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     }
     return _subcribeButton;
+}
+
+- (void)dealloc {
+    NSLog(@"[%@-->dealloc]",self.class);
 }
 
 

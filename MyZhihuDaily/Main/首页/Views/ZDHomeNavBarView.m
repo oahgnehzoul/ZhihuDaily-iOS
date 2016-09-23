@@ -58,8 +58,8 @@
                 self.progressView.hidden = progress <= 0.007143;
             }
         };
-        
         [self bk_whenTapped:^{
+            @strongify(self);
             self.touchBlock();
         }];
 
