@@ -65,7 +65,6 @@
     self.delegate = self.dl;
     
     self.bNeedLoadMore = YES;
-//    self.loadMoreAutomatically = YES;
     [self registerModel:self.model];
     self.model.themeId = self.themeId;
     [self setKeyModel:self.model];
@@ -109,7 +108,6 @@
         self.navBar.top = self.view.top;
         self.navBar.height = MIN(164, 64 - contentOffsetY);
         self.tableView.contentOffset = CGPointMake(0, MAX(-100, contentOffsetY));
-        
     }
 }
 

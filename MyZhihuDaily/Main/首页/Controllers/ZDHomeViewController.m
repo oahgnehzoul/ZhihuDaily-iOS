@@ -133,15 +133,11 @@
     return _menuButton;
 }
 
-
-
-
 - (void)setNavBar {
     self.navBarView = [[ZDHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 58)];
     self.navBarView.alpha = 0;
     [self.view addSubview:self.navBarView];
 }
-
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
