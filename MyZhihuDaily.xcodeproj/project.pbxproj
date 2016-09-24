@@ -21,6 +21,7 @@
 		603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A71D8D097A0020B988 /* SBTableViewFactory.m */; };
 		603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826AA1D8D32340020B988 /* SBPullRefreshView.m */; };
 		603893BA1BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */; };
+		604438031D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604438021D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m */; };
 		60473F9E1B9BE828001D79BB /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473F9D1B9BE828001D79BB /* DataService.m */; };
 		60473FE01B9C1889001D79BB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473FDF1B9C1889001D79BB /* BaseModel.m */; };
 		60697F6B1D93C032002BDEC9 /* ZDThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60697F6A1D93C032002BDEC9 /* ZDThemeModel.m */; };
@@ -927,6 +928,8 @@
 		603826AA1D8D32340020B988 /* SBPullRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPullRefreshView.m; sourceTree = "<group>"; };
 		603893B81BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
 		603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
+		604438011D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemeSubscribeSuccessView.h; sourceTree = "<group>"; };
+		604438021D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemeSubscribeSuccessView.m; sourceTree = "<group>"; };
 		60473F9C1B9BE828001D79BB /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		60473F9D1B9BE828001D79BB /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		60473F9F1B9C0D68001D79BB /* CommonAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonAPI.h; sourceTree = "<group>"; };
@@ -3022,6 +3025,8 @@
 			children = (
 				60FD7E981D9048CD00B7C2CE /* ZDThemeViewController.h */,
 				60FD7E991D9048CD00B7C2CE /* ZDThemeViewController.m */,
+				604438011D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.h */,
+				604438021D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m */,
 				60697F8D1D93CE11002BDEC9 /* ZDThemeDataSource.h */,
 				60697F8E1D93CE11002BDEC9 /* ZDThemeDataSource.m */,
 				60697F961D93F3A4002BDEC9 /* ZDThemeDelegate.h */,
@@ -4074,6 +4079,7 @@
 				3483A3A31B8EB74C00C71AB0 /* AppDelegate.m in Sources */,
 				3483A3A01B8EB74C00C71AB0 /* main.m in Sources */,
 				60BA5D841D8A7F420035E1AF /* SBRequest.m in Sources */,
+				604438031D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m in Sources */,
 				60473FE01B9C1889001D79BB /* BaseModel.m in Sources */,
 				60697F8F1D93CE11002BDEC9 /* ZDThemeDataSource.m in Sources */,
 				60697F8C1D93C262002BDEC9 /* ZDLeftBackView.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "SBTableViewItem.h"
 #import "ZDHomeStoryItem.h"
+
 SB_ARRAY_TYPE(ZDThemeEditorItem)
 SB_ARRAY_TYPE(ZDHomeStoryItem)
 
@@ -28,4 +29,5 @@ SB_ARRAY_TYPE(ZDHomeStoryItem)
 @property (nonatomic, copy) NSString *background;
 @property (nonatomic, copy) NSArray<ZDHomeStoryItem> *stories;
 @property (nonatomic, assign) BOOL subscribed;
+
 @end
