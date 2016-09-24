@@ -11,8 +11,6 @@
 
 @interface ZDHomeNavBarView ()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIView *containView;
-//@property (nonatomic, strong) UIButton *menuButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @property (nonatomic, strong) DACircularProgressView *progressView;
@@ -23,18 +21,13 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self addSubview:self.containView];
-        [self.containView addSubview:self.titleLabel];
-        [self.containView addSubview:self.progressView];
-        [self.containView addSubview:self.indicator];
-        
-        [self.containView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self);
-        }];
+        [self addSubview:self.titleLabel];
+        [self addSubview:self.progressView];
+        [self addSubview:self.indicator];
         
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.containView);
-            make.bottom.equalTo(self.containView).offset(-10);
+            make.centerX.equalTo(self);
+            make.bottom.equalTo(self).offset(-10);
         }];
         
         [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -75,7 +68,7 @@
 }
 
 - (void)setAlpha:(CGFloat)alpha {
-    self.containView.backgroundColor = [UIColor hx_colorWithHexRGBAString:kZDHomeNavDefaultColor alpha:alpha];
+    self.backgroundColor = [UIColor hx_colorWithHexRGBAString:kZDHomeNavDefaultColor alpha:alpha];
 }
 
 - (void)hideProgress {
@@ -102,31 +95,23 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 
-//    id object = [super hitTest:point withEvent:event];
-//    NSLog(@"%@",object);
-    
-//    if (self.touchBlock) {
-//        self.touchBlock();
+//    if (self.userInteractionEnabled == NO || self.hidden == YES || self.alpha <= 0.01) {
+//        return nil;
+//    }
+//    if (![self pointInside:point withEvent:event]) {
+//        return nil;
+//    }
+//    for (UIView *subview in self.subviews) {
+//        CGPoint childPoint = [self convertPoint:point toView:subview];
+//        UIView *fitView = [subview hitTest:childPoint withEvent:event];
+//        NSLog(@"%@",fitView);
+//        if (fitView) {
+//            return fitView;
+//        }
 //    }
 //    return self;
+    
     return [super hitTest:point withEvent:event];
-}
-
-//- (UIButton *)menuButton {
-//    if (!_menuButton) {
-//        _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [_menuButton setImage:[UIImage imageNamed:@"Home_Icon"] forState:UIControlStateNormal];
-//        [_menuButton setImage:[UIImage imageNamed:@"home_Icon_Highlight"] forState:UIControlStateHighlighted];
-//    }
-//    return _menuButton;
-//}
-
-
-- (UIView *)containView {
-    if (!_containView) {
-        _containView = [[UIView alloc] init];
-    }
-    return _containView;
 }
 
 - (DACircularProgressView *)progressView {
