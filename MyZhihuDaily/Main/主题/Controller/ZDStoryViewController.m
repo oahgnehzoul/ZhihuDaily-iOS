@@ -118,7 +118,7 @@
         make.left.top.right.equalTo(self.view);
         make.height.mas_equalTo(20);
     }];
-        
+    
     @weakify(self);
     [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
         @strongify(self);
@@ -135,7 +135,7 @@
         }else {
             [self.headerView removeFromSuperview];
         }
-        
+        [self.webView.scrollView bringSubviewToFront:self.topButton];
     }];
 }
 
@@ -180,7 +180,6 @@
                 [self.webView.scrollView setContentOffset:CGPointMake(0, kMainScreenHeight)];
             } completion:^(BOOL finished) {
                 ZDStoryItem *item = model.itemList.array[0];
-//                self.webView.scrollView.contentOffset = CGPointMake(0, 0);
                 [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
                 ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
                 [self.headerView setItem:headerItem];
@@ -211,7 +210,6 @@
     // 拖动视图的真谛，能拖动的视图都是 contentView,
     // 拖动的时候 view 的 frame 并没有改变，我们视觉上看到的是 contentOffset，拖动就是 contentOffSet 的变化，
     CGFloat offSetY = scrollView.contentOffset.y;
-    NSLog(@"%f",offSetY);
     self.statusView.hidden = offSetY < kZDStoryHeaderViewHeight;
     if (offSetY < 0) {
         if (self.hasHeaderView) {
