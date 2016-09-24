@@ -93,20 +93,11 @@
         make.height.mas_equalTo(44);
     }];
     [self.view addSubview:self.webView];
-    if (self.hasHeaderView) {
-        [self.webView.scrollView addSubview:self.headerView];
-        [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(kMainScreenWidth, kZDHomeHeaderViewHeight));
-        }];
-    } else {
-        [self.headerView removeFromSuperview];
-    }
-//    [self.webView setTranslatesAutoresizingMaskIntoConstraints:NO];
-
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 44, 0));
     }];
 
+    [self.webView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.webView.scrollView addSubview:self.topButton];
     [self.webView.scrollView addSubview:self.bottomButton];
     [self.topButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -127,14 +118,24 @@
         make.left.top.right.equalTo(self.view);
         make.height.mas_equalTo(20);
     }];
-    
+        
     @weakify(self);
     [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
         @strongify(self);
         ZDStoryItem *item = model.itemList.array[0];
         [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
-        ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
-        [self.headerView setItem:headerItem];
+        
+        if (item.image && item.image.length > 0) {
+            ZDHomeStoryItem *headerItem = [ZDHomeStoryItem itemWithDictioinary:model.item];
+            [self.headerView setItem:headerItem];
+            [self.webView.scrollView addSubview:self.headerView];
+            [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(kMainScreenWidth, kZDStoryHeaderViewHeight));
+            }];
+        }else {
+            [self.headerView removeFromSuperview];
+        }
+        
     }];
 }
 
@@ -210,16 +211,17 @@
     // 拖动视图的真谛，能拖动的视图都是 contentView,
     // 拖动的时候 view 的 frame 并没有改变，我们视觉上看到的是 contentOffset，拖动就是 contentOffSet 的变化，
     CGFloat offSetY = scrollView.contentOffset.y;
-    self.statusView.hidden = offSetY < kZDHomeHeaderViewHeight;
+    NSLog(@"%f",offSetY);
+    self.statusView.hidden = offSetY < kZDStoryHeaderViewHeight;
     if (offSetY < 0) {
-        self.webView.scrollView.contentOffset = CGPointMake(0, MAX(-55, offSetY));
         if (self.hasHeaderView) {
             [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.webView.scrollView).offset(offSetY);
-                make.height.mas_equalTo(kZDHomeHeaderViewHeight - offSetY);
+                make.height.mas_equalTo(kZDStoryHeaderViewHeight - offSetY);
             }];
         }
-        
+        self.webView.scrollView.contentOffset = CGPointMake(0, MAX(-55, offSetY));
+
         [self.topButton setTitle:self.isFirst ? @"已经是第一篇了":@"载入上一篇" forState:UIControlStateNormal];
         if (offSetY < -32) {
             [UIView animateWithDuration:0.25 animations:^{
@@ -231,7 +233,7 @@
             }];
         }
     } else  {
-        self.isStatusBarStyleDefault = offSetY > kZDHomeHeaderViewHeight;
+        self.isStatusBarStyleDefault = offSetY > kZDStoryHeaderViewHeight;
         [self setNeedsStatusBarAppearanceUpdate];
         [self.bottomButton setTitle:self.isLast ?@"已经是最后一篇了":@"载入下一篇" forState:UIControlStateNormal];
         if (offSetY > self.webView.scrollView.contentSize.height - (kMainScreenHeight - 44) + 32) {

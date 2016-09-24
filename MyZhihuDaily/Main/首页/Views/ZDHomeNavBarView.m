@@ -60,7 +60,9 @@
         };
         [self bk_whenTapped:^{
             @strongify(self);
-            self.touchBlock();
+            if (self.touchBlock) {
+                self.touchBlock();
+            }
         }];
 
     }
@@ -103,10 +105,10 @@
 //    id object = [super hitTest:point withEvent:event];
 //    NSLog(@"%@",object);
     
-    if (self.touchBlock) {
-        self.touchBlock();
-    }
-    
+//    if (self.touchBlock) {
+//        self.touchBlock();
+//    }
+//    return self;
     return [super hitTest:point withEvent:event];
 }
 
