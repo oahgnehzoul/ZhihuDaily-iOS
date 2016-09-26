@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SBViewController.h"
 #import "ZDHomeViewController.h"
+#import "ZDThemeViewController.h"
 @interface ZDStoryViewController : SBViewController
 
-- (id)initWithStoryId:(NSString *)storyId andHeader:(BOOL)has;
+- (id)initWithStoryId:(NSString *)storyId;
 
-@property (nonatomic, strong) ZDHomeViewController *vc;
+@property (nonatomic, weak) ZDHomeViewController *homeVc;
 @property (nonatomic, assign) BOOL isStatusBarStyleDefault;
-
+@property (nonatomic, weak) ZDThemeViewController *themeVc;
 @end

@@ -12,4 +12,8 @@
 
 - (id)initWithThemeId:(NSString *)themeId;
 
+- (NSString *)getPreviousStoryIdWithCurrentId:(NSString *)currentId;
+
+- (NSString *)getNextStoryIdWithCurrentId:(NSString *)currentId;
+
 @end

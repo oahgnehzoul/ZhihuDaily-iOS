@@ -24,4 +24,6 @@
 
 // 显示已经是第一篇了.
 @property (nonatomic, assign) BOOL isFirst;
+
+@property (nonatomic, assign) BOOL isGray;
 @end

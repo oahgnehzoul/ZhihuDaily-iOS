@@ -87,6 +87,36 @@
     [self.model loadMore];
 }
 
+- (NSString *)getNextStoryIdWithCurrentId:(NSString *)currentId {
+    NSArray *items = self.model.itemList.array;
+    NSMutableArray *ids = @[].mutableCopy;
+    [items enumerateObjectsUsingBlock:^(ZDHomeStoryItem  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [ids addObject:obj.storyId];
+    }];
+    NSInteger index = [ids indexOfObject:currentId];
+    if (index == (ids.count - 2)) {
+        [self loadMore];
+    }
+    if (index < (ids.count - 1)) {
+        return ids[index + 1];
+    }
+    return nil;
+}
+
+- (NSString *)getPreviousStoryIdWithCurrentId:(NSString *)currentId {
+    NSArray *items = self.model.itemList.array;
+    NSMutableArray *ids = @[].mutableCopy;
+    [items enumerateObjectsUsingBlock:^(ZDHomeStoryItem  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [ids addObject:obj.storyId];
+    }];
+    NSInteger index = [ids indexOfObject:currentId];
+    if (index != 0) {
+        return ids[index - 1];
+    }
+    return nil;
+}
+
+
 - (void)openLeft {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     ZDRootViewController *root = (ZDRootViewController *)window.rootViewController;
@@ -109,7 +139,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDHomeStoryItem *item = [self.ds getItems:indexPath.section][indexPath.row];
-    [self.navigationController pushViewController:[[ZDStoryViewController alloc] initWithStoryId:item.storyId andHeader:NO] animated:YES];
+    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId];
+    vc.themeVc = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

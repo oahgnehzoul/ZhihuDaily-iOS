@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIButton *topButton;
 @property (nonatomic, strong) UIButton *bottomButton;
 @property (nonatomic, strong) UIView *statusView;
+@property (nonatomic, strong) ZDStoryItem *item;
 
 @end
 
@@ -24,7 +25,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self addSubview:self.headerView];
         [self addSubview:self.webView];
         [self.webView.scrollView addSubview:self.topButton];
         [self.webView.scrollView addSubview:self.bottomButton];
@@ -56,6 +56,7 @@
 }
 
 - (void)setItem:(ZDStoryItem *)item {
+    _item = item;
     [self.webView loadHTMLString:[NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=%@></head><body>%@</body></html>",item.css[0],item.body] baseURL:nil];
     
     if (item.image && item.image.length > 0) {
@@ -66,7 +67,7 @@
         }];
     }else {
         [self.headerView removeFromSuperview];
-        self.headerView = nil;
+        _headerView = nil;
     }
     [self.webView.scrollView bringSubviewToFront:self.topButton];
 
@@ -86,7 +87,7 @@
     CGFloat offSetY = scrollView.contentOffset.y;
     self.statusView.hidden = offSetY < kZDStoryHeaderViewHeight;
     if (offSetY < 0) {
-        if (self.headerView) {
+        if (self.item.image && self.item.image.length > 0) {
             [self.headerView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.webView.scrollView).offset(offSetY);
                 make.height.mas_equalTo(kZDStoryHeaderViewHeight - offSetY);
@@ -146,9 +147,11 @@
     if (!_topButton) {
         _topButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_topButton setTitle:@"载入上一篇" forState:UIControlStateNormal];
-        [_topButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        UIColor *color = self.isGray ? [UIColor lightGrayColor] : [UIColor whiteColor];
+        [_topButton setTitleColor:color forState:UIControlStateNormal];
         _topButton.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_topButton setImage:[UIImage imageNamed:@"ZHAnswerViewBack"] forState:UIControlStateNormal];
+        NSString *name = self.isGray ? @"ZHAnswerViewBackIcon":@"ZHAnswerViewBack";
+        [_topButton setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
         _topButton.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
     }
     return _topButton;

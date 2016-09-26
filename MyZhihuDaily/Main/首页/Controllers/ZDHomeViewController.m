@@ -53,8 +53,8 @@
     @weakify(self);
     self.headerView.touchBlock = ^(NSString *storyId) {
         @strongify(self);
-        ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:storyId andHeader:YES];
-        vc.vc = self;
+        ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:storyId];
+        vc.homeVc = self;
         [self.navigationController pushViewController:vc animated:YES];
     };
     
@@ -145,8 +145,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDHomeStoryItem *item = [self.ds getItems:indexPath.section][indexPath.row];
-    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId andHeader:YES];
-    vc.vc = self;
+    ZDStoryViewController *vc = [[ZDStoryViewController alloc] initWithStoryId:item.storyId];
+    vc.homeVc = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
