@@ -8,6 +8,7 @@
 
 #import "ZDUtils.h"
 #import "ZDRootViewController.h"
+#import "UIViewController+CurrentViewController.h"
 @implementation ZDUtils
 
 + (NSString *)dateWithString:(NSString *)string{
@@ -19,12 +20,18 @@
 }
 
 + (void)toggleMMDrawerMenu {
-    [[self.class rootViewController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+    [(ZDRootViewController *)[self.class rootViewController] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
-+ (ZDRootViewController *)rootViewController {
++ (UIViewController *)rootViewController {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     return (ZDRootViewController *)window.rootViewController;
 }
+
++ (UIViewController *)currentViewController {
+    return [UIViewController currentViewController];
+}
+
 
 @end

@@ -14,5 +14,6 @@
 - (id)initWithStoryId:(NSString *)storyId andHeader:(BOOL)has;
 
 @property (nonatomic, strong) ZDHomeViewController *vc;
+@property (nonatomic, assign) BOOL isStatusBarStyleDefault;
 
 @end

@@ -851,6 +851,8 @@
 		6071AABC1D79585F009EB51C /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6071AABB1D79585F009EB51C /* UIView+Additions.m */; };
 		60869D8E1D8D905100936170 /* ZDAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D8D1D8D905100936170 /* ZDAFRequest.m */; };
 		60869D911D8D993600936170 /* ZDListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60869D901D8D993600936170 /* ZDListModel.m */; };
+		609151C81D98EF2A00C37AB6 /* ZDStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 609151C71D98EF2A00C37AB6 /* ZDStoryView.m */; };
+		609151CB1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609151CA1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m */; };
 		60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D671D8A7D520035E1AF /* SBTableViewCell.m */; };
 		60BA5D6B1D8A7DE60035E1AF /* SBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D6A1D8A7DE60035E1AF /* SBItem.m */; };
 		60BA5D6E1D8A7DFC0035E1AF /* SBTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D6D1D8A7DFC0035E1AF /* SBTableViewItem.m */; };
@@ -1774,6 +1776,10 @@
 		60869D8D1D8D905100936170 /* ZDAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDAFRequest.m; path = ../../ZDAFRequest.m; sourceTree = "<group>"; };
 		60869D8F1D8D993600936170 /* ZDListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDListModel.h; path = ../../ZDListModel.h; sourceTree = "<group>"; };
 		60869D901D8D993600936170 /* ZDListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDListModel.m; path = ../../ZDListModel.m; sourceTree = "<group>"; };
+		609151C61D98EF2A00C37AB6 /* ZDStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDStoryView.h; sourceTree = "<group>"; };
+		609151C71D98EF2A00C37AB6 /* ZDStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDStoryView.m; sourceTree = "<group>"; };
+		609151C91D990A7F00C37AB6 /* UIViewController+CurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentViewController.h"; sourceTree = "<group>"; };
+		609151CA1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentViewController.m"; sourceTree = "<group>"; };
 		60BA5D661D8A7D520035E1AF /* SBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTableViewCell.h; sourceTree = "<group>"; };
 		60BA5D671D8A7D520035E1AF /* SBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTableViewCell.m; sourceTree = "<group>"; };
 		60BA5D691D8A7DE60035E1AF /* SBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBItem.h; sourceTree = "<group>"; };
@@ -1935,6 +1941,8 @@
 				60C363311BA01AD400581D5B /* UIView+UIViewController.m */,
 				603893B81BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.h */,
 				603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */,
+				609151C91D990A7F00C37AB6 /* UIViewController+CurrentViewController.h */,
+				609151CA1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m */,
 				60473F9F1B9C0D68001D79BB /* CommonAPI.h */,
 				60C131161BA08B2400E81489 /* ZDUtils.h */,
 				60C131171BA08B2400E81489 /* ZDUtils.m */,
@@ -3013,6 +3021,8 @@
 				60FD7E881D9047A200B7C2CE /* ZDHomeHeaderView.m */,
 				60FD7E891D9047A200B7C2CE /* ZDHomeNavBarView.h */,
 				60FD7E8A1D9047A200B7C2CE /* ZDHomeNavBarView.m */,
+				609151C61D98EF2A00C37AB6 /* ZDStoryView.h */,
+				609151C71D98EF2A00C37AB6 /* ZDStoryView.m */,
 				60FD7ECF1D905F0C00B7C2CE /* ZDStoryBottomBar.h */,
 				60FD7ED01D905F0C00B7C2CE /* ZDStoryBottomBar.m */,
 				60FD7ED21D905F1C00B7C2CE /* ZDStoryBottomBar.xib */,
@@ -4047,6 +4057,7 @@
 				60FD7E8D1D9047A200B7C2CE /* ZDHomeDataSource.m in Sources */,
 				603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */,
 				60FD7E8E1D9047A200B7C2CE /* ZDHomeStoryItem.m in Sources */,
+				609151CB1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m in Sources */,
 				60FD7EDC1D90EA9B00B7C2CE /* ZDLaunchModel.m in Sources */,
 				60FD7E911D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m in Sources */,
 				60BA5D811D8A7EFC0035E1AF /* SBListModel.m in Sources */,
@@ -4055,6 +4066,7 @@
 				60473F9E1B9BE828001D79BB /* DataService.m in Sources */,
 				60BA5D721D8A7E450035E1AF /* SBTableViewDelegate.m in Sources */,
 				60BA5D6B1D8A7DE60035E1AF /* SBItem.m in Sources */,
+				609151C81D98EF2A00C37AB6 /* ZDStoryView.m in Sources */,
 				60BA5D6E1D8A7DFC0035E1AF /* SBTableViewItem.m in Sources */,
 				60BA5D871D8A7F6E0035E1AF /* SBItemList.m in Sources */,
 				60FD7EB61D9048D800B7C2CE /* ZDRootViewController.m in Sources */,

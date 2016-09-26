@@ -159,9 +159,18 @@
 
 // 暂时就取只从前主页获取到的数据吧，看官方的应该是详情页调了主页的接口。
 - (NSString *)getNextStoryIdWithCurrentId:(NSString *)currentId {
-    
+
     NSInteger index = [self.model.storyIds indexOfObject:currentId];
-    if (index < [self.model.storyIds count]) {
+    
+    //倒数第2张的时候自动请求下一页
+    if (index == [self.model.storyIds count] - 2) {
+        self.model.sectionNubmer = self.model.currentPageIndex + 1;
+        self.model.isLatest = NO;
+        [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
+        }];
+    }
+    
+    if (index < [self.model.storyIds count] - 1) {
         return [self.model.storyIds objectAtIndex:(index+1)];
     }
     return nil;

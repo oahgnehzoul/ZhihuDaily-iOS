@@ -50,7 +50,7 @@
                 [self clearImageInfo];
             }
             [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:launchModel.imageUrl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                NSLog(@"%ld,%ld",(long)receivedSize,expectedSize);
+//                NSLog(@"%ld,%ld",(long)receivedSize,expectedSize);
             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                 [[NSUserDefaults standardUserDefaults] setObject:launchModel.imageUrl forKey:kZDBootImageUrl];
                 [[NSUserDefaults standardUserDefaults] synchronize];

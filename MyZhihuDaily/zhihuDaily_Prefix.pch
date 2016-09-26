@@ -33,8 +33,8 @@
 #define kZDLeftCellHeight 50
 #define kZDLeftBottomViewHeight 65
 //375 / 220  =   w / h
-//#define kZDHomeHeaderViewHeight 215
-#define kZDHomeHeaderViewHeight kMainScreenWidth *218/375.0
+#define kZDHomeHeaderViewHeight 215
+//#define kZDHomeHeaderViewHeight kMainScreenWidth *218/375.0
 #define kZDStoryHeaderViewHeight kZDHomeHeaderViewHeight
 
 // 启动广告页相关

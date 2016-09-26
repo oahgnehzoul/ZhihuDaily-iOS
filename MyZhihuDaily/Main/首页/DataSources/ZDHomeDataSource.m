@@ -22,7 +22,7 @@
 }
 
 - (void)tableViewControllerDidLoadModel:(SBListModel *)model ForSection:(NSInteger)section {
-    NSLog(@"%ld",model.sectionNubmer);
+//    NSLog(@"%ld",model.sectionNubmer);
     [self setItems:model.itemList.array ForSection:model.sectionNubmer];
 }
 

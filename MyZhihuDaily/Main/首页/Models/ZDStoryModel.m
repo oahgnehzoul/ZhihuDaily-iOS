@@ -13,7 +13,6 @@
 - (NSString *)urlPath {
     
     return [NSString stringWithFormat:@"https://news-at.zhihu.com/api/7/story/%@",self.storyId];
-//    return @"https://news-at.zhihu.com/api/7/story/8806101";
 }
 
 - (NSDictionary *)dataParams {
