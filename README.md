@@ -4,8 +4,8 @@
 ![zhihu1](https://github.com/oahgnehzoul/ZhihuDaily-iOS/blob/dev/zhihu1.gif)
 #####2.首页头部视图放大和顶部日期变化效果
 ![zhihu4](https://github.com/oahgnehzoul/ZhihuDaily-iOS/blob/dev/zhihu4.gif)
-#####3.详情页上拉和下拉效果
-![zhihu3](https://github.com/oahgnehzoul/ZhihuDaily-iOS/blob/dev/zhihu3.gif)
+#####3.热闻和主题详情页上拉和下拉效果
+![zhihu6](https://github.com/oahgnehzoul/ZhihuDaily-iOS/blob/dev/zhihu6.gif)
 #####4.主题页面及下拉下载实现
 ![zhihu5](https://github.com/oahgnehzoul/ZhihuDaily-iOS/blob/dev/zhihu5.gif)
 #####实现的一些东西
