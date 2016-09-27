@@ -27,7 +27,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.backImageView];
-//        [self addSubview:self.maskView];
+        [self addSubview:self.maskView];
         [self addSubview:self.backButton];
         [self addSubview:self.titleLabel];
         [self addSubview:self.progressView];
@@ -40,9 +40,9 @@
         make.edges.equalTo(self);
     }];
     
-//    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self);
-//    }];
+    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
     [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(40, 40));
         make.left.equalTo(self).offset(10);
@@ -86,7 +86,6 @@
         [self setImageAlpha:1.0];
     }];
     
-    [self setImageAlpha:0.99];
     if (item.subscribed) {
         [self.subcribeButton setImage:[UIImage imageNamed:@"Field_Unfollow"] forState:UIControlStateNormal];
     } else {
