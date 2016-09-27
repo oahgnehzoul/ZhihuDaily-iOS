@@ -15,4 +15,6 @@
 @property (nonatomic, copy) void(^BackBlock)();
 @property (nonatomic, copy) void(^subcribBlock)(BOOL isSubcribed);
 
+- (void)setImageAlpha:(CGFloat)alpha;
+
 @end

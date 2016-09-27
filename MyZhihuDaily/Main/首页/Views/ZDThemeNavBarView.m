@@ -8,6 +8,7 @@
 
 #import "ZDThemeNavBarView.h"
 #import "DACircularProgressView.h"
+#import "UIImage+ZDBlur.h"
 @interface ZDThemeNavBarView ()
 
 @property (nonatomic, strong) UIImageView *backImageView;
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) DACircularProgressView *progressView;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @property (nonatomic, strong) UIImageView *maskView;
+@property (nonatomic, strong) UIImage *image;
 
 @end
 @implementation ZDThemeNavBarView
@@ -25,7 +27,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.backImageView];
-        [self addSubview:self.maskView];
+//        [self addSubview:self.maskView];
         [self addSubview:self.backButton];
         [self addSubview:self.titleLabel];
         [self addSubview:self.progressView];
@@ -38,9 +40,9 @@
         make.edges.equalTo(self);
     }];
     
-    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+//    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self);
+//    }];
     [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(40, 40));
         make.left.equalTo(self).offset(10);
@@ -68,9 +70,23 @@
 
 }
 
+- (void)setImageAlpha:(CGFloat)alpha {
+    UIImage *image = self.image;
+    image = [image getBlurImageWith:alpha];
+    self.backImageView.image = image;
+}
+
 - (void)setData:(ZDThemeItem *)item {
     self.titleLabel.text = item.name;
     [self.backImageView sd_setImageWithURL:[NSURL URLWithString:item.image] placeholderImage:[UIImage imageNamed:@"Field_Mask_Bg"]];
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:item.image] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        self.image = image;
+        [self setImageAlpha:1.0];
+    }];
+    
+    [self setImageAlpha:0.99];
     if (item.subscribed) {
         [self.subcribeButton setImage:[UIImage imageNamed:@"Field_Unfollow"] forState:UIControlStateNormal];
     } else {

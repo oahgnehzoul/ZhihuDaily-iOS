@@ -149,6 +149,7 @@
     if (contentOffsetY < 0) {
         self.navBar.top = self.view.top;
         self.navBar.height = MIN(164, 64 - contentOffsetY);
+        [self.navBar setImageAlpha:(contentOffsetY/100.f + 1)];
         self.tableView.contentOffset = CGPointMake(0, MAX(-100, contentOffsetY));
     }
 }
