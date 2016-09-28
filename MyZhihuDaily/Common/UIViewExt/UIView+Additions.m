@@ -106,6 +106,16 @@
     self.frame = frame;
 }
 
+- (CGPoint)anchorPoint {
+    return self.layer.anchorPoint;
+}
+
+- (void)setAnchorPoint:(CGPoint)anchorPoint {
+    CGRect frame = self.frame;
+    self.layer.anchorPoint = anchorPoint;
+    self.frame = frame;
+}
+
 - (void)removeAllSubviews {
     while (self.subviews.count) {
         UIView* child = self.subviews.lastObject;

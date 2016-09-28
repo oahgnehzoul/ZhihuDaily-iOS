@@ -866,7 +866,7 @@
 		60BA5D871D8A7F6E0035E1AF /* SBItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D861D8A7F6E0035E1AF /* SBItemList.m */; };
 		60C131181BA08B2400E81489 /* ZDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C131171BA08B2400E81489 /* ZDUtils.m */; };
 		60C363321BA01AD400581D5B /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C363311BA01AD400581D5B /* UIView+UIViewController.m */; };
-		60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDBlur.m */; };
+		60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m */; };
 		60EA67AF1BD36A9100BBD89B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA67AE1BD36A9100BBD89B /* libz.tbd */; };
 		60FD7E8B1D9047A200B7C2CE /* ZDHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E731D9047A200B7C2CE /* ZDHomeTableViewCell.m */; };
 		60FD7E8C1D9047A200B7C2CE /* ZDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E761D9047A200B7C2CE /* ZDHomeViewController.m */; };
@@ -1808,8 +1808,8 @@
 		60C131171BA08B2400E81489 /* ZDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUtils.m; sourceTree = "<group>"; };
 		60C363301BA01AD400581D5B /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
 		60C363311BA01AD400581D5B /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
-		60D3CBAC1D9A1ABD00EA9B52 /* UIImage+ZDBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZDBlur.h"; sourceTree = "<group>"; };
-		60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZDBlur.m"; sourceTree = "<group>"; };
+		60D3CBAC1D9A1ABD00EA9B52 /* UIImage+ZDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZDAdd.h"; sourceTree = "<group>"; };
+		60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZDAdd.m"; sourceTree = "<group>"; };
 		60EA67AE1BD36A9100BBD89B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		60FD7E721D9047A200B7C2CE /* ZDHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHomeTableViewCell.h; sourceTree = "<group>"; };
 		60FD7E731D9047A200B7C2CE /* ZDHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHomeTableViewCell.m; sourceTree = "<group>"; };
@@ -1939,8 +1939,8 @@
 				3483A77A1B8EEE3200C71AB0 /* ThemeManager */,
 				6071AABA1D79585F009EB51C /* UIView+Additions.h */,
 				6071AABB1D79585F009EB51C /* UIView+Additions.m */,
-				60D3CBAC1D9A1ABD00EA9B52 /* UIImage+ZDBlur.h */,
-				60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDBlur.m */,
+				60D3CBAC1D9A1ABD00EA9B52 /* UIImage+ZDAdd.h */,
+				60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m */,
 				60473F9C1B9BE828001D79BB /* DataService.h */,
 				60473F9D1B9BE828001D79BB /* DataService.m */,
 				60C363301BA01AD400581D5B /* UIView+UIViewController.h */,
@@ -4105,7 +4105,7 @@
 				60697F861D93C11B002BDEC9 /* ZDLeftTableViewCell.m in Sources */,
 				60697F851D93C11B002BDEC9 /* ZDGetThemeModel.m in Sources */,
 				60697F6B1D93C032002BDEC9 /* ZDThemeModel.m in Sources */,
-				60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDBlur.m in Sources */,
+				60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

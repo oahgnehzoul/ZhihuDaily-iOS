@@ -42,13 +42,11 @@
     [item.editors enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ZDThemeEditorItem *item = (ZDThemeEditorItem *)obj;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((10+22)*idx + 60, 11, 22, 22)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:item.avatar] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            UIGraphicsBeginImageContextWithOptions(imageView.size, NO, 0.f);
-            [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius:11] addClip];
-            [image drawInRect:imageView.bounds];
-            imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
+        [imageView sd_setImageWithURL:[NSURL URLWithString:item.avatar] placeholderImage:[UIImage imageNamed:@"Field_Avatar"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//            imageView.image = [image cirleImage];
+            imageView.image = [image imageByRoundCornerRadius:image.size.width / 2];
         }];
+    
         [view addSubview:imageView];
     }];
     return view;

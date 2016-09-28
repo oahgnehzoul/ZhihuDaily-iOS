@@ -75,6 +75,8 @@
  */
 @property (nonatomic) CGSize size;
 
+
+@property (nonatomic) CGPoint anchorPoint;
 /**
  * Removes all subviews.
  */

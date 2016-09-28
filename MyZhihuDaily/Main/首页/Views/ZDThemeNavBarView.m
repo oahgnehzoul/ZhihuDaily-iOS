@@ -8,7 +8,7 @@
 
 #import "ZDThemeNavBarView.h"
 #import "DACircularProgressView.h"
-#import "UIImage+ZDBlur.h"
+
 @interface ZDThemeNavBarView ()
 
 @property (nonatomic, strong) UIImageView *backImageView;

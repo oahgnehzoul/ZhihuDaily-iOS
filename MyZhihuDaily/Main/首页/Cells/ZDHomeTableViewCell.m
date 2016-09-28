@@ -38,6 +38,7 @@ static const CGFloat kZDHomeImageWidth = 75;
 - (void)setItem:(ZDHomeStoryItem *)item {
     self.titleLabel.text = item.title;
     [self.contentImage sd_setImageWithURL:[NSURL URLWithString:item.images[0]]];
+//    [self.contentImage performSelector:@selector(sd_setImageWithURL:) withObject:[NSURL URLWithString:item.images[0]] afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);
         make.top.equalTo(self.contentView).offset(20);
