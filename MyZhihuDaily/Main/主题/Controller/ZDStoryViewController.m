@@ -94,6 +94,9 @@
     
     @weakify(self);
     [self.model loadWithCompletion:^(SBModel *model, NSError *error) {
+        if (error) {
+            return ;
+        }
         @strongify(self);
         ZDStoryItem *item = model.itemList.array[0];
         [self.containView setItem:item];

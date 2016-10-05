@@ -56,7 +56,6 @@ static inline id SBTransformNormalValueForClass(id val, NSString *className) {
     NSDictionary *propertyInfos = [self.class propertyInfos];
     [propertyInfos enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, SBItemProperty  *_Nonnull propertyInfo, BOOL * _Nonnull stop) {
         NSString *propertyName = propertyInfo.propertyName; //model自定义的属性名,carName
-//        NSString *propertyClassName = propertyInfo.propertyClass;
         NSString *JSONKey = propertyName; //返回的JSON数据的 key，默认为 model 中定义的 属性名，
         // 如果方法中重定义，覆盖
         if ([JSONKeyPathsByPropertyKey objectForKey:propertyName]) {

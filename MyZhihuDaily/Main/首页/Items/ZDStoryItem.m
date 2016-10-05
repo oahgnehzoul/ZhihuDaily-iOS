@@ -11,11 +11,13 @@
 @implementation ZDStoryItem
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{
-             @"imageSource":@"image_source",
-             @"shareUrl":@"share_url",
-             @"storyId":@"id"
-             };
+    NSMutableDictionary *ret = @{}.mutableCopy;
+    [ret addEntriesFromDictionary:[super JSONKeyPathsByPropertyKey]];
+    [ret addEntriesFromDictionary:@{
+                                    @"shareUrl":@"share_url",
+                                    @"storyId":@"id"
+                                    }];
+    return ret;
 }
 
 @end

@@ -67,9 +67,9 @@ PODS:
     - ReactiveCocoa/Core
   - Reveal-iOS-SDK (1.6.2)
   - Routable (0.2.0)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
@@ -85,7 +85,7 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 2.5)
   - Reveal-iOS-SDK
   - Routable (~> 0.2.0)
-  - SDWebImage (~> 3.7.3)
+  - SDWebImage (~> 3.8.1)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -102,8 +102,8 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   Routable: 859984d3f1613a4139795bab45941f71ed752564
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 4346c75fca29d3032ac88fce3a5b65486c420b79
+PODFILE CHECKSUM: 6c0ea05bfcfe1ff8aa84417240affd1166c8b5bc
 
 COCOAPODS: 1.0.1

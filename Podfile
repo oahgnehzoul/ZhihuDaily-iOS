@@ -4,7 +4,7 @@ target 'MyZhihuDaily' do
 	pod 'AFNetworking', '~> 2.6.3'
 	pod 'HexColors', '~> 4.0.0'
 	pod 'MMDrawerController', '~> 0.6.0'
-    pod 'SDWebImage', '~> 3.7.3'
+    pod 'SDWebImage', '~> 3.8.1'
     pod 'MJRefresh','~>2.4.12'
     pod 'Masonry', '~> 1.0.1'
     pod 'MBProgressHUD', '~> 1.0.0'
