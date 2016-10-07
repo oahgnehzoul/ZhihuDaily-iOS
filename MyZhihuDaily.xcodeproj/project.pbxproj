@@ -866,6 +866,8 @@
 		60BA5D871D8A7F6E0035E1AF /* SBItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA5D861D8A7F6E0035E1AF /* SBItemList.m */; };
 		60C131181BA08B2400E81489 /* ZDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C131171BA08B2400E81489 /* ZDUtils.m */; };
 		60C363321BA01AD400581D5B /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C363311BA01AD400581D5B /* UIView+UIViewController.m */; };
+		60C87EE11DA77BB1009C914E /* ZDFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C87EE01DA77BB1009C914E /* ZDFPSLabel.m */; };
+		60C87EE41DA79110009C914E /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C87EE31DA79110009C914E /* YYWeakProxy.m */; };
 		60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m */; };
 		60EA67AF1BD36A9100BBD89B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA67AE1BD36A9100BBD89B /* libz.tbd */; };
 		60FD7E8B1D9047A200B7C2CE /* ZDHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FD7E731D9047A200B7C2CE /* ZDHomeTableViewCell.m */; };
@@ -1808,6 +1810,10 @@
 		60C131171BA08B2400E81489 /* ZDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDUtils.m; sourceTree = "<group>"; };
 		60C363301BA01AD400581D5B /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
 		60C363311BA01AD400581D5B /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
+		60C87EDF1DA77BB1009C914E /* ZDFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFPSLabel.h; sourceTree = "<group>"; };
+		60C87EE01DA77BB1009C914E /* ZDFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFPSLabel.m; sourceTree = "<group>"; };
+		60C87EE21DA79110009C914E /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		60C87EE31DA79110009C914E /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		60D3CBAC1D9A1ABD00EA9B52 /* UIImage+ZDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZDAdd.h"; sourceTree = "<group>"; };
 		60D3CBAD1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZDAdd.m"; sourceTree = "<group>"; };
 		60EA67AE1BD36A9100BBD89B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1990,6 +1996,10 @@
 				3483A77C1B8EEE5200C71AB0 /* ThemeManager.m */,
 				3483A77F1B8EF10F00C71AB0 /* ThemeButton.h */,
 				3483A7801B8EF10F00C71AB0 /* ThemeButton.m */,
+				60C87EDF1DA77BB1009C914E /* ZDFPSLabel.h */,
+				60C87EE01DA77BB1009C914E /* ZDFPSLabel.m */,
+				60C87EE21DA79110009C914E /* YYWeakProxy.h */,
+				60C87EE31DA79110009C914E /* YYWeakProxy.m */,
 			);
 			path = ThemeManager;
 			sourceTree = "<group>";
@@ -4097,11 +4107,13 @@
 				60697F871D93C11B002BDEC9 /* ZDLeftThemeItem.m in Sources */,
 				60697F981D93F3A4002BDEC9 /* ZDThemeDelegate.m in Sources */,
 				60C131181BA08B2400E81489 /* ZDUtils.m in Sources */,
+				60C87EE11DA77BB1009C914E /* ZDFPSLabel.m in Sources */,
 				3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */,
 				60FD7EC91D905C6A00B7C2CE /* ZDStoryViewController.m in Sources */,
 				60BA5D681D8A7D520035E1AF /* SBTableViewCell.m in Sources */,
 				60FD7EC31D905BB200B7C2CE /* ZDThemeItem.m in Sources */,
 				603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */,
+				60C87EE41DA79110009C914E /* YYWeakProxy.m in Sources */,
 				60697F861D93C11B002BDEC9 /* ZDLeftTableViewCell.m in Sources */,
 				60697F851D93C11B002BDEC9 /* ZDGetThemeModel.m in Sources */,
 				60697F6B1D93C032002BDEC9 /* ZDThemeModel.m in Sources */,

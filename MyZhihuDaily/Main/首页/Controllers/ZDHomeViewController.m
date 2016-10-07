@@ -17,6 +17,8 @@
 #import "ZDRootViewController.h"
 #import "ZDStoryViewController.h"
 #import "ZDHomeDelegate.h"
+#import "ZDFPSLabel.h"
+
 @interface ZDHomeViewController ()
 @property (nonatomic, strong) ZDHomeDataSource *ds;
 @property (nonatomic, strong) ZDHomeStoryModel *model;
@@ -29,6 +31,8 @@
 @property (nonatomic, assign) CGFloat progress;
 @property (nonatomic, assign) NSInteger firstPageCount;
 @property (nonatomic, strong) NSMutableArray *storyIds;
+
+@property (nonatomic, strong) ZDFPSLabel *fpsLabel;
 @end
 
 @implementation ZDHomeViewController
@@ -90,6 +94,15 @@
     [self setKeyModel:self.model];
     self.model.isLatest = YES;
     [self load];
+    
+    self.fpsLabel = [[ZDFPSLabel alloc] init];
+    [self.view addSubview:self.fpsLabel];
+    [self.fpsLabel sizeToFit];
+    self.fpsLabel.alpha = 0;
+    [self.fpsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(12);
+        make.bottom.equalTo(self.view).offset(-15);
+    }];
 }
 
 - (void)didLoadModel:(ZDHomeStoryModel *)model {
@@ -213,7 +226,7 @@
             make.bottom.equalTo(self.view.mas_top).offset(kZDHomeHeaderViewHeight - offSetY);
             make.left.equalTo(self.view);
         }];
-        
+        [self.navBarView hideProgress];
     }
     if (offSetY < 0 ) {
         self.navBarView.alpha = 0.f;
@@ -236,7 +249,13 @@
     }
 }
 
-
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if (!self.fpsLabel.alpha) {
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.fpsLabel.alpha = 1;
+        } completion:nil];
+    }
+}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
@@ -251,7 +270,23 @@
             }];
         }
     }
-    self.navBarView.progressBlock(self.progress);
+//    self.navBarView.progressBlock(self.progress);
+    
+    if (!decelerate) {
+        if (self.fpsLabel.alpha) {
+            [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                self.fpsLabel.alpha = 0;
+            } completion:nil];
+        }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (self.fpsLabel.alpha) {
+        [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.fpsLabel.alpha = 0;
+        } completion:nil];
+    }
 }
 
 - (void)refresh {
