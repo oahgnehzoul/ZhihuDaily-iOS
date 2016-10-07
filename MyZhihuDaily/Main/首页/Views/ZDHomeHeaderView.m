@@ -28,7 +28,7 @@
         self.collectionView.scrollsToTop = NO;
         [self addSubview:self.pageControl];
         [self bringSubviewToFront:self.pageControl];
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor clearColor];
         
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
