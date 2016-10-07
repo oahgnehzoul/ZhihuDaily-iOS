@@ -35,6 +35,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Bugtags (1.3.0)
   - DACircularProgress (2.3.1)
   - FBRetainCycleDetector (0.1.2)
   - HexColors (4.0.0)
@@ -74,6 +75,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
   - BlocksKit (~> 2.2.5)
+  - Bugtags
   - DACircularProgress (~> 2.3.1)
   - HexColors (~> 4.0.0)
   - Mantle (~> 2.0.7)
@@ -90,6 +92,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Bugtags: e3cb5b6622d4a8c51267af8a29c4d370ddcd7db8
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FBRetainCycleDetector: 45462f9ed1af0cd77224a4cc4e6dacaca47371b4
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
@@ -104,6 +107,6 @@ SPEC CHECKSUMS:
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 6c0ea05bfcfe1ff8aa84417240affd1166c8b5bc
+PODFILE CHECKSUM: eb928a21838c2217c58139527252ccda320f314e
 
 COCOAPODS: 1.0.1

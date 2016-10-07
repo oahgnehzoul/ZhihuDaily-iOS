@@ -9,11 +9,12 @@
 #import "AppDelegate.h"
 #import "MMDrawerController.h"
 #import "BaseNavController.h"
-
 #import "ZDRootViewController.h"
 #import "ZDHomeViewController.h"
 #import "ZDThemeViewController.h"
 #import "ZDLaunchAdvertiseView.h"
+#import <Bugtags/Bugtags.h>
+
 @interface AppDelegate ()
 
 @end
@@ -24,6 +25,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
    
+    [Bugtags startWithAppKey:kZDBugtagsKey invocationEvent:BTGInvocationEventShake];
+
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

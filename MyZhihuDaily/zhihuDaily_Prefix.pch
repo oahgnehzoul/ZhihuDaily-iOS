@@ -51,6 +51,9 @@
 #define kZDHomeCellDefaultColor @"#383838"
 #define kColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
 
+//key
+#define kZDBugtagsKey @"2ebdaa44c9ce1b22846d0d220f4dec25"
+
 // 常用
 #import "HexColors.h"
 #import "CommonAPI.h"
