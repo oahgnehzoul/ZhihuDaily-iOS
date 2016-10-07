@@ -30,6 +30,7 @@ static const CGFloat kZDHomeImageWidth = 75;
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.contentImage];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

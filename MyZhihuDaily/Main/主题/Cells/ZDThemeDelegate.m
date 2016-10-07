@@ -19,7 +19,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 44)];
-    
+    view.backgroundColor = [UIColor whiteColor];
     UILabel *label = [[UILabel alloc] init];
     label.text = @"主编";
     label.font = [UIFont systemFontOfSize:14];
