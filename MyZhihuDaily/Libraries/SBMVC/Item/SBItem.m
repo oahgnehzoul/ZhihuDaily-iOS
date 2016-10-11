@@ -10,9 +10,6 @@
 #import <objc/runtime.h>
 #import "NSDictionary+SBItem.h"
 
-static void *SBItemCachedPropertyKeysKey = &SBItemCachedPropertyKeysKey;
-static void *SBItemCachedPropertyInfos = &SBItemCachedPropertyInfos;
-
 @implementation SBItem
 
 static inline id SBTransformNormalValueForClass(id val, NSString *className) {
@@ -71,6 +68,7 @@ static inline id SBTransformNormalValueForClass(id val, NSString *className) {
             propertyClass = NSClassFromString(propertyInfo.propertyClass);
         }
 
+        // value 类型转换.
         switch (propertyInfo.propertyType) {
             case SBItemPropertyTypeBool:{
                 if ([value isKindOfClass:[NSString class]]) {
@@ -163,8 +161,12 @@ static inline id SBTransformNormalValueForClass(id val, NSString *className) {
 }
 
 
+/**
+ 返回 Item 属性字典。
+ @return @{propertyName:propertyInfo};
+ */
 + (NSDictionary *)propertyInfos {
-    NSDictionary *cachedInfos = objc_getAssociatedObject(self, SBItemCachedPropertyInfos);
+    NSDictionary *cachedInfos = objc_getAssociatedObject(self, _cmd);
     if (cachedInfos) {
         return cachedInfos;
     }
@@ -183,36 +185,17 @@ static inline id SBTransformNormalValueForClass(id val, NSString *className) {
         [ret addEntriesFromDictionary:superPropertyInfos];
     }
     free(properties);
-    objc_setAssociatedObject(self, SBItemCachedPropertyInfos, ret, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, _cmd, ret, OBJC_ASSOCIATION_COPY_NONATOMIC);
     return ret;
 }
 
+/**
+ 返回 Item 的属性名字 NSSet数组
+
+ @return @{propertyName1,propertyName2}
+ */
 + (NSSet *)propertyKeys {
-    //查找之前是否利用 runtime 给 Class 添加过属性，如果添加过就说明我们已经获取过了，没必要重复获取一个类的所有 property，如果没有，就通过 runtime 获取 class 的所有 property 的名字，并利用 objc_setAssociatedObject 给 class 添加属性。
-    NSSet *cachedKeys = objc_getAssociatedObject(self, SBItemCachedPropertyKeysKey);
-    if (cachedKeys) {
-        return cachedKeys;
-    }
-    NSMutableSet *keys = [NSMutableSet set];
-    unsigned int count = 0;
-    objc_property_t *properties = class_copyPropertyList(self, &count);
-    for (int i = 0; i < count; i++) {
-        const char *propertyName = property_getName(properties[i]);
-        [keys addObject:@(propertyName)];
-    }
-    
-    Class superClass = class_getSuperclass(self);
-    if (superClass && ![NSStringFromClass(superClass) isEqualToString:@"SBItem"] && ![NSStringFromClass(superClass) isEqualToString:@"SBTableViewItem"]) {
-        NSSet *superPropertyKeys = [superClass propertyKeys];
-        [keys addObjectsFromArray:(NSArray *)superPropertyKeys];
-    }
-    
-    free(properties);
-    
-    objc_setAssociatedObject(self, SBItemCachedPropertyKeysKey, keys, OBJC_ASSOCIATION_COPY);
-    
-    return keys;
-    
+    return [NSSet setWithArray:[[self propertyInfos] allKeys]];
 }
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {

@@ -9,7 +9,7 @@
 #import "NSDictionary+SBItem.h"
 
 @implementation NSDictionary (SBItem)
-
+// 兼容 key 点语法。dic[a.b] -->  dic[a][b]
 - (id)sb_valueForJSONKeyPath:(NSString *)JSONKeyPath {
     NSArray *components = [JSONKeyPath componentsSeparatedByString:@"."];
     id ret = self;
