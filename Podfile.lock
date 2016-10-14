@@ -71,6 +71,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - Reveal-iOS-SDK
   - Routable (~> 0.2.0)
   - SDWebImage (~> 3.8.1)
+  - YYModel (~> 1.0.4)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -106,7 +108,8 @@ SPEC CHECKSUMS:
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: eb928a21838c2217c58139527252ccda320f314e
+PODFILE CHECKSUM: 4cee6911ed43ca7578f0f157b7f4f3bd87573e35
 
 COCOAPODS: 1.0.1

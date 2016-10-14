@@ -16,6 +16,8 @@
 		3483A7811B8EF10F00C71AB0 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7801B8EF10F00C71AB0 /* ThemeButton.m */; };
 		3483A7A41B8F61E900C71AB0 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3483A7A31B8F61E900C71AB0 /* BaseNavController.m */; };
 		602A7D561D9273BD007B4758 /* ZDHomeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A7D551D9273BD007B4758 /* ZDHomeDelegate.m */; };
+		6032CC2E1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032CC2B1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.m */; };
+		6032CC2F1DB11FBD0087D799 /* GYBootingProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032CC2D1DB11FBD0087D799 /* GYBootingProtection.m */; };
 		603826A21D8C5A230020B988 /* SBItemProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A11D8C5A230020B988 /* SBItemProperty.m */; };
 		603826A51D8C61CA0020B988 /* NSDictionary+SBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A41D8C61CA0020B988 /* NSDictionary+SBItem.m */; };
 		603826A81D8D097A0020B988 /* SBTableViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826A71D8D097A0020B988 /* SBTableViewFactory.m */; };
@@ -923,6 +925,10 @@
 		3483A7A31B8F61E900C71AB0 /* BaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
 		602A7D541D9273BD007B4758 /* ZDHomeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDHomeDelegate.h; path = "MyZhihuDaily/Main/启动/Models/ZDHomeDelegate.h"; sourceTree = SOURCE_ROOT; };
 		602A7D551D9273BD007B4758 /* ZDHomeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDHomeDelegate.m; path = "MyZhihuDaily/Main/启动/Models/ZDHomeDelegate.m"; sourceTree = SOURCE_ROOT; };
+		6032CC2A1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+GYBootingProtection.h"; sourceTree = "<group>"; };
+		6032CC2B1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+GYBootingProtection.m"; sourceTree = "<group>"; };
+		6032CC2C1DB11FBD0087D799 /* GYBootingProtection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBootingProtection.h; sourceTree = "<group>"; };
+		6032CC2D1DB11FBD0087D799 /* GYBootingProtection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBootingProtection.m; sourceTree = "<group>"; };
 		603826A01D8C5A230020B988 /* SBItemProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBItemProperty.h; sourceTree = "<group>"; };
 		603826A11D8C5A230020B988 /* SBItemProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBItemProperty.m; sourceTree = "<group>"; };
 		603826A31D8C61CA0020B988 /* NSDictionary+SBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SBItem.h"; sourceTree = "<group>"; };
@@ -1942,6 +1948,7 @@
 		3483A3C31B8EB76900C71AB0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6032CC291DB11FBD0087D799 /* BootProtection */,
 				3483A77A1B8EEE3200C71AB0 /* ThemeManager */,
 				6071AABA1D79585F009EB51C /* UIView+Additions.h */,
 				6071AABB1D79585F009EB51C /* UIView+Additions.m */,
@@ -2002,6 +2009,17 @@
 				60C87EE31DA79110009C914E /* YYWeakProxy.m */,
 			);
 			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		6032CC291DB11FBD0087D799 /* BootProtection */ = {
+			isa = PBXGroup;
+			children = (
+				6032CC2A1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.h */,
+				6032CC2B1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.m */,
+				6032CC2C1DB11FBD0087D799 /* GYBootingProtection.h */,
+				6032CC2D1DB11FBD0087D799 /* GYBootingProtection.m */,
+			);
+			path = BootProtection;
 			sourceTree = "<group>";
 		};
 		60697F7B1D93C11B002BDEC9 /* 侧栏 */ = {
@@ -4065,6 +4083,7 @@
 				603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */,
 				60FD7E8E1D9047A200B7C2CE /* ZDHomeStoryItem.m in Sources */,
 				609151CB1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m in Sources */,
+				6032CC2F1DB11FBD0087D799 /* GYBootingProtection.m in Sources */,
 				60FD7EDC1D90EA9B00B7C2CE /* ZDLaunchModel.m in Sources */,
 				60FD7E911D9047A200B7C2CE /* ZDHeaderCollectionViewCell.m in Sources */,
 				60BA5D811D8A7EFC0035E1AF /* SBListModel.m in Sources */,
@@ -4117,6 +4136,7 @@
 				60697F861D93C11B002BDEC9 /* ZDLeftTableViewCell.m in Sources */,
 				60697F851D93C11B002BDEC9 /* ZDGetThemeModel.m in Sources */,
 				60697F6B1D93C032002BDEC9 /* ZDThemeModel.m in Sources */,
+				6032CC2E1DB11FBD0087D799 /* AppDelegate+GYBootingProtection.m in Sources */,
 				60D3CBAE1D9A1ABD00EA9B52 /* UIImage+ZDAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
