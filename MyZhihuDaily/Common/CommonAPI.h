@@ -14,7 +14,6 @@
 #define LatestNews @"/api/4/news/latest"
 #define BeforeNews @"/api/4/news/before/"
 
-//#define WebView @"http://daily.zhihu.com/story/"
 #define Detail @"/api/4/news/"
 
 
@@ -29,9 +28,6 @@
 #define Comment @"/api/4/story/"
 
 #define Start @"/api/7/prefetch-launch-images/"
-//@"user":@"3216820023",
-//@"access_token":@"2.00vp8hVD0K7rDZ37e68e711fFcg_zB",
-//@"refresh_token":@"2.00vp8hVD0K7rDZdf2c43c919lGFHIC"
 #define access_token @"2.00vp8hVD0K7rDZ37e68e711fFcg_zB"
 #define user @"3216820023"
 #define refresh_token @"2.00vp8hVD0K7rDZdf2c43c919lGFHIC"

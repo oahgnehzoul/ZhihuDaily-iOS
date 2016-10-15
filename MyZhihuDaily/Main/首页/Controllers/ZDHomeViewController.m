@@ -63,7 +63,7 @@
     };
     
     [self.view addSubview:self.headerView];
-    [self.view bringSubviewToFront:self.tableView];
+//    [self.view bringSubviewToFront:self.tableView];
     self.view.backgroundColor = [UIColor whiteColor];
 
     //把 tableview 顶下去.相当于改变 UIEdgeInset,但是直接改变 inset会影响 sectionHeader.
