@@ -81,13 +81,6 @@
         make.bottom.equalTo(self.leftView.mas_bottom).offset(-2);
     }];
     
-//    [self.skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(84, 28));
-//        make.right.equalTo(self.bottomBackView).offset(-2);
-//        make.centerY.equalTo(self.leftView);
-//    }];
-//    [self.skipButton sizeToFit];
-//    self.skipButton.size = CGSizeMake(self.skipButton.width + 20, self.skipButton.height + 5);
     [self.skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 28));
         make.right.equalTo(self.bottomBackView).offset(-2);

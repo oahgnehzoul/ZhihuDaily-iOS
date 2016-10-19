@@ -24,8 +24,9 @@
 		603826AB1D8D32340020B988 /* SBPullRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 603826AA1D8D32340020B988 /* SBPullRefreshView.m */; };
 		603893BA1BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */; };
 		604438031D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604438021D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m */; };
+		60448CC51DB7959B00FB8706 /* ZDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60448CC41DB7959B00FB8706 /* ZDCache.m */; };
+		60448CCB1DB7A8B000FB8706 /* UIViewController+ZDDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 60448CCA1DB7A8B000FB8706 /* UIViewController+ZDDealloc.m */; };
 		60473F9E1B9BE828001D79BB /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473F9D1B9BE828001D79BB /* DataService.m */; };
-		60473FE01B9C1889001D79BB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60473FDF1B9C1889001D79BB /* BaseModel.m */; };
 		60697F6B1D93C032002BDEC9 /* ZDThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60697F6A1D93C032002BDEC9 /* ZDThemeModel.m */; };
 		60697F851D93C11B002BDEC9 /* ZDGetThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60697F7D1D93C11B002BDEC9 /* ZDGetThemeModel.m */; };
 		60697F861D93C11B002BDEC9 /* ZDLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60697F7F1D93C11B002BDEC9 /* ZDLeftTableViewCell.m */; };
@@ -941,11 +942,13 @@
 		603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
 		604438011D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDThemeSubscribeSuccessView.h; sourceTree = "<group>"; };
 		604438021D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDThemeSubscribeSuccessView.m; sourceTree = "<group>"; };
+		60448CC31DB7959B00FB8706 /* ZDCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCache.h; sourceTree = "<group>"; };
+		60448CC41DB7959B00FB8706 /* ZDCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCache.m; sourceTree = "<group>"; };
+		60448CC91DB7A8B000FB8706 /* UIViewController+ZDDealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZDDealloc.h"; sourceTree = "<group>"; };
+		60448CCA1DB7A8B000FB8706 /* UIViewController+ZDDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZDDealloc.m"; sourceTree = "<group>"; };
 		60473F9C1B9BE828001D79BB /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		60473F9D1B9BE828001D79BB /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		60473F9F1B9C0D68001D79BB /* CommonAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonAPI.h; sourceTree = "<group>"; };
-		60473FDE1B9C1889001D79BB /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		60473FDF1B9C1889001D79BB /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		60697F691D93C032002BDEC9 /* ZDThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDThemeModel.h; path = "MyZhihuDaily/Main/首页/Views/ZDThemeModel.h"; sourceTree = SOURCE_ROOT; };
 		60697F6A1D93C032002BDEC9 /* ZDThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDThemeModel.m; path = "MyZhihuDaily/Main/首页/Views/ZDThemeModel.m"; sourceTree = SOURCE_ROOT; };
 		60697F7C1D93C11B002BDEC9 /* ZDGetThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGetThemeModel.h; sourceTree = "<group>"; };
@@ -1962,6 +1965,8 @@
 				603893B91BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m */,
 				609151C91D990A7F00C37AB6 /* UIViewController+CurrentViewController.h */,
 				609151CA1D990A7F00C37AB6 /* UIViewController+CurrentViewController.m */,
+				60448CC91DB7A8B000FB8706 /* UIViewController+ZDDealloc.h */,
+				60448CCA1DB7A8B000FB8706 /* UIViewController+ZDDealloc.m */,
 				60473F9F1B9C0D68001D79BB /* CommonAPI.h */,
 				60C131161BA08B2400E81489 /* ZDUtils.h */,
 				60C131171BA08B2400E81489 /* ZDUtils.m */,
@@ -1984,12 +1989,12 @@
 		3483A3DE1B8EB77600C71AB0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				60473FDE1B9C1889001D79BB /* BaseModel.h */,
-				60473FDF1B9C1889001D79BB /* BaseModel.m */,
 				3483A7A21B8F61E900C71AB0 /* BaseNavController.h */,
 				3483A7A31B8F61E900C71AB0 /* BaseNavController.m */,
 				60869D8C1D8D905100936170 /* ZDAFRequest.h */,
 				60869D8D1D8D905100936170 /* ZDAFRequest.m */,
+				60448CC31DB7959B00FB8706 /* ZDCache.h */,
+				60448CC41DB7959B00FB8706 /* ZDCache.m */,
 				60869D8F1D8D993600936170 /* ZDListModel.h */,
 				60869D901D8D993600936170 /* ZDListModel.m */,
 			);
@@ -3155,7 +3160,7 @@
 			attributes = {
 				CLASSPREFIX = ZD;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = oahgnehzoul;
+				ORGANIZATIONNAME = oahzol;
 				TargetAttributes = {
 					3483A3991B8EB74C00C71AB0 = {
 						CreatedOnToolsVersion = 6.4;
@@ -4076,6 +4081,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				603826A51D8C61CA0020B988 /* NSDictionary+SBItem.m in Sources */,
+				60448CC51DB7959B00FB8706 /* ZDCache.m in Sources */,
 				603893BA1BD281ED00D2C7AC /* UINavigationBar+BackgroundColor.m in Sources */,
 				60FD7E9F1D9048CD00B7C2CE /* ZDThemeViewController.m in Sources */,
 				60869D911D8D993600936170 /* ZDListModel.m in Sources */,
@@ -4091,6 +4097,7 @@
 				60FD7ED91D9068F600B7C2CE /* ZDStoryItem.m in Sources */,
 				60473F9E1B9BE828001D79BB /* DataService.m in Sources */,
 				60BA5D721D8A7E450035E1AF /* SBTableViewDelegate.m in Sources */,
+				60448CCB1DB7A8B000FB8706 /* UIViewController+ZDDealloc.m in Sources */,
 				60BA5D6B1D8A7DE60035E1AF /* SBItem.m in Sources */,
 				609151C81D98EF2A00C37AB6 /* ZDStoryView.m in Sources */,
 				60BA5D6E1D8A7DFC0035E1AF /* SBTableViewItem.m in Sources */,
@@ -4118,7 +4125,6 @@
 				3483A3A01B8EB74C00C71AB0 /* main.m in Sources */,
 				60BA5D841D8A7F420035E1AF /* SBRequest.m in Sources */,
 				604438031D96922E0042A2A0 /* ZDThemeSubscribeSuccessView.m in Sources */,
-				60473FE01B9C1889001D79BB /* BaseModel.m in Sources */,
 				60697F8F1D93CE11002BDEC9 /* ZDThemeDataSource.m in Sources */,
 				60697F8C1D93C262002BDEC9 /* ZDLeftBackView.m in Sources */,
 				3483A77D1B8EEE5200C71AB0 /* ThemeManager.m in Sources */,

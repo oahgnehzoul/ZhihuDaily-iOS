@@ -42,17 +42,15 @@
     NSError *error = nil;
     if (![self prepareParseResponse:JSON error:&error] && error) {
         _hasMore = NO;
-//        [self requestDidFailWithError:error];
         [self performSelector:@selector(requestDidFailWithError:) withObject:error];
         return NO;
     }
     NSArray *list = [self parseResponse:JSON error:&error];
     if (error) {
-//        [self requestDidFailWithError:error];
         [self performSelector:@selector(requestDidFailWithError:) withObject:error];
         return NO;
     } else {
-        // add 9.21.by oahgnehzoul
+        // add 9.21.by oahgzl
         if (self.clearBeforeAdd) {
             [self.itemList removeAlObjects];
         }
@@ -66,7 +64,7 @@
             _hasMore = list.count >= self.pageSize;
             break;
         case SBModelPageCustomize:
-//            _hasMore = self.pageSize
+
         default:
             break;
     }

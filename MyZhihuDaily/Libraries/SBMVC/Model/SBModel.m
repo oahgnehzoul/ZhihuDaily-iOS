@@ -140,7 +140,7 @@
 }
 
 - (BOOL)useCache {
-    return NO;
+    return YES;
 }
 
 - (BOOL)usePost {

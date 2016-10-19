@@ -8,7 +8,7 @@
 
 #import "ZDAFRequest.h"
 #import "AFNetworking.h"
-
+#import "ZDCache.h"
 @interface ZDAFRequest ()<SBRequest,SBRequestDelegate>
 @property (nonatomic, strong) AFHTTPRequestOperation *requestOperation;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -60,13 +60,15 @@
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self requestDidStartLoad:self];
     });
+    NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:self.usePost ? @"POST":@"GET" URLString:self.url parameters:self.queries error:nil];
+    NSString *cacheKey = [NSString stringWithFormat:@"%@",request.URL];
     void (^ZDAFSuccess)(AFHTTPRequestOperation *request,id response) = ^(AFHTTPRequestOperation *operation,id response) {
         // readonly
         self->_responseObject = response;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self requestDidFinish:response];
-//            NSLog(@"#ZAFRequest requestDidFinish:%@",response);
+            NSLog(@"#ZAFRequest requestDidFinish:%@",response);
         });
     };
     
@@ -83,6 +85,20 @@
         });
     };
     
+    if (self.useCache && [[ZDCache shareInstance] hasDataForKey:cacheKey expires:self.apiCacheTimeOutSeconds]) {
+        NSData *data = [[ZDCache shareInstance] dataForKey:cacheKey expires:self.apiCacheTimeOutSeconds];
+        if (data) {
+            NSDictionary *responseObj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSLog(@"#ZDAFRequest requestDidFinish with cache :%@",responseObj);
+                self.isFromCache = YES;
+                [self requestDidFinish:responseObj];
+            });
+            return;
+        }
+    }
+    
+    self.isFromCache = NO;
     if (self.usePost) {
         self.requestOperation = [self.manager POST:self.url parameters:self.queries success:ZDAFSuccess failure:ZDAFFailure];
     } else {

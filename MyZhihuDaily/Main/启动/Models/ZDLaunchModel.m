@@ -25,4 +25,8 @@
     return @[];
 }
 
+- (BOOL)useCache {
+    return NO;
+}
+
 @end

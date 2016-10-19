@@ -23,7 +23,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
    
     [Bugtags startWithAppKey:kZDBugtagsKey invocationEvent:BTGInvocationEventShake];
 
