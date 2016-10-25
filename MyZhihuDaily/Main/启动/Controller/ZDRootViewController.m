@@ -28,7 +28,7 @@
     ZDHomeViewController *homeVc = [[ZDHomeViewController alloc] init];
     
     self.leftDrawerViewController = leftMenuVc;
-
+    
     BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:homeVc];
     self.centerViewController = nav;
     

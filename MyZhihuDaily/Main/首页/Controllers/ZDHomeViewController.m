@@ -52,7 +52,7 @@
     //默认为 yes，会让 viewcontroller 根据 status bar ,navigation bar,toolbar,tabbar自动调整 insets
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight)];
+    self.headerView = [[ZDHomeHeaderView alloc] initWithFrame:CGRectMake(0, -20, kMainScreenWidth, kZDHomeHeaderViewHeight)];
     
     @weakify(self);
     self.headerView.touchBlock = ^(NSString *storyId) {
@@ -62,15 +62,18 @@
         [self.navigationController pushViewController:vc animated:YES];
     };
     
-    [self.view addSubview:self.headerView];
-//    [self.view bringSubviewToFront:self.tableView];
-    self.view.backgroundColor = [UIColor whiteColor];
+
 
     //把 tableview 顶下去.相当于改变 UIEdgeInset,但是直接改变 inset会影响 sectionHeader.
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kZDHomeHeaderViewHeight - 20)];
     view.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = view;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    [self.tableView addSubview:self.headerView];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.tableView.clipsToBounds = NO;
+    
     [self.view addSubview:self.menuButton];
 
     [self setNavBar];
@@ -111,7 +114,7 @@
         self.firstPageCount = model.itemList.count;
     }
     [super didLoadModel:model];
-    if ([model.stories count] && model.currentPageIndex == 0) {
+    if ([model.stories count] && model.currentPageIndex == 0 && [self.headerView.items count] == 0) {
         self.headerView.items = model.stories;
     }
 }
