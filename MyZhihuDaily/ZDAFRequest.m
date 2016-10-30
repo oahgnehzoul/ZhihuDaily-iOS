@@ -66,6 +66,13 @@
         // readonly
         self->_responseObject = response;
         
+        if (self.useCache) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *data = [NSKeyedArchiver archivedDataWithRootObject:response];
+                [[ZDCache shareInstance] storeData:data forKey:cacheKey];
+            });
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self requestDidFinish:response];
             NSLog(@"#ZAFRequest requestDidFinish:%@",response);

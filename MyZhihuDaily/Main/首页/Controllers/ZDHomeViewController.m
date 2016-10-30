@@ -114,7 +114,7 @@
         self.firstPageCount = model.itemList.count;
     }
     [super didLoadModel:model];
-    if ([model.stories count] && model.currentPageIndex == 0 && [self.headerView.items count] == 0) {
+    if ([model.stories count] && model.currentPageIndex == 0 ) {
         self.headerView.items = model.stories;
     }
 }

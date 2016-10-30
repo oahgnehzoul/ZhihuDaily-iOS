@@ -59,10 +59,12 @@
     [self setPageIndex:indexPath];
     
     @weakify(self);
-    self.timer = [NSTimer bk_scheduledTimerWithTimeInterval:5 block:^(NSTimer *timer) {
-        @strongify(self);
-        [self collectionViewScroll];
-    } repeats:YES];
+    if (_timer == nil) {
+        _timer = [NSTimer bk_scheduledTimerWithTimeInterval:5 block:^(NSTimer *timer) {
+            @strongify(self);
+            [self collectionViewScroll];
+        } repeats:YES];
+    }
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
