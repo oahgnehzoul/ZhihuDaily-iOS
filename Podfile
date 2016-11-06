@@ -16,5 +16,6 @@ target 'MyZhihuDaily' do
     pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 	pod 'MLeaksFinder', :configurations => ['Debug']
     pod 'Bugtags'
-    pod 'YYModel', '~> 1.0.4'
+   # pod 'YYModel', '~> 1.0.4'
+	pod 'FDFullscreenPopGesture', '~> 1.1'
 end
