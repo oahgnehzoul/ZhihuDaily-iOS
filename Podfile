@@ -13,9 +13,8 @@ target 'MyZhihuDaily' do
     pod 'ReactiveCocoa', '~> 2.5'
     pod 'Routable', '~> 0.2.0'
 	pod 'DACircularProgress', '~> 2.3.1'
-    pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+    pod 'Reveal-SDK', :configurations => ['Debug']
 	pod 'MLeaksFinder', :configurations => ['Debug']
     pod 'Bugtags'
-   # pod 'YYModel', '~> 1.0.4'
 	pod 'FDFullscreenPopGesture', '~> 1.1'
 end
