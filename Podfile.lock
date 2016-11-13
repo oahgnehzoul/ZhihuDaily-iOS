@@ -45,7 +45,6 @@ PODS:
   - Mantle/extobjc (2.0.7)
   - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (2.4.12)
   - MLeaksFinder (0.2.0):
     - FBRetainCycleDetector
   - MMDrawerController (0.6.0):
@@ -67,7 +66,6 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - Reveal-SDK (2)
   - Routable (0.2.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
@@ -83,11 +81,9 @@ DEPENDENCIES:
   - Mantle (~> 2.0.7)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
-  - MJRefresh (~> 2.4.12)
   - MLeaksFinder
   - MMDrawerController (~> 0.6.0)
   - ReactiveCocoa (~> 2.5)
-  - Reveal-SDK
   - Routable (~> 0.2.0)
   - SDWebImage (~> 3.8.1)
 
@@ -102,14 +98,12 @@ SPEC CHECKSUMS:
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   MLeaksFinder: 07ab450d72d3bf5ef4201b74047d74ceae66d605
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
   Routable: 859984d3f1613a4139795bab45941f71ed752564
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: a49d8a32ae496c584f2a5e84ad5ee73b216989ef
+PODFILE CHECKSUM: 86ad7e8bd15eaf8aadd90645f5e6f9927b7c5e36
 
 COCOAPODS: 1.1.0

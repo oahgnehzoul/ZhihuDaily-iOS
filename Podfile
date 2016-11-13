@@ -5,7 +5,6 @@ target 'MyZhihuDaily' do
 	pod 'HexColors', '~> 4.0.0'
 	pod 'MMDrawerController', '~> 0.6.0'
     pod 'SDWebImage', '~> 3.8.1'
-    pod 'MJRefresh','~>2.4.12'
     pod 'Masonry', '~> 1.0.1'
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'BlocksKit', '~> 2.2.5'
@@ -13,7 +12,7 @@ target 'MyZhihuDaily' do
     pod 'ReactiveCocoa', '~> 2.5'
     pod 'Routable', '~> 0.2.0'
 	pod 'DACircularProgress', '~> 2.3.1'
-    pod 'Reveal-SDK', :configurations => ['Debug']
+    #pod 'Reveal-SDK', :configurations => ['Debug']
 	pod 'MLeaksFinder', :configurations => ['Debug']
     pod 'Bugtags'
 	pod 'FDFullscreenPopGesture', '~> 1.1'
